@@ -1,0 +1,34 @@
+.class public final synthetic Lcom/jetinno/machine/activity/Machine2ChildActivity$$ExternalSyntheticLambda0;
+.super Ljava/lang/Object;
+.source "D8$$SyntheticClass"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
+
+
+# instance fields
+.field public final synthetic f$0:Lcom/jetinno/machine/activity/Machine2ChildActivity;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lcom/jetinno/machine/activity/Machine2ChildActivity;)V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/jetinno/machine/activity/Machine2ChildActivity$$ExternalSyntheticLambda0;->f$0:Lcom/jetinno/machine/activity/Machine2ChildActivity;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onClick(Landroid/view/View;)V
+    .registers 3
+
+    iget-object v0, p0, Lcom/jetinno/machine/activity/Machine2ChildActivity$$ExternalSyntheticLambda0;->f$0:Lcom/jetinno/machine/activity/Machine2ChildActivity;
+
+    invoke-static {v0, p1}, Lcom/jetinno/machine/activity/Machine2ChildActivity;->$r8$lambda$aGikGbR1EtwtDucNBLA3vUBu0m8(Lcom/jetinno/machine/activity/Machine2ChildActivity;Landroid/view/View;)V
+
+    return-void
+.end method

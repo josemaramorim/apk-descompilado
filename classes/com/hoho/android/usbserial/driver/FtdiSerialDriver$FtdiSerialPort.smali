@@ -1,0 +1,1927 @@
+.class public Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;
+.super Lcom/hoho/android/usbserial/driver/CommonUsbSerialPort;
+.source "FtdiSerialDriver.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/hoho/android/usbserial/driver/FtdiSerialDriver;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = "FtdiSerialPort"
+.end annotation
+
+
+# static fields
+.field private static final GET_LATENCY_TIMER_REQUEST:I = 0xa
+
+.field private static final GET_MODEM_STATUS_REQUEST:I = 0x5
+
+.field private static final MODEM_CONTROL_DTR_DISABLE:I = 0x100
+
+.field private static final MODEM_CONTROL_DTR_ENABLE:I = 0x101
+
+.field private static final MODEM_CONTROL_REQUEST:I = 0x1
+
+.field private static final MODEM_CONTROL_RTS_DISABLE:I = 0x200
+
+.field private static final MODEM_CONTROL_RTS_ENABLE:I = 0x202
+
+.field private static final MODEM_STATUS_CD:I = 0x80
+
+.field private static final MODEM_STATUS_CTS:I = 0x10
+
+.field private static final MODEM_STATUS_DSR:I = 0x20
+
+.field private static final MODEM_STATUS_RI:I = 0x40
+
+.field private static final READ_HEADER_LENGTH:I = 0x2
+
+.field private static final REQTYPE_DEVICE_TO_HOST:I = 0xc0
+
+.field private static final REQTYPE_HOST_TO_DEVICE:I = 0x40
+
+.field private static final RESET_ALL:I = 0x0
+
+.field private static final RESET_PURGE_RX:I = 0x1
+
+.field private static final RESET_PURGE_TX:I = 0x2
+
+.field private static final RESET_REQUEST:I = 0x0
+
+.field private static final SET_BAUD_RATE_REQUEST:I = 0x3
+
+.field private static final SET_DATA_REQUEST:I = 0x4
+
+.field private static final SET_LATENCY_TIMER_REQUEST:I = 0x9
+
+.field private static final USB_WRITE_TIMEOUT_MILLIS:I = 0x1388
+
+
+# instance fields
+.field private baudRateWithPort:Z
+
+.field private breakConfig:I
+
+.field private dtr:Z
+
+.field private rts:Z
+
+.field final synthetic this$0:Lcom/hoho/android/usbserial/driver/FtdiSerialDriver;
+
+
+# direct methods
+.method public constructor <init>(Lcom/hoho/android/usbserial/driver/FtdiSerialDriver;Landroid/hardware/usb/UsbDevice;I)V
+    .registers 4
+
+    .line 91
+    iput-object p1, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->this$0:Lcom/hoho/android/usbserial/driver/FtdiSerialDriver;
+
+    .line 92
+    invoke-direct {p0, p2, p3}, Lcom/hoho/android/usbserial/driver/CommonUsbSerialPort;-><init>(Landroid/hardware/usb/UsbDevice;I)V
+
+    const/4 p1, 0x0
+
+    .line 86
+    iput-boolean p1, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->baudRateWithPort:Z
+
+    .line 87
+    iput-boolean p1, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->dtr:Z
+
+    .line 88
+    iput-boolean p1, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->rts:Z
+
+    .line 89
+    iput p1, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->breakConfig:I
+
+    return-void
+.end method
+
+.method private getStatus()I
+    .registers 11
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    const/4 v0, 0x2
+
+    new-array v9, v0, [B
+
+    .line 292
+    iget-object v1, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mConnection:Landroid/hardware/usb/UsbDeviceConnection;
+
+    const/16 v2, 0xc0
+
+    const/4 v3, 0x5
+
+    const/4 v4, 0x0
+
+    iget v5, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mPortNumber:I
+
+    add-int/lit8 v5, v5, 0x1
+
+    const/16 v8, 0x1388
+
+    const/4 v7, 0x2
+
+    move-object v6, v9
+
+    invoke-virtual/range {v1 .. v8}, Landroid/hardware/usb/UsbDeviceConnection;->controlTransfer(IIII[BII)I
+
+    move-result v1
+
+    if-ne v1, v0, :cond_1b
+
+    const/4 v0, 0x0
+
+    aget-byte v0, v9, v0
+
+    return v0
+
+    .line 295
+    :cond_1b
+    new-instance v0, Ljava/io/IOException;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "Get modem status failed: result="
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method private setBaudrate(I)V
+    .registers 24
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, p1
+
+    const v2, 0x3567e0
+
+    if-gt v1, v2, :cond_100
+
+    const v2, 0x2625a0
+
+    const/4 v3, 0x3
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x1
+
+    if-lt v1, v2, :cond_17
+
+    const v2, 0x2dc6c0
+
+    const/4 v6, 0x0
+
+    :goto_15
+    const/4 v7, 0x0
+
+    goto :goto_35
+
+    :cond_17
+    const v2, 0x1ab3f0
+
+    if-lt v1, v2, :cond_21
+
+    const v2, 0x1e8480
+
+    const/4 v6, 0x1
+
+    goto :goto_15
+
+    :cond_21
+    const v2, 0x2dc6c00
+
+    .line 193
+    div-int v6, v2, v1
+
+    add-int/2addr v6, v5
+
+    shr-int/2addr v6, v5
+
+    and-int/lit8 v7, v6, 0x7
+
+    shr-int/2addr v6, v3
+
+    const/16 v8, 0x3fff
+
+    if-gt v6, v8, :cond_f8
+
+    shl-int/lit8 v8, v6, 0x3
+
+    add-int/2addr v8, v7
+
+    .line 199
+    div-int/2addr v2, v8
+
+    add-int/2addr v2, v5
+
+    shr-int/2addr v2, v5
+
+    :goto_35
+    int-to-double v8, v2
+
+    int-to-double v10, v1
+
+    div-double/2addr v8, v10
+
+    const-wide/high16 v10, 0x3ff0000000000000L    # 1.0
+
+    sub-double/2addr v10, v8
+
+    .line 202
+    invoke-static {v10, v11}, Ljava/lang/Math;->abs(D)D
+
+    move-result-wide v8
+
+    const-wide v10, 0x3f9fbe76c8b43958L    # 0.031
+
+    const-wide/high16 v12, 0x4059000000000000L    # 100.0
+
+    cmpl-double v14, v8, v10
+
+    if-gez v14, :cond_e2
+
+    const v10, 0x8000
+
+    const v11, 0xc000
+
+    packed-switch v7, :pswitch_data_108
+
+    goto :goto_6c
+
+    :pswitch_54
+    or-int v10, v6, v11
+
+    goto :goto_61
+
+    :pswitch_57
+    or-int/2addr v10, v6
+
+    goto :goto_61
+
+    :pswitch_59
+    or-int/lit16 v10, v6, 0x4000
+
+    goto :goto_61
+
+    :pswitch_5c
+    or-int/lit16 v10, v6, 0x4000
+
+    goto :goto_69
+
+    :pswitch_5f
+    or-int/lit8 v10, v6, 0x0
+
+    :goto_61
+    move/from16 v17, v10
+
+    const/4 v10, 0x1
+
+    goto :goto_6f
+
+    :pswitch_65
+    or-int/2addr v10, v6
+
+    goto :goto_69
+
+    :pswitch_67
+    or-int v10, v6, v11
+
+    :goto_69
+    move/from16 v17, v10
+
+    goto :goto_6e
+
+    :goto_6c
+    move/from16 v17, v6
+
+    :goto_6e
+    const/4 v10, 0x0
+
+    .line 217
+    :goto_6f
+    iget-boolean v11, v0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->baudRateWithPort:Z
+
+    if-eqz v11, :cond_79
+
+    shl-int/lit8 v10, v10, 0x8
+
+    .line 219
+    iget v11, v0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mPortNumber:I
+
+    add-int/2addr v11, v5
+
+    or-int/2addr v10, v11
+
+    :cond_79
+    move/from16 v18, v10
+
+    .line 221
+    # getter for: Lcom/hoho/android/usbserial/driver/FtdiSerialDriver;->TAG:Ljava/lang/String;
+    invoke-static {}, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver;->access$000()Ljava/lang/String;
+
+    move-result-object v10
+
+    const/4 v11, 0x7
+
+    new-array v11, v11, [Ljava/lang/Object;
+
+    .line 222
+    invoke-static/range {p1 .. p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    aput-object v1, v11, v4
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    aput-object v1, v11, v5
+
+    mul-double v8, v8, v12
+
+    invoke-static {v8, v9}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v1
+
+    const/4 v2, 0x2
+
+    aput-object v1, v11, v2
+
+    invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    aput-object v1, v11, v3
+
+    const/4 v1, 0x4
+
+    invoke-static/range {v18 .. v18}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v11, v1
+
+    const/4 v1, 0x5
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v11, v1
+
+    const/4 v1, 0x6
+
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v11, v1
+
+    const-string v1, "baud rate=%d, effective=%d, error=%.1f%%, value=0x%04x, index=0x%04x, divisor=%d, subdivisor=%d"
+
+    .line 221
+    invoke-static {v1, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v10, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 224
+    iget-object v14, v0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mConnection:Landroid/hardware/usb/UsbDeviceConnection;
+
+    const/16 v15, 0x40
+
+    const/16 v16, 0x3
+
+    const/16 v19, 0x0
+
+    const/16 v20, 0x0
+
+    const/16 v21, 0x1388
+
+    invoke-virtual/range {v14 .. v21}, Landroid/hardware/usb/UsbDeviceConnection;->controlTransfer(IIII[BII)I
+
+    move-result v1
+
+    if-nez v1, :cond_ce
+
+    return-void
+
+    .line 227
+    :cond_ce
+    new-instance v2, Ljava/io/IOException;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, "Setting baudrate failed: result="
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v2, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    .line 204
+    :cond_e2
+    new-instance v1, Ljava/lang/UnsupportedOperationException;
+
+    new-array v2, v5, [Ljava/lang/Object;
+
+    mul-double v8, v8, v12
+
+    invoke-static {v8, v9}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v3
+
+    aput-object v3, v2, v4
+
+    const-string v3, "Baud rate deviation %.1f%% is higher than allowed 3%%"
+
+    invoke-static {v3, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    .line 198
+    :cond_f8
+    new-instance v1, Ljava/lang/UnsupportedOperationException;
+
+    const-string v2, "Baud rate to low"
+
+    invoke-direct {v1, v2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    .line 183
+    :cond_100
+    new-instance v1, Ljava/lang/UnsupportedOperationException;
+
+    const-string v2, "Baud rate to high"
+
+    invoke-direct {v1, v2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :pswitch_data_108
+    .packed-switch 0x1
+        :pswitch_67
+        :pswitch_65
+        :pswitch_5f
+        :pswitch_5c
+        :pswitch_59
+        :pswitch_57
+        :pswitch_54
+    .end packed-switch
+.end method
+
+
+# virtual methods
+.method protected closeInt()V
+    .registers 4
+
+    .line 138
+    :try_start_0
+    iget-object v0, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mConnection:Landroid/hardware/usb/UsbDeviceConnection;
+
+    iget-object v1, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mDevice:Landroid/hardware/usb/UsbDevice;
+
+    iget v2, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mPortNumber:I
+
+    invoke-virtual {v1, v2}, Landroid/hardware/usb/UsbDevice;->getInterface(I)Landroid/hardware/usb/UsbInterface;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/hardware/usb/UsbDeviceConnection;->releaseInterface(Landroid/hardware/usb/UsbInterface;)Z
+    :try_end_d
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_d} :catch_d
+
+    :catch_d
+    return-void
+.end method
+
+.method public getCD()Z
+    .registers 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 302
+    invoke-direct {p0}, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->getStatus()I
+
+    move-result v0
+
+    and-int/lit16 v0, v0, 0x80
+
+    if-eqz v0, :cond_a
+
+    const/4 v0, 0x1
+
+    goto :goto_b
+
+    :cond_a
+    const/4 v0, 0x0
+
+    :goto_b
+    return v0
+.end method
+
+.method public getCTS()Z
+    .registers 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 307
+    invoke-direct {p0}, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->getStatus()I
+
+    move-result v0
+
+    and-int/lit8 v0, v0, 0x10
+
+    if-eqz v0, :cond_a
+
+    const/4 v0, 0x1
+
+    goto :goto_b
+
+    :cond_a
+    const/4 v0, 0x0
+
+    :goto_b
+    return v0
+.end method
+
+.method public getControlLines()Ljava/util/EnumSet;
+    .registers 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/EnumSet<",
+            "Lcom/hoho/android/usbserial/driver/UsbSerialPort$ControlLine;",
+            ">;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 352
+    invoke-direct {p0}, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->getStatus()I
+
+    move-result v0
+
+    .line 353
+    const-class v1, Lcom/hoho/android/usbserial/driver/UsbSerialPort$ControlLine;
+
+    invoke-static {v1}, Ljava/util/EnumSet;->noneOf(Ljava/lang/Class;)Ljava/util/EnumSet;
+
+    move-result-object v1
+
+    .line 354
+    iget-boolean v2, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->rts:Z
+
+    if-eqz v2, :cond_13
+
+    sget-object v2, Lcom/hoho/android/usbserial/driver/UsbSerialPort$ControlLine;->RTS:Lcom/hoho/android/usbserial/driver/UsbSerialPort$ControlLine;
+
+    invoke-virtual {v1, v2}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
+
+    :cond_13
+    and-int/lit8 v2, v0, 0x10
+
+    if-eqz v2, :cond_1c
+
+    .line 355
+    sget-object v2, Lcom/hoho/android/usbserial/driver/UsbSerialPort$ControlLine;->CTS:Lcom/hoho/android/usbserial/driver/UsbSerialPort$ControlLine;
+
+    invoke-virtual {v1, v2}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
+
+    .line 356
+    :cond_1c
+    iget-boolean v2, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->dtr:Z
+
+    if-eqz v2, :cond_25
+
+    sget-object v2, Lcom/hoho/android/usbserial/driver/UsbSerialPort$ControlLine;->DTR:Lcom/hoho/android/usbserial/driver/UsbSerialPort$ControlLine;
+
+    invoke-virtual {v1, v2}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
+
+    :cond_25
+    and-int/lit8 v2, v0, 0x20
+
+    if-eqz v2, :cond_2e
+
+    .line 357
+    sget-object v2, Lcom/hoho/android/usbserial/driver/UsbSerialPort$ControlLine;->DSR:Lcom/hoho/android/usbserial/driver/UsbSerialPort$ControlLine;
+
+    invoke-virtual {v1, v2}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
+
+    :cond_2e
+    and-int/lit16 v2, v0, 0x80
+
+    if-eqz v2, :cond_37
+
+    .line 358
+    sget-object v2, Lcom/hoho/android/usbserial/driver/UsbSerialPort$ControlLine;->CD:Lcom/hoho/android/usbserial/driver/UsbSerialPort$ControlLine;
+
+    invoke-virtual {v1, v2}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
+
+    :cond_37
+    and-int/lit8 v0, v0, 0x40
+
+    if-eqz v0, :cond_40
+
+    .line 359
+    sget-object v0, Lcom/hoho/android/usbserial/driver/UsbSerialPort$ControlLine;->RI:Lcom/hoho/android/usbserial/driver/UsbSerialPort$ControlLine;
+
+    invoke-virtual {v1, v0}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
+
+    :cond_40
+    return-object v1
+.end method
+
+.method public getDSR()Z
+    .registers 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 312
+    invoke-direct {p0}, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->getStatus()I
+
+    move-result v0
+
+    and-int/lit8 v0, v0, 0x20
+
+    if-eqz v0, :cond_a
+
+    const/4 v0, 0x1
+
+    goto :goto_b
+
+    :cond_a
+    const/4 v0, 0x0
+
+    :goto_b
+    return v0
+.end method
+
+.method public getDTR()Z
+    .registers 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 317
+    iget-boolean v0, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->dtr:Z
+
+    return v0
+.end method
+
+.method public getDriver()Lcom/hoho/android/usbserial/driver/UsbSerialDriver;
+    .registers 2
+
+    .line 97
+    iget-object v0, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->this$0:Lcom/hoho/android/usbserial/driver/FtdiSerialDriver;
+
+    return-object v0
+.end method
+
+.method public getLatencyTimer()I
+    .registers 11
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    const/4 v0, 0x1
+
+    new-array v9, v0, [B
+
+    .line 408
+    iget-object v1, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mConnection:Landroid/hardware/usb/UsbDeviceConnection;
+
+    const/16 v2, 0xc0
+
+    const/16 v3, 0xa
+
+    const/4 v4, 0x0
+
+    iget v5, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mPortNumber:I
+
+    add-int/2addr v5, v0
+
+    const/16 v8, 0x1388
+
+    const/4 v7, 0x1
+
+    move-object v6, v9
+
+    invoke-virtual/range {v1 .. v8}, Landroid/hardware/usb/UsbDeviceConnection;->controlTransfer(IIII[BII)I
+
+    move-result v1
+
+    if-ne v1, v0, :cond_1b
+
+    const/4 v0, 0x0
+
+    aget-byte v0, v9, v0
+
+    return v0
+
+    .line 411
+    :cond_1b
+    new-instance v0, Ljava/io/IOException;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "Get latency timer failed: result="
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public getRI()Z
+    .registers 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 332
+    invoke-direct {p0}, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->getStatus()I
+
+    move-result v0
+
+    and-int/lit8 v0, v0, 0x40
+
+    if-eqz v0, :cond_a
+
+    const/4 v0, 0x1
+
+    goto :goto_b
+
+    :cond_a
+    const/4 v0, 0x0
+
+    :goto_b
+    return v0
+.end method
+
+.method public getRTS()Z
+    .registers 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 337
+    iget-boolean v0, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->rts:Z
+
+    return v0
+.end method
+
+.method public getSupportedControlLines()Ljava/util/EnumSet;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/EnumSet<",
+            "Lcom/hoho/android/usbserial/driver/UsbSerialPort$ControlLine;",
+            ">;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 365
+    const-class v0, Lcom/hoho/android/usbserial/driver/UsbSerialPort$ControlLine;
+
+    invoke-static {v0}, Ljava/util/EnumSet;->allOf(Ljava/lang/Class;)Ljava/util/EnumSet;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method protected openInt(Landroid/hardware/usb/UsbDeviceConnection;)V
+    .registers 13
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 103
+    iget-object v0, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mDevice:Landroid/hardware/usb/UsbDevice;
+
+    iget v1, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mPortNumber:I
+
+    invoke-virtual {v0, v1}, Landroid/hardware/usb/UsbDevice;->getInterface(I)Landroid/hardware/usb/UsbInterface;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p1, v0, v1}, Landroid/hardware/usb/UsbDeviceConnection;->claimInterface(Landroid/hardware/usb/UsbInterface;Z)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_d4
+
+    .line 106
+    iget-object v0, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mDevice:Landroid/hardware/usb/UsbDevice;
+
+    iget v2, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mPortNumber:I
+
+    invoke-virtual {v0, v2}, Landroid/hardware/usb/UsbDevice;->getInterface(I)Landroid/hardware/usb/UsbInterface;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/hardware/usb/UsbInterface;->getEndpointCount()I
+
+    move-result v0
+
+    const/4 v2, 0x2
+
+    if-lt v0, v2, :cond_cc
+
+    .line 109
+    iget-object v0, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mDevice:Landroid/hardware/usb/UsbDevice;
+
+    iget v2, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mPortNumber:I
+
+    invoke-virtual {v0, v2}, Landroid/hardware/usb/UsbDevice;->getInterface(I)Landroid/hardware/usb/UsbInterface;
+
+    move-result-object v0
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v2}, Landroid/hardware/usb/UsbInterface;->getEndpoint(I)Landroid/hardware/usb/UsbEndpoint;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mReadEndpoint:Landroid/hardware/usb/UsbEndpoint;
+
+    .line 110
+    iget-object v0, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mDevice:Landroid/hardware/usb/UsbDevice;
+
+    iget v3, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mPortNumber:I
+
+    invoke-virtual {v0, v3}, Landroid/hardware/usb/UsbDevice;->getInterface(I)Landroid/hardware/usb/UsbInterface;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroid/hardware/usb/UsbInterface;->getEndpoint(I)Landroid/hardware/usb/UsbEndpoint;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mWriteEndpoint:Landroid/hardware/usb/UsbEndpoint;
+
+    .line 112
+    iget-object v3, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mConnection:Landroid/hardware/usb/UsbDeviceConnection;
+
+    const/16 v4, 0x40
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    iget v0, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mPortNumber:I
+
+    add-int/lit8 v7, v0, 0x1
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    const/16 v10, 0x1388
+
+    invoke-virtual/range {v3 .. v10}, Landroid/hardware/usb/UsbDeviceConnection;->controlTransfer(IIII[BII)I
+
+    move-result v0
+
+    if-nez v0, :cond_b8
+
+    .line 117
+    iget-object v3, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mConnection:Landroid/hardware/usb/UsbDeviceConnection;
+
+    const/16 v4, 0x40
+
+    const/4 v5, 0x1
+
+    .line 118
+    iget-boolean v0, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->dtr:Z
+
+    if-eqz v0, :cond_5b
+
+    const/16 v0, 0x101
+
+    goto :goto_5d
+
+    :cond_5b
+    const/16 v0, 0x100
+
+    .line 119
+    :goto_5d
+    iget-boolean v6, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->rts:Z
+
+    if-eqz v6, :cond_64
+
+    const/16 v6, 0x202
+
+    goto :goto_66
+
+    :cond_64
+    const/16 v6, 0x200
+
+    :goto_66
+    or-int/2addr v6, v0
+
+    iget v0, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mPortNumber:I
+
+    add-int/lit8 v7, v0, 0x1
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    const/16 v10, 0x1388
+
+    .line 117
+    invoke-virtual/range {v3 .. v10}, Landroid/hardware/usb/UsbDeviceConnection;->controlTransfer(IIII[BII)I
+
+    move-result v0
+
+    if-nez v0, :cond_a4
+
+    .line 126
+    invoke-virtual {p1}, Landroid/hardware/usb/UsbDeviceConnection;->getRawDescriptors()[B
+
+    move-result-object p1
+
+    if-eqz p1, :cond_9c
+
+    .line 127
+    array-length v0, p1
+
+    const/16 v3, 0xe
+
+    if-lt v0, v3, :cond_9c
+
+    const/16 v0, 0xd
+
+    .line 130
+    aget-byte p1, p1, v0
+
+    const/4 v0, 0x7
+
+    if-eq p1, v0, :cond_99
+
+    const/16 v0, 0x8
+
+    if-eq p1, v0, :cond_99
+
+    const/16 v0, 0x9
+
+    if-eq p1, v0, :cond_99
+
+    .line 131
+    iget-object p1, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mDevice:Landroid/hardware/usb/UsbDevice;
+
+    .line 132
+    invoke-virtual {p1}, Landroid/hardware/usb/UsbDevice;->getInterfaceCount()I
+
+    move-result p1
+
+    if-le p1, v1, :cond_98
+
+    goto :goto_99
+
+    :cond_98
+    const/4 v1, 0x0
+
+    :cond_99
+    :goto_99
+    iput-boolean v1, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->baudRateWithPort:Z
+
+    return-void
+
+    .line 128
+    :cond_9c
+    new-instance p1, Ljava/io/IOException;
+
+    const-string v0, "Could not get device descriptors"
+
+    invoke-direct {p1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    .line 122
+    :cond_a4
+    new-instance p1, Ljava/io/IOException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "Init RTS,DTR failed: result="
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    .line 115
+    :cond_b8
+    new-instance p1, Ljava/io/IOException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "Reset failed: result="
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    .line 107
+    :cond_cc
+    new-instance p1, Ljava/io/IOException;
+
+    const-string v0, "Not enough endpoints"
+
+    invoke-direct {p1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    .line 104
+    :cond_d4
+    new-instance p1, Ljava/io/IOException;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Could not claim interface "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget v1, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mPortNumber:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public purgeHwBuffers(ZZ)V
+    .registers 11
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    if-eqz p1, :cond_2b
+
+    .line 371
+    iget-object v0, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mConnection:Landroid/hardware/usb/UsbDeviceConnection;
+
+    const/16 v1, 0x40
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    iget p1, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mPortNumber:I
+
+    add-int/lit8 v4, p1, 0x1
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/16 v7, 0x1388
+
+    invoke-virtual/range {v0 .. v7}, Landroid/hardware/usb/UsbDeviceConnection;->controlTransfer(IIII[BII)I
+
+    move-result p1
+
+    if-nez p1, :cond_17
+
+    goto :goto_2b
+
+    .line 374
+    :cond_17
+    new-instance p2, Ljava/io/IOException;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Purge write buffer failed: result="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p2
+
+    :cond_2b
+    :goto_2b
+    if-eqz p2, :cond_56
+
+    .line 379
+    iget-object v0, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mConnection:Landroid/hardware/usb/UsbDeviceConnection;
+
+    const/16 v1, 0x40
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    iget p1, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mPortNumber:I
+
+    add-int/lit8 v4, p1, 0x1
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/16 v7, 0x1388
+
+    invoke-virtual/range {v0 .. v7}, Landroid/hardware/usb/UsbDeviceConnection;->controlTransfer(IIII[BII)I
+
+    move-result p1
+
+    if-nez p1, :cond_42
+
+    goto :goto_56
+
+    .line 382
+    :cond_42
+    new-instance p2, Ljava/io/IOException;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Purge read buffer failed: result="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p2
+
+    :cond_56
+    :goto_56
+    return-void
+.end method
+
+.method public read([BI)I
+    .registers 10
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 144
+    array-length v0, p1
+
+    const/4 v1, 0x2
+
+    if-le v0, v1, :cond_41
+
+    const/4 v0, 0x0
+
+    if-eqz p2, :cond_35
+
+    .line 152
+    invoke-static {}, Lcom/hoho/android/usbserial/util/MonotonicClock;->millis()J
+
+    move-result-wide v2
+
+    int-to-long v4, p2
+
+    add-long/2addr v2, v4
+
+    .line 154
+    :cond_d
+    invoke-static {}, Lcom/hoho/android/usbserial/util/MonotonicClock;->millis()J
+
+    move-result-wide v4
+
+    sub-long v4, v2, v4
+
+    long-to-int p2, v4
+
+    const/4 v4, 0x1
+
+    invoke-static {v4, p2}, Ljava/lang/Math;->max(II)I
+
+    move-result p2
+
+    invoke-super {p0, p1, p2, v0}, Lcom/hoho/android/usbserial/driver/CommonUsbSerialPort;->read([BIZ)I
+
+    move-result p2
+
+    if-ne p2, v1, :cond_27
+
+    .line 155
+    invoke-static {}, Lcom/hoho/android/usbserial/util/MonotonicClock;->millis()J
+
+    move-result-wide v4
+
+    cmp-long v6, v4, v2
+
+    if-ltz v6, :cond_d
+
+    :cond_27
+    if-gtz p2, :cond_3c
+
+    .line 156
+    invoke-static {}, Lcom/hoho/android/usbserial/util/MonotonicClock;->millis()J
+
+    move-result-wide v0
+
+    cmp-long v4, v0, v2
+
+    if-gez v4, :cond_3c
+
+    .line 157
+    invoke-virtual {p0}, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->testConnection()V
+
+    goto :goto_3c
+
+    .line 160
+    :cond_35
+    invoke-super {p0, p1, p2, v0}, Lcom/hoho/android/usbserial/driver/CommonUsbSerialPort;->read([BIZ)I
+
+    move-result v2
+
+    if-eq v2, v1, :cond_35
+
+    move p2, v2
+
+    .line 163
+    :cond_3c
+    :goto_3c
+    invoke-virtual {p0, p1, p2}, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->readFilter([BI)I
+
+    move-result p1
+
+    return p1
+
+    .line 145
+    :cond_41
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "Read buffer to small"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method protected readFilter([BI)I
+    .registers 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 167
+    iget-object v0, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mReadEndpoint:Landroid/hardware/usb/UsbEndpoint;
+
+    invoke-virtual {v0}, Landroid/hardware/usb/UsbEndpoint;->getMaxPacketSize()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    :goto_8
+    if-ge v1, p2, :cond_23
+
+    add-int v3, v1, v0
+
+    .line 170
+    invoke-static {v3, p2}, Ljava/lang/Math;->min(II)I
+
+    move-result v4
+
+    add-int/lit8 v1, v1, 0x2
+
+    sub-int/2addr v4, v1
+
+    if-ltz v4, :cond_1b
+
+    .line 173
+    invoke-static {p1, v1, p1, v2, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    add-int/2addr v2, v4
+
+    move v1, v3
+
+    goto :goto_8
+
+    .line 172
+    :cond_1b
+    new-instance p1, Ljava/io/IOException;
+
+    const-string p2, "Expected at least 2 bytes"
+
+    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_23
+    return v2
+.end method
+
+.method public setBreak(Z)V
+    .registers 11
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 389
+    iget v0, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->breakConfig:I
+
+    if-eqz p1, :cond_6
+
+    or-int/lit16 v0, v0, 0x4000
+
+    :cond_6
+    move v4, v0
+
+    .line 391
+    iget-object v1, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mConnection:Landroid/hardware/usb/UsbDeviceConnection;
+
+    const/16 v2, 0x40
+
+    const/4 v3, 0x4
+
+    iget p1, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mPortNumber:I
+
+    add-int/lit8 v5, p1, 0x1
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    const/16 v8, 0x1388
+
+    invoke-virtual/range {v1 .. v8}, Landroid/hardware/usb/UsbDeviceConnection;->controlTransfer(IIII[BII)I
+
+    move-result p1
+
+    if-nez p1, :cond_1b
+
+    return-void
+
+    .line 394
+    :cond_1b
+    new-instance v0, Ljava/io/IOException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "Setting BREAK failed: result="
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public setDTR(Z)V
+    .registers 10
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 322
+    iget-object v0, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mConnection:Landroid/hardware/usb/UsbDeviceConnection;
+
+    const/16 v1, 0x40
+
+    const/4 v2, 0x1
+
+    if-eqz p1, :cond_a
+
+    const/16 v3, 0x101
+
+    goto :goto_c
+
+    :cond_a
+    const/16 v3, 0x100
+
+    .line 323
+    :goto_c
+    iget v4, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mPortNumber:I
+
+    add-int/lit8 v4, v4, 0x1
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/16 v7, 0x1388
+
+    .line 322
+    invoke-virtual/range {v0 .. v7}, Landroid/hardware/usb/UsbDeviceConnection;->controlTransfer(IIII[BII)I
+
+    move-result v0
+
+    if-nez v0, :cond_1d
+
+    .line 327
+    iput-boolean p1, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->dtr:Z
+
+    return-void
+
+    .line 325
+    :cond_1d
+    new-instance p1, Ljava/io/IOException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "Set DTR failed: result="
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public setLatencyTimer(I)V
+    .registers 10
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 399
+    iget-object v0, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mConnection:Landroid/hardware/usb/UsbDeviceConnection;
+
+    const/16 v1, 0x40
+
+    const/16 v2, 0x9
+
+    iget v3, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mPortNumber:I
+
+    add-int/lit8 v4, v3, 0x1
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/16 v7, 0x1388
+
+    move v3, p1
+
+    invoke-virtual/range {v0 .. v7}, Landroid/hardware/usb/UsbDeviceConnection;->controlTransfer(IIII[BII)I
+
+    move-result p1
+
+    if-nez p1, :cond_16
+
+    return-void
+
+    .line 402
+    :cond_16
+    new-instance v0, Ljava/io/IOException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "Set latency timer failed: result="
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public setParameters(IIII)V
+    .registers 15
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    if-lez p1, :cond_b9
+
+    .line 236
+    invoke-direct {p0, p1}, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->setBaudrate(I)V
+
+    const/4 p1, 0x5
+
+    if-eq p2, p1, :cond_a5
+
+    const/4 p1, 0x6
+
+    if-eq p2, p1, :cond_a5
+
+    const/4 p1, 0x7
+
+    if-eq p2, p1, :cond_27
+
+    const/16 p1, 0x8
+
+    if-ne p2, p1, :cond_13
+
+    goto :goto_27
+
+    .line 248
+    :cond_13
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    new-instance p3, Ljava/lang/StringBuilder;
+
+    const-string p4, "Invalid data bits: "
+
+    invoke-direct {p3, p4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_27
+    :goto_27
+    or-int/lit8 p1, p2, 0x0
+
+    const/4 p2, 0x3
+
+    const/4 v0, 0x2
+
+    const/4 v1, 0x1
+
+    if-eqz p4, :cond_56
+
+    if-eq p4, v1, :cond_54
+
+    if-eq p4, v0, :cond_51
+
+    if-eq p4, p2, :cond_4e
+
+    const/4 v2, 0x4
+
+    if-ne p4, v2, :cond_3a
+
+    or-int/lit16 p1, p1, 0x400
+
+    goto :goto_56
+
+    .line 267
+    :cond_3a
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    new-instance p2, Ljava/lang/StringBuilder;
+
+    const-string p3, "Invalid parity: "
+
+    invoke-direct {p2, p3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p2, p4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_4e
+    or-int/lit16 p1, p1, 0x300
+
+    goto :goto_56
+
+    :cond_51
+    or-int/lit16 p1, p1, 0x200
+
+    goto :goto_56
+
+    :cond_54
+    or-int/lit16 p1, p1, 0x100
+
+    :cond_56
+    :goto_56
+    if-eq p3, v1, :cond_7a
+
+    if-eq p3, v0, :cond_78
+
+    if-eq p3, p2, :cond_70
+
+    .line 279
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    new-instance p2, Ljava/lang/StringBuilder;
+
+    const-string p4, "Invalid stop bits: "
+
+    invoke-direct {p2, p4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    .line 274
+    :cond_70
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    const-string p2, "Unsupported stop bits: 1.5"
+
+    invoke-direct {p1, p2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_78
+    or-int/lit16 p1, p1, 0x1000
+
+    .line 282
+    :cond_7a
+    iget-object v2, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mConnection:Landroid/hardware/usb/UsbDeviceConnection;
+
+    const/16 v3, 0x40
+
+    const/4 v4, 0x4
+
+    iget p2, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mPortNumber:I
+
+    add-int/lit8 v6, p2, 0x1
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/16 v9, 0x1388
+
+    move v5, p1
+
+    invoke-virtual/range {v2 .. v9}, Landroid/hardware/usb/UsbDeviceConnection;->controlTransfer(IIII[BII)I
+
+    move-result p2
+
+    if-nez p2, :cond_91
+
+    .line 287
+    iput p1, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->breakConfig:I
+
+    return-void
+
+    .line 285
+    :cond_91
+    new-instance p1, Ljava/io/IOException;
+
+    new-instance p3, Ljava/lang/StringBuilder;
+
+    const-string p4, "Setting parameters failed: result="
+
+    invoke-direct {p3, p4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    .line 242
+    :cond_a5
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    new-instance p3, Ljava/lang/StringBuilder;
+
+    const-string p4, "Unsupported data bits: "
+
+    invoke-direct {p3, p4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    .line 234
+    :cond_b9
+    new-instance p2, Ljava/lang/IllegalArgumentException;
+
+    new-instance p3, Ljava/lang/StringBuilder;
+
+    const-string p4, "Invalid baud rate: "
+
+    invoke-direct {p3, p4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p2
+.end method
+
+.method public setRTS(Z)V
+    .registers 10
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 342
+    iget-object v0, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mConnection:Landroid/hardware/usb/UsbDeviceConnection;
+
+    const/16 v1, 0x40
+
+    const/4 v2, 0x1
+
+    if-eqz p1, :cond_a
+
+    const/16 v3, 0x202
+
+    goto :goto_c
+
+    :cond_a
+    const/16 v3, 0x200
+
+    .line 343
+    :goto_c
+    iget v4, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->mPortNumber:I
+
+    add-int/lit8 v4, v4, 0x1
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/16 v7, 0x1388
+
+    .line 342
+    invoke-virtual/range {v0 .. v7}, Landroid/hardware/usb/UsbDeviceConnection;->controlTransfer(IIII[BII)I
+
+    move-result v0
+
+    if-nez v0, :cond_1d
+
+    .line 347
+    iput-boolean p1, p0, Lcom/hoho/android/usbserial/driver/FtdiSerialDriver$FtdiSerialPort;->rts:Z
+
+    return-void
+
+    .line 345
+    :cond_1d
+    new-instance p1, Ljava/io/IOException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "Set DTR failed: result="
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method

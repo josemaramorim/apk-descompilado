@@ -1,0 +1,440 @@
+.class public final Lorg/apache/log4j/EnhancedThrowableRenderer;
+.super Ljava/lang/Object;
+.source "EnhancedThrowableRenderer.java"
+
+# interfaces
+.implements Lorg/apache/log4j/spi/ThrowableRenderer;
+
+
+# static fields
+.field static synthetic class$java$lang$Throwable:Ljava/lang/Class;
+
+
+# instance fields
+.field private getClassNameMethod:Ljava/lang/reflect/Method;
+
+.field private getStackTraceMethod:Ljava/lang/reflect/Method;
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 4
+
+    .line 49
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 52
+    :try_start_3
+    sget-object v0, Lorg/apache/log4j/EnhancedThrowableRenderer;->class$java$lang$Throwable:Ljava/lang/Class;
+
+    if-nez v0, :cond_f
+
+    const-string v0, "java.lang.Throwable"
+
+    invoke-static {v0}, Lorg/apache/log4j/EnhancedThrowableRenderer;->class$(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v0
+
+    sput-object v0, Lorg/apache/log4j/EnhancedThrowableRenderer;->class$java$lang$Throwable:Ljava/lang/Class;
+
+    :cond_f
+    const-string v1, "getStackTrace"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lorg/apache/log4j/EnhancedThrowableRenderer;->getStackTraceMethod:Ljava/lang/reflect/Method;
+
+    const-string v0, "java.lang.StackTraceElement"
+
+    .line 53
+    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v0
+
+    const-string v1, "getClassName"
+
+    .line 54
+    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lorg/apache/log4j/EnhancedThrowableRenderer;->getClassNameMethod:Ljava/lang/reflect/Method;
+    :try_end_26
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_26} :catch_26
+
+    :catch_26
+    return-void
+.end method
+
+.method static synthetic class$(Ljava/lang/String;)Ljava/lang/Class;
+    .registers 2
+
+    .line 52
+    :try_start_0
+    invoke-static {p0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object p0
+    :try_end_4
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_4} :catch_5
+
+    return-object p0
+
+    :catch_5
+    move-exception p0
+
+    new-instance v0, Ljava/lang/NoClassDefFoundError;
+
+    invoke-direct {v0}, Ljava/lang/NoClassDefFoundError;-><init>()V
+
+    invoke-virtual {v0, p0}, Ljava/lang/NoClassDefFoundError;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+
+    move-result-object p0
+
+    throw p0
+.end method
+
+.method private findClass(Ljava/lang/String;)Ljava/lang/Class;
+    .registers 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/ClassNotFoundException;
+        }
+    .end annotation
+
+    .line 158
+    :try_start_0
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Thread;->getContextClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object p1
+    :try_end_c
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_c} :catch_d
+
+    return-object p1
+
+    .line 161
+    :catch_d
+    :try_start_d
+    invoke-static {p1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object p1
+    :try_end_11
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_d .. :try_end_11} :catch_12
+
+    return-object p1
+
+    .line 163
+    :catch_12
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method private formatElement(Ljava/lang/Object;Ljava/util/Map;)Ljava/lang/String;
+    .registers 10
+
+    .line 87
+    new-instance v0, Ljava/lang/StringBuffer;
+
+    const-string v1, "\tat "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
+
+    .line 88
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuffer;->append(Ljava/lang/Object;)Ljava/lang/StringBuffer;
+
+    .line 90
+    :try_start_a
+    iget-object v1, p0, Lorg/apache/log4j/EnhancedThrowableRenderer;->getClassNameMethod:Ljava/lang/reflect/Method;
+
+    const/4 v2, 0x0
+
+    move-object v3, v2
+
+    check-cast v3, [Ljava/lang/Object;
+
+    invoke-virtual {v1, p1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 91
+    invoke-interface {p2, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_23
+
+    .line 93
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/Object;)Ljava/lang/StringBuffer;
+
+    goto/16 :goto_9d
+
+    .line 95
+    :cond_23
+    invoke-direct {p0, p1}, Lorg/apache/log4j/EnhancedThrowableRenderer;->findClass(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v1
+
+    .line 96
+    invoke-virtual {v0}, Ljava/lang/StringBuffer;->length()I
+
+    move-result v2
+
+    const/16 v3, 0x5b
+
+    .line 97
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    :try_end_30
+    .catch Ljava/lang/Exception; {:try_start_a .. :try_end_30} :catch_9d
+
+    .line 99
+    :try_start_30
+    invoke-virtual {v1}, Ljava/lang/Class;->getProtectionDomain()Ljava/security/ProtectionDomain;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/security/ProtectionDomain;->getCodeSource()Ljava/security/CodeSource;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_7d
+
+    .line 101
+    invoke-virtual {v3}, Ljava/security/CodeSource;->getLocation()Ljava/net/URL;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_7d
+
+    const-string v4, "file"
+
+    .line 106
+    invoke-virtual {v3}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_7a
+
+    .line 107
+    invoke-virtual {v3}, Ljava/net/URL;->getPath()Ljava/lang/String;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_7d
+
+    const/16 v5, 0x2f
+
+    .line 112
+    invoke-virtual {v4, v5}, Ljava/lang/String;->lastIndexOf(I)I
+
+    move-result v5
+
+    .line 113
+    sget-char v6, Ljava/io/File;->separatorChar:C
+
+    invoke-virtual {v4, v6}, Ljava/lang/String;->lastIndexOf(I)I
+
+    move-result v6
+
+    if-le v6, v5, :cond_61
+
+    move v5, v6
+
+    :cond_61
+    if-lez v5, :cond_76
+
+    .line 121
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    add-int/lit8 v6, v6, -0x1
+
+    if-ne v5, v6, :cond_6c
+
+    goto :goto_76
+
+    :cond_6c
+    add-int/lit8 v5, v5, 0x1
+
+    .line 124
+    invoke-virtual {v4, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    goto :goto_7d
+
+    .line 122
+    :cond_76
+    :goto_76
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/Object;)Ljava/lang/StringBuffer;
+
+    goto :goto_7d
+
+    .line 128
+    :cond_7a
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/Object;)Ljava/lang/StringBuffer;
+    :try_end_7d
+    .catch Ljava/lang/SecurityException; {:try_start_30 .. :try_end_7d} :catch_7d
+    .catch Ljava/lang/Exception; {:try_start_30 .. :try_end_7d} :catch_9d
+
+    :catch_7d
+    :cond_7d
+    :goto_7d
+    const/16 v3, 0x3a
+
+    .line 134
+    :try_start_7f
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+
+    .line 135
+    invoke-virtual {v1}, Ljava/lang/Class;->getPackage()Ljava/lang/Package;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_91
+
+    .line 137
+    invoke-virtual {v1}, Ljava/lang/Package;->getImplementationVersion()Ljava/lang/String;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_91
+
+    .line 139
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    :cond_91
+    const/16 v1, 0x5d
+
+    .line 142
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+
+    .line 143
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->substring(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {p2, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_9d
+    .catch Ljava/lang/Exception; {:try_start_7f .. :try_end_9d} :catch_9d
+
+    .line 147
+    :catch_9d
+    :goto_9d
+    invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+
+# virtual methods
+.method public doRender(Ljava/lang/Throwable;)[Ljava/lang/String;
+    .registers 7
+
+    .line 63
+    iget-object v0, p0, Lorg/apache/log4j/EnhancedThrowableRenderer;->getStackTraceMethod:Ljava/lang/reflect/Method;
+
+    if-eqz v0, :cond_2e
+
+    const/4 v1, 0x0
+
+    .line 66
+    :try_start_5
+    invoke-virtual {v0, p1, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Ljava/lang/Object;
+
+    check-cast v0, [Ljava/lang/Object;
+
+    .line 67
+    array-length v1, v0
+
+    add-int/lit8 v1, v1, 0x1
+
+    new-array v1, v1, [Ljava/lang/String;
+
+    .line 68
+    invoke-virtual {p1}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    aput-object v2, v1, v3
+
+    .line 69
+    new-instance v2, Ljava/util/HashMap;
+
+    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
+
+    .line 70
+    :goto_1e
+    array-length v4, v0
+
+    if-ge v3, v4, :cond_2d
+
+    add-int/lit8 v4, v3, 0x1
+
+    .line 71
+    aget-object v3, v0, v3
+
+    invoke-direct {p0, v3, v2}, Lorg/apache/log4j/EnhancedThrowableRenderer;->formatElement(Ljava/lang/Object;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v3
+
+    aput-object v3, v1, v4
+    :try_end_2b
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_2b} :catch_2e
+
+    move v3, v4
+
+    goto :goto_1e
+
+    :cond_2d
+    return-object v1
+
+    .line 77
+    :catch_2e
+    :cond_2e
+    invoke-static {p1}, Lorg/apache/log4j/DefaultThrowableRenderer;->render(Ljava/lang/Throwable;)[Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
+.end method

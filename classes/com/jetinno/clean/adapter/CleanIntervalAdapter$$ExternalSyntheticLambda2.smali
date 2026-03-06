@@ -1,0 +1,46 @@
+.class public final synthetic Lcom/jetinno/clean/adapter/CleanIntervalAdapter$$ExternalSyntheticLambda2;
+.super Ljava/lang/Object;
+.source "D8$$SyntheticClass"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
+
+
+# instance fields
+.field public final synthetic f$0:Lcom/jetinno/clean/adapter/CleanIntervalAdapter;
+
+.field public final synthetic f$1:Lcom/jetinno/clean/bean/CleanIntervalBean;
+
+.field public final synthetic f$2:I
+
+
+# direct methods
+.method public synthetic constructor <init>(Lcom/jetinno/clean/adapter/CleanIntervalAdapter;Lcom/jetinno/clean/bean/CleanIntervalBean;I)V
+    .registers 4
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/jetinno/clean/adapter/CleanIntervalAdapter$$ExternalSyntheticLambda2;->f$0:Lcom/jetinno/clean/adapter/CleanIntervalAdapter;
+
+    iput-object p2, p0, Lcom/jetinno/clean/adapter/CleanIntervalAdapter$$ExternalSyntheticLambda2;->f$1:Lcom/jetinno/clean/bean/CleanIntervalBean;
+
+    iput p3, p0, Lcom/jetinno/clean/adapter/CleanIntervalAdapter$$ExternalSyntheticLambda2;->f$2:I
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onClick(Landroid/view/View;)V
+    .registers 5
+
+    iget-object v0, p0, Lcom/jetinno/clean/adapter/CleanIntervalAdapter$$ExternalSyntheticLambda2;->f$0:Lcom/jetinno/clean/adapter/CleanIntervalAdapter;
+
+    iget-object v1, p0, Lcom/jetinno/clean/adapter/CleanIntervalAdapter$$ExternalSyntheticLambda2;->f$1:Lcom/jetinno/clean/bean/CleanIntervalBean;
+
+    iget v2, p0, Lcom/jetinno/clean/adapter/CleanIntervalAdapter$$ExternalSyntheticLambda2;->f$2:I
+
+    invoke-static {v0, v1, v2, p1}, Lcom/jetinno/clean/adapter/CleanIntervalAdapter;->$r8$lambda$WIAjywITkLYwb7g1B7yt8jBcswk(Lcom/jetinno/clean/adapter/CleanIntervalAdapter;Lcom/jetinno/clean/bean/CleanIntervalBean;ILandroid/view/View;)V
+
+    return-void
+.end method

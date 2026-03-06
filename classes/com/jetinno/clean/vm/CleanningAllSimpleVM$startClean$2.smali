@@ -1,0 +1,384 @@
+.class final Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;
+.super Lkotlin/coroutines/jvm/internal/SuspendLambda;
+.source "CleanningAllSimpleVM.kt"
+
+# interfaces
+.implements Lkotlin/jvm/functions/Function2;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/jetinno/clean/vm/CleanningAllSimpleVM;->startClean(Ljava/util/List;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x18
+    name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lkotlin/coroutines/jvm/internal/SuspendLambda;",
+        "Lkotlin/jvm/functions/Function2<",
+        "Lkotlinx/coroutines/CoroutineScope;",
+        "Lkotlin/coroutines/Continuation<",
+        "-",
+        "Lkotlin/Unit;",
+        ">;",
+        "Ljava/lang/Object;",
+        ">;"
+    }
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"
+    }
+    d2 = {
+        "<anonymous>",
+        "",
+        "Lkotlinx/coroutines/CoroutineScope;"
+    }
+    k = 0x3
+    mv = {
+        0x1,
+        0x6,
+        0x0
+    }
+    xi = 0x30
+.end annotation
+
+.annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
+    c = "com.jetinno.clean.vm.CleanningAllSimpleVM$startClean$2"
+    f = "CleanningAllSimpleVM.kt"
+    i = {
+        0x0,
+        0x0,
+        0x1,
+        0x1
+    }
+    l = {
+        0x31,
+        0x32,
+        0x34
+    }
+    m = "invokeSuspend"
+    n = {
+        "totalTime",
+        "cleanningTime",
+        "totalTime",
+        "cleanningTime"
+    }
+    s = {
+        "I$0",
+        "I$1",
+        "I$0",
+        "I$1"
+    }
+.end annotation
+
+
+# instance fields
+.field final synthetic $cleanDatas:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Lcom/jetinno/clean/bean/CleanAllModuleBean;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field I$0:I
+
+.field I$1:I
+
+.field label:I
+
+.field final synthetic this$0:Lcom/jetinno/clean/vm/CleanningAllSimpleVM;
+
+
+# direct methods
+.method constructor <init>(Ljava/util/List;Lcom/jetinno/clean/vm/CleanningAllSimpleVM;Lkotlin/coroutines/Continuation;)V
+    .registers 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Lcom/jetinno/clean/bean/CleanAllModuleBean;",
+            ">;",
+            "Lcom/jetinno/clean/vm/CleanningAllSimpleVM;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;",
+            ">;)V"
+        }
+    .end annotation
+
+    iput-object p1, p0, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;->$cleanDatas:Ljava/util/List;
+
+    iput-object p2, p0, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;->this$0:Lcom/jetinno/clean/vm/CleanningAllSimpleVM;
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p3}, Lkotlin/coroutines/jvm/internal/SuspendLambda;-><init>(ILkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Object;",
+            "Lkotlin/coroutines/Continuation<",
+            "*>;)",
+            "Lkotlin/coroutines/Continuation<",
+            "Lkotlin/Unit;",
+            ">;"
+        }
+    .end annotation
+
+    new-instance p1, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;
+
+    iget-object v0, p0, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;->$cleanDatas:Ljava/util/List;
+
+    iget-object v1, p0, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;->this$0:Lcom/jetinno/clean/vm/CleanningAllSimpleVM;
+
+    invoke-direct {p1, v0, v1, p2}, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;-><init>(Ljava/util/List;Lcom/jetinno/clean/vm/CleanningAllSimpleVM;Lkotlin/coroutines/Continuation;)V
+
+    check-cast p1, Lkotlin/coroutines/Continuation;
+
+    return-object p1
+.end method
+
+.method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    check-cast p1, Lkotlinx/coroutines/CoroutineScope;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;->invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .registers 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlinx/coroutines/CoroutineScope;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1, p2}, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;->create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;
+
+    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    invoke-virtual {p1, p2}, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 11
+
+    invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
+
+    move-result-object v0
+
+    .line 46
+    iget v1, p0, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;->label:I
+
+    const/4 v2, 0x3
+
+    const/4 v3, 0x2
+
+    const/4 v4, 0x1
+
+    if-eqz v1, :cond_32
+
+    if-eq v1, v4, :cond_28
+
+    if-eq v1, v3, :cond_1e
+
+    if-ne v1, v2, :cond_16
+
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+
+    goto/16 :goto_8f
+
+    .line 53
+    :cond_16
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    .line 46
+    :cond_1e
+    iget v1, p0, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;->I$1:I
+
+    iget v5, p0, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;->I$0:I
+
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+
+    move p1, v5
+
+    move-object v5, p0
+
+    goto :goto_6e
+
+    :cond_28
+    iget v1, p0, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;->I$1:I
+
+    iget v5, p0, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;->I$0:I
+
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+
+    move p1, v5
+
+    move-object v5, p0
+
+    goto :goto_5c
+
+    :cond_32
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+
+    .line 47
+    iget-object p1, p0, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;->$cleanDatas:Ljava/util/List;
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result p1
+
+    mul-int/lit16 p1, p1, 0x12c
+
+    const/4 v1, 0x0
+
+    move-object v5, p0
+
+    :goto_3f
+    if-ge v1, p1, :cond_70
+
+    .line 49
+    iget-object v6, v5, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;->this$0:Lcom/jetinno/clean/vm/CleanningAllSimpleVM;
+
+    # getter for: Lcom/jetinno/clean/vm/CleanningAllSimpleVM;->_timeFlow:Lkotlinx/coroutines/flow/MutableSharedFlow;
+    invoke-static {v6}, Lcom/jetinno/clean/vm/CleanningAllSimpleVM;->access$get_timeFlow$p(Lcom/jetinno/clean/vm/CleanningAllSimpleVM;)Lkotlinx/coroutines/flow/MutableSharedFlow;
+
+    move-result-object v6
+
+    new-instance v7, Lcom/jetinno/clean/bean/CleanTimePair;
+
+    invoke-direct {v7, v1, p1}, Lcom/jetinno/clean/bean/CleanTimePair;-><init>(II)V
+
+    move-object v8, v5
+
+    check-cast v8, Lkotlin/coroutines/Continuation;
+
+    iput p1, v5, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;->I$0:I
+
+    iput v1, v5, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;->I$1:I
+
+    iput v4, v5, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;->label:I
+
+    invoke-interface {v6, v7, v8}, Lkotlinx/coroutines/flow/MutableSharedFlow;->emit(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object v6
+
+    if-ne v6, v0, :cond_5c
+
+    return-object v0
+
+    .line 50
+    :cond_5c
+    :goto_5c
+    move-object v6, v5
+
+    check-cast v6, Lkotlin/coroutines/Continuation;
+
+    iput p1, v5, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;->I$0:I
+
+    iput v1, v5, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;->I$1:I
+
+    iput v3, v5, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;->label:I
+
+    const-wide/16 v7, 0x3e8
+
+    invoke-static {v7, v8, v6}, Lkotlinx/coroutines/DelayKt;->delay(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object v6
+
+    if-ne v6, v0, :cond_6e
+
+    return-object v0
+
+    :cond_6e
+    :goto_6e
+    add-int/2addr v1, v4
+
+    goto :goto_3f
+
+    .line 52
+    :cond_70
+    iget-object p1, v5, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;->this$0:Lcom/jetinno/clean/vm/CleanningAllSimpleVM;
+
+    invoke-virtual {p1}, Lcom/jetinno/clean/vm/CleanningAllSimpleVM;->get_operationResultFlow()Lkotlinx/coroutines/flow/MutableSharedFlow;
+
+    move-result-object p1
+
+    new-instance v1, Lcom/jetinno/clean/bean/CleanResult$Failure;
+
+    iget-object v3, v5, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;->this$0:Lcom/jetinno/clean/vm/CleanningAllSimpleVM;
+
+    sget v4, Lcom/jetinno/clean/R$string;->operation_failed:I
+
+    invoke-virtual {v3, v4}, Lcom/jetinno/clean/vm/CleanningAllSimpleVM;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {v1, v3}, Lcom/jetinno/clean/bean/CleanResult$Failure;-><init>(Ljava/lang/String;)V
+
+    move-object v3, v5
+
+    check-cast v3, Lkotlin/coroutines/Continuation;
+
+    iput v2, v5, Lcom/jetinno/clean/vm/CleanningAllSimpleVM$startClean$2;->label:I
+
+    invoke-interface {p1, v1, v3}, Lkotlinx/coroutines/flow/MutableSharedFlow;->emit(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-ne p1, v0, :cond_8f
+
+    return-object v0
+
+    .line 53
+    :cond_8f
+    :goto_8f
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
+.end method

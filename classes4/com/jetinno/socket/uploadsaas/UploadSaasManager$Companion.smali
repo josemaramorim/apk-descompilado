@@ -1,0 +1,122 @@
+.class public final Lcom/jetinno/socket/uploadsaas/UploadSaasManager$Companion;
+.super Ljava/lang/Object;
+.source "UploadSaasManager.kt"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/jetinno/socket/uploadsaas/UploadSaasManager;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "Companion"
+.end annotation
+
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nUploadSaasManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 UploadSaasManager.kt\ncom/jetinno/socket/uploadsaas/UploadSaasManager$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,114:1\n1#2:115\n*E\n"
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0008\u0002\n\u0002\u0010\u000e\n\u0002\u0008\u0008\n\u0002\u0018\u0002\n\u0002\u0008\u0002\u0008\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\u0008\u0002\u00a2\u0006\u0002\u0010\u0002J\u0006\u0010\u000e\u001a\u00020\rR\u000e\u0010\u0003\u001a\u00020\u0004X\u0082T\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0004X\u0082T\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0004X\u0082T\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0004X\u0082T\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u0008\u001a\u00020\u0004X\u0082T\u00a2\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0004X\u0082T\u00a2\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0004X\u0082T\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0004X\u0082T\u00a2\u0006\u0002\n\u0000R\u0010\u0010\u000c\u001a\u0004\u0018\u00010\rX\u0082\u000e\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u000f"
+    }
+    d2 = {
+        "Lcom/jetinno/socket/uploadsaas/UploadSaasManager$Companion;",
+        "",
+        "()V",
+        "OPERATION_CONFIG",
+        "",
+        "OPERATION_EVA",
+        "OPERATION_LOG",
+        "OPERATION_PRODUCT",
+        "OPERATION_RECIPE",
+        "REMOTE",
+        "TAG",
+        "UPLOAD",
+        "_instance",
+        "Lcom/jetinno/socket/uploadsaas/UploadSaasManager;",
+        "getInstance",
+        "module_socket_release"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x6,
+        0x0
+    }
+    xi = 0x30
+.end annotation
+
+
+# direct methods
+.method private constructor <init>()V
+    .registers 1
+
+    .line 14
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .registers 2
+
+    invoke-direct {p0}, Lcom/jetinno/socket/uploadsaas/UploadSaasManager$Companion;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final getInstance()Lcom/jetinno/socket/uploadsaas/UploadSaasManager;
+    .registers 3
+
+    .line 31
+    # getter for: Lcom/jetinno/socket/uploadsaas/UploadSaasManager;->_instance:Lcom/jetinno/socket/uploadsaas/UploadSaasManager;
+    invoke-static {}, Lcom/jetinno/socket/uploadsaas/UploadSaasManager;->access$get_instance$cp()Lcom/jetinno/socket/uploadsaas/UploadSaasManager;
+
+    move-result-object v0
+
+    if-nez v0, :cond_1d
+
+    monitor-enter p0
+
+    .line 32
+    :try_start_7
+    # getter for: Lcom/jetinno/socket/uploadsaas/UploadSaasManager;->_instance:Lcom/jetinno/socket/uploadsaas/UploadSaasManager;
+    invoke-static {}, Lcom/jetinno/socket/uploadsaas/UploadSaasManager;->access$get_instance$cp()Lcom/jetinno/socket/uploadsaas/UploadSaasManager;
+
+    move-result-object v0
+
+    if-nez v0, :cond_18
+
+    new-instance v0, Lcom/jetinno/socket/uploadsaas/UploadSaasManager;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lcom/jetinno/socket/uploadsaas/UploadSaasManager;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    sget-object v1, Lcom/jetinno/socket/uploadsaas/UploadSaasManager;->Companion:Lcom/jetinno/socket/uploadsaas/UploadSaasManager$Companion;
+
+    invoke-static {v0}, Lcom/jetinno/socket/uploadsaas/UploadSaasManager;->access$set_instance$cp(Lcom/jetinno/socket/uploadsaas/UploadSaasManager;)V
+    :try_end_18
+    .catchall {:try_start_7 .. :try_end_18} :catchall_1a
+
+    .line 31
+    :cond_18
+    monitor-exit p0
+
+    goto :goto_1d
+
+    :catchall_1a
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    :cond_1d
+    :goto_1d
+    return-object v0
+.end method

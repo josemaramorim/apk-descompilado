@@ -1,0 +1,732 @@
+.class public final Lcom/uuzuche/lib_zxing/camera/CameraManager;
+.super Ljava/lang/Object;
+.source "CameraManager.java"
+
+
+# static fields
+.field public static FRAME_HEIGHT:I = -0x1
+
+.field public static FRAME_MARGINTOP:I = -0x1
+
+.field public static FRAME_WIDTH:I = -0x1
+
+.field static final SDK_INT:I
+
+.field private static final TAG:Ljava/lang/String; = "CameraManager"
+
+.field private static cameraManager:Lcom/uuzuche/lib_zxing/camera/CameraManager;
+
+
+# instance fields
+.field private final autoFocusCallback:Lcom/uuzuche/lib_zxing/camera/AutoFocusCallback;
+
+.field private camera:Landroid/hardware/Camera;
+
+.field private final configManager:Lcom/uuzuche/lib_zxing/camera/CameraConfigurationManager;
+
+.field private final context:Landroid/content/Context;
+
+.field private framingRect:Landroid/graphics/Rect;
+
+.field private framingRectInPreview:Landroid/graphics/Rect;
+
+.field private initialized:Z
+
+.field private final previewCallback:Lcom/uuzuche/lib_zxing/camera/PreviewCallback;
+
+.field private previewing:Z
+
+.field private final useOneShotPreviewCallback:Z
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
+
+    .line 55
+    :try_start_0
+    sget-object v0, Landroid/os/Build$VERSION;->SDK:Ljava/lang/String;
+
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v0
+    :try_end_6
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_6} :catch_7
+
+    goto :goto_9
+
+    :catch_7
+    const/16 v0, 0x2710
+
+    .line 60
+    :goto_9
+    sput v0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->SDK_INT:I
+
+    return-void
+.end method
+
+.method private constructor <init>(Landroid/content/Context;)V
+    .registers 4
+
+    .line 101
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 103
+    iput-object p1, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->context:Landroid/content/Context;
+
+    .line 104
+    new-instance v0, Lcom/uuzuche/lib_zxing/camera/CameraConfigurationManager;
+
+    invoke-direct {v0, p1}, Lcom/uuzuche/lib_zxing/camera/CameraConfigurationManager;-><init>(Landroid/content/Context;)V
+
+    iput-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->configManager:Lcom/uuzuche/lib_zxing/camera/CameraConfigurationManager;
+
+    .line 111
+    sget-object p1, Landroid/os/Build$VERSION;->SDK:Ljava/lang/String;
+
+    invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result p1
+
+    const/4 v1, 0x3
+
+    if-le p1, v1, :cond_17
+
+    const/4 p1, 0x1
+
+    goto :goto_18
+
+    :cond_17
+    const/4 p1, 0x0
+
+    :goto_18
+    iput-boolean p1, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->useOneShotPreviewCallback:Z
+
+    .line 113
+    new-instance v1, Lcom/uuzuche/lib_zxing/camera/PreviewCallback;
+
+    invoke-direct {v1, v0, p1}, Lcom/uuzuche/lib_zxing/camera/PreviewCallback;-><init>(Lcom/uuzuche/lib_zxing/camera/CameraConfigurationManager;Z)V
+
+    iput-object v1, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->previewCallback:Lcom/uuzuche/lib_zxing/camera/PreviewCallback;
+
+    .line 114
+    new-instance p1, Lcom/uuzuche/lib_zxing/camera/AutoFocusCallback;
+
+    invoke-direct {p1}, Lcom/uuzuche/lib_zxing/camera/AutoFocusCallback;-><init>()V
+
+    iput-object p1, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->autoFocusCallback:Lcom/uuzuche/lib_zxing/camera/AutoFocusCallback;
+
+    return-void
+.end method
+
+.method public static get()Lcom/uuzuche/lib_zxing/camera/CameraManager;
+    .registers 1
+
+    .line 98
+    sget-object v0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->cameraManager:Lcom/uuzuche/lib_zxing/camera/CameraManager;
+
+    return-object v0
+.end method
+
+.method public static init(Landroid/content/Context;)V
+    .registers 2
+
+    .line 87
+    sget-object v0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->cameraManager:Lcom/uuzuche/lib_zxing/camera/CameraManager;
+
+    if-nez v0, :cond_b
+
+    .line 88
+    new-instance v0, Lcom/uuzuche/lib_zxing/camera/CameraManager;
+
+    invoke-direct {v0, p0}, Lcom/uuzuche/lib_zxing/camera/CameraManager;-><init>(Landroid/content/Context;)V
+
+    sput-object v0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->cameraManager:Lcom/uuzuche/lib_zxing/camera/CameraManager;
+
+    :cond_b
+    return-void
+.end method
+
+
+# virtual methods
+.method public buildLuminanceSource([BII)Lcom/uuzuche/lib_zxing/camera/PlanarYUVLuminanceSource;
+    .registers 16
+
+    .line 297
+    invoke-virtual {p0}, Lcom/uuzuche/lib_zxing/camera/CameraManager;->getFramingRectInPreview()Landroid/graphics/Rect;
+
+    move-result-object v0
+
+    .line 298
+    iget-object v1, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->configManager:Lcom/uuzuche/lib_zxing/camera/CameraConfigurationManager;
+
+    invoke-virtual {v1}, Lcom/uuzuche/lib_zxing/camera/CameraConfigurationManager;->getPreviewFormat()I
+
+    move-result v1
+
+    .line 299
+    iget-object v2, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->configManager:Lcom/uuzuche/lib_zxing/camera/CameraConfigurationManager;
+
+    invoke-virtual {v2}, Lcom/uuzuche/lib_zxing/camera/CameraConfigurationManager;->getPreviewFormatString()Ljava/lang/String;
+
+    move-result-object v2
+
+    const/16 v3, 0x10
+
+    if-eq v1, v3, :cond_52
+
+    const/16 v3, 0x11
+
+    if-eq v1, v3, :cond_52
+
+    const-string v3, "yuv420p"
+
+    .line 312
+    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_36
+
+    .line 313
+    new-instance v1, Lcom/uuzuche/lib_zxing/camera/PlanarYUVLuminanceSource;
+
+    iget v8, v0, Landroid/graphics/Rect;->left:I
+
+    iget v9, v0, Landroid/graphics/Rect;->top:I
+
+    .line 314
+    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
+
+    move-result v10
+
+    invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
+
+    move-result v11
+
+    move-object v4, v1
+
+    move-object v5, p1
+
+    move v6, p2
+
+    move v7, p3
+
+    invoke-direct/range {v4 .. v11}, Lcom/uuzuche/lib_zxing/camera/PlanarYUVLuminanceSource;-><init>([BIIIIII)V
+
+    return-object v1
+
+    .line 317
+    :cond_36
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    new-instance p2, Ljava/lang/StringBuilder;
+
+    const-string p3, "Unsupported picture format: "
+
+    invoke-direct {p2, p3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const/16 p3, 0x2f
+
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    .line 307
+    :cond_52
+    new-instance v8, Lcom/uuzuche/lib_zxing/camera/PlanarYUVLuminanceSource;
+
+    iget v4, v0, Landroid/graphics/Rect;->left:I
+
+    iget v5, v0, Landroid/graphics/Rect;->top:I
+
+    .line 308
+    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
+
+    move-result v6
+
+    invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
+
+    move-result v7
+
+    move-object v0, v8
+
+    move-object v1, p1
+
+    move v2, p2
+
+    move v3, p3
+
+    invoke-direct/range {v0 .. v7}, Lcom/uuzuche/lib_zxing/camera/PlanarYUVLuminanceSource;-><init>([BIIIIII)V
+
+    return-object v8
+.end method
+
+.method public closeDriver()V
+    .registers 2
+
+    .line 151
+    iget-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->camera:Landroid/hardware/Camera;
+
+    if-eqz v0, :cond_f
+
+    .line 152
+    invoke-static {}, Lcom/uuzuche/lib_zxing/camera/FlashlightManager;->disableFlashlight()V
+
+    .line 153
+    iget-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->camera:Landroid/hardware/Camera;
+
+    invoke-virtual {v0}, Landroid/hardware/Camera;->release()V
+
+    const/4 v0, 0x0
+
+    .line 154
+    iput-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->camera:Landroid/hardware/Camera;
+
+    :cond_f
+    return-void
+.end method
+
+.method public getAutoFocusCallback()Lcom/uuzuche/lib_zxing/camera/AutoFocusCallback;
+    .registers 2
+
+    .line 342
+    iget-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->autoFocusCallback:Lcom/uuzuche/lib_zxing/camera/AutoFocusCallback;
+
+    return-object v0
+.end method
+
+.method public getCamera()Landroid/hardware/Camera;
+    .registers 2
+
+    .line 326
+    iget-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->camera:Landroid/hardware/Camera;
+
+    return-object v0
+.end method
+
+.method public getContext()Landroid/content/Context;
+    .registers 2
+
+    .line 322
+    iget-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->context:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method public getFramingRect()Landroid/graphics/Rect;
+    .registers 6
+
+    .line 224
+    iget-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->configManager:Lcom/uuzuche/lib_zxing/camera/CameraConfigurationManager;
+
+    invoke-virtual {v0}, Lcom/uuzuche/lib_zxing/camera/CameraConfigurationManager;->getScreenResolution()Landroid/graphics/Point;
+
+    move-result-object v0
+
+    .line 226
+    iget-object v1, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->camera:Landroid/hardware/Camera;
+
+    if-nez v1, :cond_c
+
+    const/4 v0, 0x0
+
+    return-object v0
+
+    .line 230
+    :cond_c
+    iget v1, v0, Landroid/graphics/Point;->x:I
+
+    sget v2, Lcom/uuzuche/lib_zxing/camera/CameraManager;->FRAME_WIDTH:I
+
+    sub-int/2addr v1, v2
+
+    div-int/lit8 v1, v1, 0x2
+
+    .line 233
+    sget v2, Lcom/uuzuche/lib_zxing/camera/CameraManager;->FRAME_MARGINTOP:I
+
+    const/4 v3, -0x1
+
+    if-eq v2, v3, :cond_19
+
+    goto :goto_20
+
+    .line 236
+    :cond_19
+    iget v0, v0, Landroid/graphics/Point;->y:I
+
+    sget v2, Lcom/uuzuche/lib_zxing/camera/CameraManager;->FRAME_HEIGHT:I
+
+    sub-int/2addr v0, v2
+
+    div-int/lit8 v2, v0, 0x2
+
+    .line 238
+    :goto_20
+    new-instance v0, Landroid/graphics/Rect;
+
+    sget v3, Lcom/uuzuche/lib_zxing/camera/CameraManager;->FRAME_WIDTH:I
+
+    add-int/2addr v3, v1
+
+    sget v4, Lcom/uuzuche/lib_zxing/camera/CameraManager;->FRAME_HEIGHT:I
+
+    add-int/2addr v4, v2
+
+    invoke-direct {v0, v1, v2, v3, v4}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    iput-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->framingRect:Landroid/graphics/Rect;
+
+    return-object v0
+.end method
+
+.method public getFramingRectInPreview()Landroid/graphics/Rect;
+    .registers 6
+
+    .line 248
+    iget-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->framingRectInPreview:Landroid/graphics/Rect;
+
+    if-nez v0, :cond_47
+
+    .line 249
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-virtual {p0}, Lcom/uuzuche/lib_zxing/camera/CameraManager;->getFramingRect()Landroid/graphics/Rect;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
+
+    .line 250
+    iget-object v1, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->configManager:Lcom/uuzuche/lib_zxing/camera/CameraConfigurationManager;
+
+    invoke-virtual {v1}, Lcom/uuzuche/lib_zxing/camera/CameraConfigurationManager;->getCameraResolution()Landroid/graphics/Point;
+
+    move-result-object v1
+
+    .line 251
+    iget-object v2, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->configManager:Lcom/uuzuche/lib_zxing/camera/CameraConfigurationManager;
+
+    invoke-virtual {v2}, Lcom/uuzuche/lib_zxing/camera/CameraConfigurationManager;->getScreenResolution()Landroid/graphics/Point;
+
+    move-result-object v2
+
+    .line 257
+    iget v3, v0, Landroid/graphics/Rect;->left:I
+
+    iget v4, v1, Landroid/graphics/Point;->y:I
+
+    mul-int v3, v3, v4
+
+    iget v4, v2, Landroid/graphics/Point;->x:I
+
+    div-int/2addr v3, v4
+
+    iput v3, v0, Landroid/graphics/Rect;->left:I
+
+    .line 258
+    iget v3, v0, Landroid/graphics/Rect;->right:I
+
+    iget v4, v1, Landroid/graphics/Point;->y:I
+
+    mul-int v3, v3, v4
+
+    iget v4, v2, Landroid/graphics/Point;->x:I
+
+    div-int/2addr v3, v4
+
+    iput v3, v0, Landroid/graphics/Rect;->right:I
+
+    .line 259
+    iget v3, v0, Landroid/graphics/Rect;->top:I
+
+    iget v4, v1, Landroid/graphics/Point;->x:I
+
+    mul-int v3, v3, v4
+
+    iget v4, v2, Landroid/graphics/Point;->y:I
+
+    div-int/2addr v3, v4
+
+    iput v3, v0, Landroid/graphics/Rect;->top:I
+
+    .line 260
+    iget v3, v0, Landroid/graphics/Rect;->bottom:I
+
+    iget v1, v1, Landroid/graphics/Point;->x:I
+
+    mul-int v3, v3, v1
+
+    iget v1, v2, Landroid/graphics/Point;->y:I
+
+    div-int/2addr v3, v1
+
+    iput v3, v0, Landroid/graphics/Rect;->bottom:I
+
+    .line 261
+    iput-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->framingRectInPreview:Landroid/graphics/Rect;
+
+    .line 263
+    :cond_47
+    iget-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->framingRectInPreview:Landroid/graphics/Rect;
+
+    return-object v0
+.end method
+
+.method public getPreviewCallback()Lcom/uuzuche/lib_zxing/camera/PreviewCallback;
+    .registers 2
+
+    .line 338
+    iget-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->previewCallback:Lcom/uuzuche/lib_zxing/camera/PreviewCallback;
+
+    return-object v0
+.end method
+
+.method public isPreviewing()Z
+    .registers 2
+
+    .line 330
+    iget-boolean v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->previewing:Z
+
+    return v0
+.end method
+
+.method public isUseOneShotPreviewCallback()Z
+    .registers 2
+
+    .line 334
+    iget-boolean v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->useOneShotPreviewCallback:Z
+
+    return v0
+.end method
+
+.method public openDriver(Landroid/view/SurfaceHolder;)V
+    .registers 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 124
+    iget-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->camera:Landroid/hardware/Camera;
+
+    if-nez v0, :cond_2e
+
+    .line 125
+    invoke-static {}, Landroid/hardware/Camera;->open()Landroid/hardware/Camera;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->camera:Landroid/hardware/Camera;
+
+    if-eqz v0, :cond_28
+
+    .line 129
+    invoke-virtual {v0, p1}, Landroid/hardware/Camera;->setPreviewDisplay(Landroid/view/SurfaceHolder;)V
+
+    .line 131
+    iget-boolean p1, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->initialized:Z
+
+    if-nez p1, :cond_1d
+
+    const/4 p1, 0x1
+
+    .line 132
+    iput-boolean p1, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->initialized:Z
+
+    .line 133
+    iget-object p1, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->configManager:Lcom/uuzuche/lib_zxing/camera/CameraConfigurationManager;
+
+    iget-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->camera:Landroid/hardware/Camera;
+
+    invoke-virtual {p1, v0}, Lcom/uuzuche/lib_zxing/camera/CameraConfigurationManager;->initFromCameraParameters(Landroid/hardware/Camera;)V
+
+    .line 135
+    :cond_1d
+    iget-object p1, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->configManager:Lcom/uuzuche/lib_zxing/camera/CameraConfigurationManager;
+
+    iget-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->camera:Landroid/hardware/Camera;
+
+    invoke-virtual {p1, v0}, Lcom/uuzuche/lib_zxing/camera/CameraConfigurationManager;->setDesiredCameraParameters(Landroid/hardware/Camera;)V
+
+    .line 143
+    invoke-static {}, Lcom/uuzuche/lib_zxing/camera/FlashlightManager;->enableFlashlight()V
+
+    goto :goto_2e
+
+    .line 127
+    :cond_28
+    new-instance p1, Ljava/io/IOException;
+
+    invoke-direct {p1}, Ljava/io/IOException;-><init>()V
+
+    throw p1
+
+    :cond_2e
+    :goto_2e
+    return-void
+.end method
+
+.method public requestAutoFocus(Landroid/os/Handler;I)V
+    .registers 4
+
+    .line 209
+    iget-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->camera:Landroid/hardware/Camera;
+
+    if-eqz v0, :cond_14
+
+    iget-boolean v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->previewing:Z
+
+    if-eqz v0, :cond_14
+
+    .line 210
+    iget-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->autoFocusCallback:Lcom/uuzuche/lib_zxing/camera/AutoFocusCallback;
+
+    invoke-virtual {v0, p1, p2}, Lcom/uuzuche/lib_zxing/camera/AutoFocusCallback;->setHandler(Landroid/os/Handler;I)V
+
+    .line 212
+    iget-object p1, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->camera:Landroid/hardware/Camera;
+
+    iget-object p2, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->autoFocusCallback:Lcom/uuzuche/lib_zxing/camera/AutoFocusCallback;
+
+    invoke-virtual {p1, p2}, Landroid/hardware/Camera;->autoFocus(Landroid/hardware/Camera$AutoFocusCallback;)V
+
+    :cond_14
+    return-void
+.end method
+
+.method public requestPreviewFrame(Landroid/os/Handler;I)V
+    .registers 4
+
+    .line 192
+    iget-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->camera:Landroid/hardware/Camera;
+
+    if-eqz v0, :cond_20
+
+    iget-boolean v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->previewing:Z
+
+    if-eqz v0, :cond_20
+
+    .line 193
+    iget-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->previewCallback:Lcom/uuzuche/lib_zxing/camera/PreviewCallback;
+
+    invoke-virtual {v0, p1, p2}, Lcom/uuzuche/lib_zxing/camera/PreviewCallback;->setHandler(Landroid/os/Handler;I)V
+
+    .line 194
+    iget-boolean p1, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->useOneShotPreviewCallback:Z
+
+    if-eqz p1, :cond_19
+
+    .line 195
+    iget-object p1, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->camera:Landroid/hardware/Camera;
+
+    iget-object p2, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->previewCallback:Lcom/uuzuche/lib_zxing/camera/PreviewCallback;
+
+    invoke-virtual {p1, p2}, Landroid/hardware/Camera;->setOneShotPreviewCallback(Landroid/hardware/Camera$PreviewCallback;)V
+
+    goto :goto_20
+
+    .line 197
+    :cond_19
+    iget-object p1, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->camera:Landroid/hardware/Camera;
+
+    iget-object p2, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->previewCallback:Lcom/uuzuche/lib_zxing/camera/PreviewCallback;
+
+    invoke-virtual {p1, p2}, Landroid/hardware/Camera;->setPreviewCallback(Landroid/hardware/Camera$PreviewCallback;)V
+
+    :cond_20
+    :goto_20
+    return-void
+.end method
+
+.method public setPreviewing(Z)V
+    .registers 2
+
+    .line 346
+    iput-boolean p1, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->previewing:Z
+
+    return-void
+.end method
+
+.method public startPreview()V
+    .registers 3
+
+    .line 162
+    iget-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->camera:Landroid/hardware/Camera;
+
+    if-eqz v0, :cond_e
+
+    iget-boolean v1, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->previewing:Z
+
+    if-nez v1, :cond_e
+
+    .line 163
+    invoke-virtual {v0}, Landroid/hardware/Camera;->startPreview()V
+
+    const/4 v0, 0x1
+
+    .line 164
+    iput-boolean v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->previewing:Z
+
+    :cond_e
+    return-void
+.end method
+
+.method public stopPreview()V
+    .registers 4
+
+    .line 172
+    iget-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->camera:Landroid/hardware/Camera;
+
+    if-eqz v0, :cond_22
+
+    iget-boolean v1, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->previewing:Z
+
+    if-eqz v1, :cond_22
+
+    .line 173
+    iget-boolean v1, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->useOneShotPreviewCallback:Z
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_10
+
+    .line 174
+    invoke-virtual {v0, v2}, Landroid/hardware/Camera;->setPreviewCallback(Landroid/hardware/Camera$PreviewCallback;)V
+
+    .line 176
+    :cond_10
+    iget-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->camera:Landroid/hardware/Camera;
+
+    invoke-virtual {v0}, Landroid/hardware/Camera;->stopPreview()V
+
+    .line 177
+    iget-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->previewCallback:Lcom/uuzuche/lib_zxing/camera/PreviewCallback;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v2, v1}, Lcom/uuzuche/lib_zxing/camera/PreviewCallback;->setHandler(Landroid/os/Handler;I)V
+
+    .line 178
+    iget-object v0, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->autoFocusCallback:Lcom/uuzuche/lib_zxing/camera/AutoFocusCallback;
+
+    invoke-virtual {v0, v2, v1}, Lcom/uuzuche/lib_zxing/camera/AutoFocusCallback;->setHandler(Landroid/os/Handler;I)V
+
+    .line 179
+    iput-boolean v1, p0, Lcom/uuzuche/lib_zxing/camera/CameraManager;->previewing:Z
+
+    :cond_22
+    return-void
+.end method
