@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="foam_controller_operation_Ids">
+        <item>0x00000001</item>
+        <item>0x00000002</item>
+        <item>0x00000003</item>
+        <item>0x00000004</item>
+        <item>0x00000005</item>
+        <item>0x00000006</item>
+        <item>0x00000007</item>
+        <item>0x00000008</item>
+        <item>0x00000009</item>
+        <item>0x0000000A</item>
+        <item>0x0000000B</item>
+        <item>0x0000000C</item>
+        <item>0x0000000D</item>
+        <item>0x0000000E</item>
+        <item>0x0000000F</item>
+        <item>0x00000010</item>
+        <item>0x00000011</item>
+        <item>0x00000012</item>
+        <item>0x00000050</item>
+        <item>0x00000051</item>
+        <item>0x00000052</item>
+        <item>0x00000053</item>
+    </integer-array>
+    <integer-array name="foam_controller_setting_Ids">
+        <item>0x00000020</item>
+        <item>0x00000021</item>
+        <item>0x00000022</item>
+        <item>0x00000023</item>
+        <item>0x00000024</item>
+        <item>0x00000025</item>
+        <item>0x00000026</item>
+        <item>0x00000027</item>
+        <item>0x00000028</item>
+        <item>0x00000029</item>
+        <item>0x0000002A</item>
+        <item>0x0000002B</item>
+        <item>0x0000002C</item>
+        <item>0x0000002D</item>
+        <item>0x0000002E</item>
+        <item>0x0000002F</item>
+    </integer-array>
+    <string-array name="products_arrange_ways">
+        <item>3*1</item>
+        <item>4*1</item>
+        <item>3*2</item>
+        <item>4*2</item>
+        <item>3*3</item>
+        <item>5*2</item>
+        <item>4*3</item>
+        <item>5*3</item>
+        <item>6*3</item>
+        <item>6*4</item>
+        <item>7*5</item>
+    </string-array>
+</resources>

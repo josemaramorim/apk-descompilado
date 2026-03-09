@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/ll_cleanall_hand" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_cleanall" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_cleanall_auto" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="@dimen/margin_large" android:paddingRight="@dimen/margin_large" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textColor="@color/white" android:layout_width="0.0px" android:layout_height="wrap_content" android:text="@string/clean_boot_clean" android:layout_weight="1.0" />
+            <TextView android:id="@id/tv_cleanall_boot" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_normal" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:drawableLeft="@drawable/sel_switch" />
+        </LinearLayout>
+        <View android:background="@color/white" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_cleanall_timer" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:orientation="vertical" android:id="@id/fl_menuedit_root" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/fl_menuedit_container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/cons_menuedit_container" android:background="@color/colorPrimary" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/fl_menuedit_container2" android:layout_width="0.0px" android:layout_height="0.0px" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout android:id="@id/rl_menuedit_title" android:background="@color/colorPrimary" android:layout_width="fill_parent" android:layout_height="@dimen/title_height">
+        <ImageView android:id="@id/iv_menuedit_back" android:paddingLeft="@dimen/margin_normal" android:paddingRight="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/sel_main_back" />
+        <TextView android:textSize="@dimen/dp_18" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_menuedit_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/text_width_pass" android:drawableRight="@drawable/ic_arrow_bottom" android:layout_centerInParent="true" style="@style/input_product_edit" />
+        <ImageView android:id="@id/iv_menuedit_move" android:paddingLeft="@dimen/margin_normal" android:paddingRight="@dimen/margin_normal" android:layout_width="@dimen/title_height" android:layout_height="@dimen/title_height" android:src="@drawable/ic_move" android:layout_alignParentRight="true" />
+        <ImageView android:id="@id/iv_menuedit_reset" android:paddingLeft="@dimen/margin_normal" android:paddingRight="@dimen/margin_normal" android:layout_width="@dimen/title_height" android:layout_height="@dimen/title_height" android:src="@drawable/ic_reset" android:layout_toLeftOf="@id/iv_menuedit_move" />
+        <ImageView android:id="@id/iv_menuedit_selected" android:paddingLeft="@dimen/margin_normal" android:paddingRight="@dimen/margin_normal" android:layout_width="@dimen/title_height" android:layout_height="@dimen/title_height" android:src="@drawable/sel_press" android:layout_toLeftOf="@id/iv_menuedit_reset" />
+    </RelativeLayout>
+</FrameLayout>

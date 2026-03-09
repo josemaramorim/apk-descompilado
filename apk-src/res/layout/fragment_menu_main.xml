@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:orientation="vertical" android:id="@id/fl_main_root" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.jetinno.core.menuedit.widget.MenuImageView android:id="@id/iv_main_bg1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" app:defaultSrc="@drawable/menuic_main_bg" />
+    <com.jetinno.core.menuedit.widget.MenuImageView android:id="@id/iv_main_bg2" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" app:defaultSrc="@drawable/menuic_sales_bg" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:id="@id/head_menu300main" android:layout_width="fill_parent" android:layout_height="@dimen/menu300_main_top_height" />
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <FrameLayout android:id="@id/fl_menu300main_productlist" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <FrameLayout android:id="@id/fl_menu300main_other" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <FrameLayout android:id="@id/fl_menu300main_error" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <FrameLayout android:gravity="center" android:layout_gravity="bottom" android:id="@id/fl_product_bar" android:layout_width="1.0px" android:layout_height="1.0px" />
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

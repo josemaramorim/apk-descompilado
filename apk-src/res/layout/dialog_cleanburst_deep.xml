@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/cardview_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" app:titleText="@string/clean_all_deep" />
+        <View android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/line_height_normal" />
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_cleanburstdeep_desc" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/font_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/clean_burst_deep_desc" style="@style/text_canister" />
+                <Button android:id="@id/bt_cleanburstdeep_desc" android:layout_marginTop="@dimen/margin_normal" android:text="@string/next" style="@style/button_normal" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_cleanburstdeep_inputtime" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/clean_burst_deep_timetext" style="@style/text_canister" />
+                    <FrameLayout android:background="@drawable/rec_white_t_1dp" android:layout_width="@dimen/input_width_normal" android:layout_height="@dimen/input_height_normal" android:layout_marginLeft="@dimen/margin_large">
+                        <TextView android:id="@id/tv_cleanburstdeep_error" style="@style/text_machinemilk" />
+                        <EditText android:id="@id/et_cleanburstdeep_inputtime" style="@style/input_machinemilk" />
+                    </FrameLayout>
+                </LinearLayout>
+                <Button android:id="@id/bt_cleanburstdeep_inputtime" android:layout_marginTop="@dimen/margin_normal" android:text="@string/next" style="@style/button_normal" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_cleanburstdeep_cleaning" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ProgressBar android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_cleanburstdeep_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:text="@string/common_hint_pass_cleaning" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/ll_cleanburstdeep_inputwater" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/machine_hint_water_ml" style="@style/text_canister" />
+                    <FrameLayout android:background="@drawable/rec_white_t_1dp" android:layout_width="@dimen/input_width_normal" android:layout_height="@dimen/input_height_normal" android:layout_marginLeft="@dimen/margin_large">
+                        <TextView android:id="@id/tv_cleanburstdeep_inputwater_error" style="@style/text_machinemilk" />
+                        <EditText android:id="@id/et_cleanburstdeep_inputwater" style="@style/input_machinemilk" />
+                    </FrameLayout>
+                </LinearLayout>
+                <Button android:id="@id/bt_cleanburstdeep_inputwater" android:layout_marginTop="@dimen/margin_normal" android:text="@string/next" style="@style/button_normal" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_cleanburstdeep_inputwater_cleaning" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ProgressBar android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_cleanburstdeep_inputwater_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:text="@string/common_hint_pass_cleaning" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_cleanburstdeep_stop" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ProgressBar android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_cleanburstdeep_stop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:text="@string/clean_stop_cleaning" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

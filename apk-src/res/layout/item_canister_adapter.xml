@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingTop="@dimen/margin_normal" android:paddingBottom="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_caniseter_canisterid" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="@integer/canister_weight_id">
+        <TextView android:id="@id/tv_canister_canisterid" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/text_canister" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_canister_canistername" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="@integer/canister_weight_name">
+        <TextView android:id="@id/tv_canister_canistername" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/text_canister" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="@integer/canister_weight_id">
+        <TextView android:id="@id/tv_canister_materialid" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/text_canister" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_canister_remain" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="@integer/canister_weight_remain">
+        <com.jetinno.canister.widget.MatchResTextView android:id="@id/tv_canister_remain" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/text_canister" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="@integer/canister_weight_add_sum">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="@integer/canister_weight_add">
+            <ImageView android:id="@id/tv_canister_add" android:layout_width="@dimen/img_icon_height_normal" android:layout_height="wrap_content" android:src="@drawable/ic_add" android:tint="@color/sel_canister_button" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" android:layout_weight="@integer/canister_weight_test">
+            <ImageView android:id="@id/tv_canister_modify" android:layout_width="@dimen/img_icon_height_normal" android:layout_height="wrap_content" android:src="@drawable/ic_modify" android:tint="@color/sel_canister_button" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="@integer/canister_weight_set">
+            <ImageView android:id="@id/tv_canister_setting" android:layout_width="@dimen/img_icon_height_normal" android:layout_height="wrap_content" android:src="@drawable/ic_setting2" android:tint="@color/sel_canister_button" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

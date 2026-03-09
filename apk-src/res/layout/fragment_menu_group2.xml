@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.jetinno.core.menuedit.widget.MenuImageView android:id="@id/group_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" app:defaultSrc="@drawable/menuic_group_bg" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_menu300_group" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/ll_menugroup2_land" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include android:id="@id/ll_menugroup2_land_item0" android:layout_width="0.0px" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/margin_large" android:layout_marginRight="@dimen/margin_normal" android:layout_weight="3.0" layout="@layout/item_menu_group2_layout2_adapter" />
+        <include android:id="@id/ll_menugroup2_land_item1" android:layout_width="0.0px" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" android:layout_weight="4.0" layout="@layout/item_menu_group2_layout2_adapter" />
+        <include android:id="@id/ll_menugroup2_land_item2" android:layout_width="0.0px" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_large" android:layout_weight="3.0" layout="@layout/item_menu_group2_layout2_adapter" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

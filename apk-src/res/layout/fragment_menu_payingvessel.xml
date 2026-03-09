@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:orientation="vertical" android:id="@id/fl_menu_paying_child" android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_weight="1.0" />
+        <com.jetinno.menu300.ui.buy.MenuBuyButtonsView android:id="@id/view_menubuttons" android:layout_width="fill_parent" android:layout_height="wrap_content" app:visibleBack="true" app:visibleCancel="false" app:visibleOk="false" app:visibleTime="false" />
+    </LinearLayout>
+    <include layout="@layout/view_menu_buynote" />
+</FrameLayout>

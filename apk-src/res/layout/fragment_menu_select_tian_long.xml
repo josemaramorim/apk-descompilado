@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_menutianlong_tianlong" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_weight="1.0">
+            <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_biggest" android:textColor="@color/menu_black" android:id="@id/tv_menu300selectvx_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/menu300_selectvx820_top" android:layout_marginBottom="@dimen/menu300_selectvx820_bottom" android:text="@string/menu_请选择卡支付方式" android:letterSpacing="0.1" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_menu300_tian_long" android:paddingLeft="@dimen/menu300_margin_large2" android:paddingRight="@dimen/menu300_margin_large2" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <com.jetinno.menu300.ui.buy.MenuBuyButtonsView android:id="@id/view_menubuttons" android:layout_width="fill_parent" android:layout_height="wrap_content" app:visibleBack="true" app:visibleCancel="false" app:visibleOk="false" app:visibleTime="true" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/fl_menutianlong_other" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <EditText android:textStyle="bold" android:textColor="@color/common_text_black" android:gravity="center" android:layout_gravity="bottom" android:id="@id/et_product_select_bar" android:visibility="gone" android:layout_width="1.0px" android:layout_height="1.0px" />
+</FrameLayout>

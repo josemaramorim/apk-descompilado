@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/app_black_dark2" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" app:titleText="@string/导出日志" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:padding="@dimen/margin_large" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <Button android:textColor="@color/white" android:id="@id/bt_logaction_export_internal" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/title_height" android:layout_marginBottom="@dimen/margin_large" android:text="@string/导出日志至内部存储" style="@style/button_normal_max150" />
+        <Button android:textColor="@color/white" android:id="@id/bt_logaction_export_usb" android:layout_width="fill_parent" android:layout_height="@dimen/title_height" android:text="@string/导出日志至U盘" style="@style/button_normal_max150" />
+    </LinearLayout>
+</LinearLayout>

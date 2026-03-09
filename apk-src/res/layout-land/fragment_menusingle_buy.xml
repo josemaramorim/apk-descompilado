@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/view_menu300buy_product" android:layout_width="@dimen/menu35_making_img_height" android:layout_height="fill_parent" android:layout_marginBottom="@dimen/menu35_main_bottom_height" />
+    <FrameLayout android:id="@id/fl_menu300buy_concen" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</LinearLayout>

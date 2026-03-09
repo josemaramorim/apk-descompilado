@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/cardview_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:background="@color/color_083F68" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/tv_headbar_back" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_normal" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_normal" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_close" />
+            <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/black" android:gravity="center" android:id="@id/tv_headbar_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" android:layout_toLeftOf="@id/tv_headbar_cancel" android:layout_toRightOf="@id/tv_headbar_back" android:layout_centerInParent="true" />
+            <ImageView android:id="@id/tv_headbar_cancel" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_normal" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_close" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <View android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/dp_1" />
+        <TextView android:textSize="@dimen/font_large" android:textColor="@color/white" android:id="@id/tv_exporteva_version" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:padding="@dimen/margin_large2" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ProgressBar android:gravity="center" android:visibility="visible" android:layout_width="@dimen/text_height_large" android:layout_height="@dimen/text_height_large" style="@android:style/Widget.Holo.Light.ProgressBar.Large.Inverse" />
+            <TextView android:textSize="@dimen/font_biggest" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_exporteva_progress" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0%" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

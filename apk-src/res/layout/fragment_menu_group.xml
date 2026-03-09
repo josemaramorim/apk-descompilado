@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.jetinno.core.menuedit.widget.MenuImageView android:id="@id/group_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" app:defaultSrc="@drawable/menuic_group_bg" />
+    <com.google.android.flexbox.FlexboxLayout android:id="@id/fl_group_items" android:layout_width="fill_parent" android:layout_height="fill_parent" app:flexWrap="wrap" app:justifyContent="center" />
+</androidx.constraintlayout.widget.ConstraintLayout>

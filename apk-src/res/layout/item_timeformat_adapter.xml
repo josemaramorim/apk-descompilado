@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/sel_commonfun_bt_bg" android:paddingTop="@dimen/margin_large" android:paddingBottom="@dimen/margin_large" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="3.0">
+        <com.jetinno.common.widget.MainTimeView android:id="@id/mtv_timeformat" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <TextView android:id="@id/tv_timeformat_checked" android:background="@drawable/sel_check_white" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/text_canister" />
+    </LinearLayout>
+</LinearLayout>

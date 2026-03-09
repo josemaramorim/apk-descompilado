@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:paddingTop="@dimen/menu300_concen_top" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_large" android:textStyle="bold" android:textColor="@color/menu_black" android:id="@id/tv_menu300concen_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" />
+    <com.jetinno.menu300.widget.MenuConcenViewPager android:id="@id/vp_menu300concen_type" android:layout_width="@dimen/menu300_concen_typewidth" android:layout_height="@dimen/menu300_concen_typeheight" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/menu300_concen_buttontop">
+        <com.jetinno.core.menuedit.widget.MenuLinearLayout android:id="@id/iv_menu300concen_sub" android:layout_width="@dimen/menu300_concen_buttonwidth" android:layout_height="@dimen/menu300_concen_buttonwidth" app:normalIcon="@drawable/menuic_sub_normal" app:pressIcon="@drawable/menuic_sub_press" />
+        <com.jetinno.core.menuedit.widget.MenuLinearLayout android:id="@id/iv_menu300concen_plus" android:layout_width="@dimen/menu300_concen_buttonwidth" android:layout_height="@dimen/menu300_concen_buttonwidth" android:layout_marginLeft="@dimen/menu300_margin_large2" app:normalIcon="@drawable/menuic_plus_normal" app:pressIcon="@drawable/menuic_plus_press" />
+    </LinearLayout>
+</LinearLayout>

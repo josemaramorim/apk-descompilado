@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" android:layout_marginBottom="@dimen/margin_normal">
+        <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/img_icon_height_normal" android:layout_marginLeft="@dimen/margin_large" android:layout_marginRight="@dimen/margin_normal" android:src="@drawable/ic_state_note" />
+        <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/app_white" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/common_machinelog_warn" />
+        <View android:layout_width="0.0dip" android:layout_height="@dimen/line_height_normal" android:layout_weight="1.0" />
+        <TextView android:id="@id/tv_machinelog_clear" android:layout_height="@dimen/title_height" android:text="@string/common_empty_log" style="@style/button_normal_max150" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@color/colorPrimary" android:layout_width="fill_parent" android:layout_height="@dimen/text_height_normal">
+        <TextView android:textStyle="bold" android:textColor="@color/app_white" android:gravity="center" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/common_machinelog_time" android:layout_weight="1.0" style="@style/text_canister" />
+        <TextView android:textStyle="bold" android:textColor="@color/app_white" android:gravity="center" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/common_machinelog_code" android:layout_weight="1.0" style="@style/text_canister" />
+        <TextView android:textStyle="bold" android:textColor="@color/app_white" android:gravity="center" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/common_machinelog_desc" android:layout_weight="1.0" style="@style/text_canister" />
+        <TextView android:textStyle="bold" android:textColor="@color/app_white" android:gravity="center" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/common_machinelog_help" android:layout_weight="1.0" style="@style/text_canister" />
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_machinelog" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

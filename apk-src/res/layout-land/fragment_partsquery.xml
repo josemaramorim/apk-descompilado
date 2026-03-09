@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@color/colorPrimary" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.google.android.flexbox.FlexboxLayout android:paddingLeft="@dimen/margin_normal" android:paddingTop="@dimen/margin_normal" android:paddingRight="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.jetinno.machineold.partsquery.PartsMixView android:id="@id/mix_partsquery" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_flexGrow="1.0" />
+                <com.jetinno.machineold.partsquery.PartsCanisterView android:id="@id/canister_partsquery" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" app:layout_flexGrow="1.0" />
+                <com.jetinno.machineold.partsquery.PartsValveView android:id="@id/valve_partsquery" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" app:layout_flexGrow="1.0" />
+                <com.jetinno.machineold.partsquery.PartsWaterView android:id="@id/water_partsquery" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" app:layout_flexGrow="1.0" />
+                <com.google.android.flexbox.FlexboxLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" app:flexDirection="column" app:layout_flexGrow="1.0">
+                    <com.jetinno.machineold.partsquery.PartsCoffeeView android:id="@id/coffee_partsquery" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <com.jetinno.machineold.partsquery.PartsFBView android:id="@id/fb_partsquery" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" />
+                    <com.jetinno.machineold.partsquery.PartsTeaView android:id="@id/tea_partsquery" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" app:layout_flexGrow="1.0" />
+                </com.google.android.flexbox.FlexboxLayout>
+                <com.jetinno.machineold.partsquery.PartsDoorView android:id="@id/door_partsquery" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" app:layout_flexGrow="1.0" />
+                <com.jetinno.machineold.partsquery.PartsCupView android:id="@id/cup_partsquery" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" app:layout_flexGrow="1.0" />
+                <com.jetinno.machineold.partsquery.PartsLidView android:id="@id/lid_partsquery" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" app:layout_flexGrow="1.0" />
+            </com.google.android.flexbox.FlexboxLayout>
+            <com.google.android.flexbox.FlexboxLayout android:paddingLeft="@dimen/margin_normal" android:paddingTop="@dimen/margin_normal" android:paddingRight="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.google.android.flexbox.FlexboxLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" app:flexDirection="column" app:layout_flexGrow="3.0">
+                    <com.jetinno.machineold.partsquery.PartsMachineStateView android:id="@id/machinestate_partsquery" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_flexGrow="1.0" />
+                    <com.jetinno.machineold.partsquery.PartsRuntimeView android:id="@id/runtime_partsquery" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" app:layout_flexGrow="1.0" />
+                </com.google.android.flexbox.FlexboxLayout>
+                <com.jetinno.machineold.partsquery.PartsVersionView android:id="@id/version_partsquery" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" app:layout_flexGrow="1.0" />
+                <com.google.android.flexbox.FlexboxLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" app:flexDirection="column" app:layout_flexGrow="3.0">
+                    <com.jetinno.machineold.partsquery.PartsProductEnableView android:id="@id/productenable_partsquery" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_flexGrow="1.0" />
+                    <com.jetinno.machineold.partsquery.PartsCupConfigView android:id="@id/cupconfig_partsquery" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" app:layout_flexGrow="1.0" />
+                </com.google.android.flexbox.FlexboxLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:background="@color/app_black_dark2" android:padding="@dimen/margin_small" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" app:layout_flexGrow="1.0">
+                    <Button android:id="@id/bt_partsquery_query" android:layout_width="fill_parent" android:text="@string/machinemodule_状态查询" style="@style/button_normal" />
+                    <Button android:id="@id/bt_partsquery_query_more" android:layout_width="fill_parent" android:layout_marginTop="@dimen/margin_normal" android:text="@string/machinemodule_更多查询" style="@style/button_normal" />
+                </LinearLayout>
+            </com.google.android.flexbox.FlexboxLayout>
+            <com.google.android.flexbox.FlexboxLayout android:paddingLeft="@dimen/margin_normal" android:paddingTop="@dimen/margin_normal" android:paddingRight="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.jetinno.machineold.partsquery.PartsIceView android:id="@id/ice_partsquery" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_flexGrow="1.0" />
+                <com.jetinno.machineold.partsquery.PartsMilkView android:id="@id/milk_partsquery" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" app:layout_flexGrow="1.0" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_flexGrow="1.0" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_flexGrow="1.0" />
+            </com.google.android.flexbox.FlexboxLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

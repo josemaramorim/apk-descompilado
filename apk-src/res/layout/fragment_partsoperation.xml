@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@color/colorPrimary" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.jetinno.machineold.partsoperation.PartsOperationAllView android:id="@id/parsoperation_all" android:background="@color/app_black_dark2" android:padding="@dimen/margin_small" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_large" />
+            <com.jetinno.machineold.partsoperation.PartsOperationWaterView android:id="@id/parsoperation_water" android:background="@color/app_black_dark2" android:padding="@dimen/margin_small" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_large" />
+            <com.jetinno.machineold.partsoperation.PartsOperationCupView android:id="@id/parsoperation_cup" android:background="@color/app_black_dark2" android:padding="@dimen/margin_small" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_large" />
+            <com.jetinno.machineold.partsoperation.PartsOperationBrewView android:id="@id/parsoperation_brew" android:background="@color/app_black_dark2" android:padding="@dimen/margin_small" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_large" />
+            <com.jetinno.machineold.partsoperation.PartsOperationTeaView android:id="@id/parsoperation_tea" android:background="@color/app_black_dark2" android:padding="@dimen/margin_small" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_large" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

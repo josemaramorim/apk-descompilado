@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/cardview_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" app:layout_constraintTop_toTopOf="parent" app:titleText="@string/enable_access" />
+        <TextView android:textSize="@dimen/font_large" android:textColor="@color/white" android:gravity="center_vertical" android:id="@id/tv_access_switch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_large2" android:text="@string/open_or_close" android:drawableRight="@drawable/sel_switch" android:drawablePadding="@dimen/margin_normal" app:layout_constraintBottom_toTopOf="@id/headbar" app:layout_constraintLeft_toLeftOf="@id/headbar" app:layout_constraintTop_toBottomOf="@id/headbar" style="@style/text_canister" />
+        <TextView android:id="@id/tv_access_sure" android:layout_width="fill_parent" android:layout_marginLeft="@dimen/margin_large" android:layout_marginRight="@dimen/margin_large" android:layout_marginBottom="@dimen/margin_large" android:text="@string/save" app:layout_constraintBottom_toBottomOf="parent" style="@style/button_normal" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_access_topaction" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintTop_toBottomOf="@id/headbar">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_accessconfig_child_expand" android:padding="@dimen/margin_normal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="2.0">
+                <ImageView android:id="@id/iv_accessconfig_child_expand" android:layout_width="@dimen/font_biggest" android:layout_height="@dimen/font_biggest" android:src="@drawable/sel_access_expand" style="@style/text_canister" />
+                <TextView android:textSize="@dimen/font_large" android:textStyle="normal" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_accessconfig_child_expand" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:text="@string/all_folded" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:paddingTop="@dimen/margin_normal" android:paddingBottom="@dimen/margin_normal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="4.0">
+                <TextView android:textStyle="normal" android:gravity="center" android:id="@id/tv_accessconfig_child_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/canister_name" style="@style/text_canister" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:paddingTop="@dimen/margin_small" android:paddingBottom="@dimen/margin_small" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <TextView android:textStyle="normal" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/common_person_manager" style="@style/text_canister" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:paddingTop="@dimen/margin_small" android:paddingBottom="@dimen/margin_small" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <TextView android:textStyle="normal" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/common_person_normal" style="@style/text_canister" />
+            </LinearLayout>
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_access" android:layout_width="fill_parent" android:layout_height="0.0px" app:layout_constraintBottom_toTopOf="@id/tv_access_sure" app:layout_constraintTop_toBottomOf="@id/ll_access_topaction" />
+        <View android:id="@id/line_access" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/line_height_normal" app:layout_constraintTop_toBottomOf="@id/ll_access_topaction" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

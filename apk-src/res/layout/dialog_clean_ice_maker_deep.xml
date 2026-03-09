@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/cardview_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" app:titleText="@string/clean_all_deep" />
+        <View android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/line_height_normal" />
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/rl_clean_ice_maker_root" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/rl_clean_ice_maker_step1" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:text="@string/clean_ice_maker_deep_step1" />
+                <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:text="@string/click_descale_clean_hint" />
+                <Button android:id="@id/bt_clean_ice_maker_step1_next" android:layout_marginTop="@dimen/margin_normal" android:text="@string/descale_clean" style="@style/button_normal" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/rl_clean_ice_maker_step2" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ProgressBar android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_clean_ice_maker_progress" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/clean_ice_maker_progress" android:layout_marginStart="@dimen/margin_normal" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_clean_ice_maker_deep_step2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/draining_ice" android:layout_marginStart="@dimen/margin_normal" />
+                </LinearLayout>
+                <Button android:id="@id/bt_clean_ice_maker_step2_next" android:layout_marginTop="@dimen/margin_normal" android:text="@string/next" style="@style/button_normal" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/rl_clean_ice_maker_step3" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_open_ice_bucket" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:text="@string/open_ice_bucket" />
+                <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_step3_click_confirm_hint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:text="@string/click_confirm_hint" />
+                <Button android:id="@id/bt_clean_ice_maker_step3_confirm" android:layout_marginTop="@dimen/margin_normal" android:text="@string/confirm" style="@style/button_normal" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/rl_clean_ice_maker_step4" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ProgressBar android:id="@id/pb_step4" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_clean_ice_maker_progress_step4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/clean_ice_maker_progress" android:layout_marginStart="@dimen/margin_normal" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_descaling_and_draining" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/descaling_and_draining" android:layout_marginStart="@dimen/margin_normal" />
+                </LinearLayout>
+                <Button android:id="@id/bt_clean_ice_maker_step4_next" android:layout_marginTop="@dimen/margin_normal" android:text="@string/next" style="@style/button_normal" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/rl_clean_ice_maker_step5" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ProgressBar android:id="@id/pb_step5" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_clean_ice_maker_progress_step5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/clean_ice_maker_progress" android:layout_marginStart="@dimen/margin_normal" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_cycling_descaling" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cycling_descaling" android:layout_marginStart="@dimen/margin_normal" />
+                </LinearLayout>
+                <Button android:id="@id/bt_clean_ice_maker_step5_next" android:layout_marginTop="@dimen/margin_normal" android:text="@string/next" style="@style/button_normal" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/rl_clean_ice_maker_step6" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ProgressBar android:id="@id/pb_step6" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_clean_ice_maker_progress_step6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/clean_ice_maker_progress" android:layout_marginStart="@dimen/margin_normal" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_waiting_for_30_mins" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/margin_normal" />
+                </LinearLayout>
+                <Button android:id="@id/bt_clean_ice_maker_step6_next" android:layout_marginTop="@dimen/margin_normal" android:text="@string/next" style="@style/button_normal" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/rl_clean_ice_maker_step7" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ProgressBar android:id="@id/pb_step7" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_clean_ice_maker_progress_step7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/clean_ice_maker_progress" android:layout_marginStart="@dimen/margin_normal" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_descaling_and_draining2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/descaling_and_draining" android:layout_marginStart="@dimen/margin_normal" />
+                </LinearLayout>
+                <Button android:id="@id/bt_clean_ice_maker_step7_next" android:layout_marginTop="@dimen/margin_normal" android:text="@string/next" style="@style/button_normal" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/rl_clean_ice_maker_step8" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_open_ice_bucket_spray_clean_water" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/open_ice_bucket_spray_clean_water" />
+                <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_step8_click_confirm_hint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:text="@string/click_confirm_hint" />
+                <Button android:id="@id/bt_clean_ice_maker_step8_confirm" android:layout_marginTop="@dimen/margin_normal" android:text="@string/confirm" style="@style/button_normal" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/rl_clean_ice_maker_step9" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ProgressBar android:id="@id/pb_step9" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_clean_ice_maker_progress_step9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/clean_ice_maker_progress" android:layout_marginStart="@dimen/margin_normal" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_flushing_descaling_solvent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/flushing_descaling_solvent" android:layout_marginStart="@dimen/margin_normal" />
+                </LinearLayout>
+                <Button android:id="@id/bt_clean_ice_maker_step9_next" android:layout_marginTop="@dimen/margin_normal" android:text="@string/next" style="@style/button_normal" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/rl_clean_ice_maker_step10" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ProgressBar android:id="@id/pb_step10" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_clean_ice_maker_progress_step10" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/clean_ice_maker_progress" android:layout_marginStart="@dimen/margin_normal" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_deep_cleaning_water_tank" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/deep_cleaning_water_tank" android:layout_marginStart="@dimen/margin_normal" />
+                </LinearLayout>
+                <Button android:id="@id/bt_clean_ice_maker_step10_next" android:layout_marginTop="@dimen/margin_normal" android:text="@string/next" style="@style/button_normal" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/rl_clean_ice_maker_step11" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_spray_disinfectant" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/spray_disinfectant" />
+                <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_click_disinfection_and_cleaning" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:text="@string/click_disinfection_and_cleaning" />
+                <Button android:id="@id/bt_disinfection_and_cleaning" android:layout_marginTop="@dimen/margin_normal" android:text="@string/disinfection_and_cleaning" style="@style/button_normal" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/rl_clean_ice_maker_step12" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ProgressBar android:id="@id/pb_step12" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_clean_ice_maker_progress_step12" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/clean_ice_maker_progress" android:layout_marginStart="@dimen/margin_normal" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_disinfectant_is_circulating" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/disinfectant_is_circulating" android:layout_marginStart="@dimen/margin_normal" />
+                </LinearLayout>
+                <Button android:id="@id/bt_clean_ice_maker_step12_next" android:layout_marginTop="@dimen/margin_normal" android:text="@string/next" style="@style/button_normal" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/rl_clean_ice_maker_step13" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ProgressBar android:id="@id/pb_step13" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_clean_ice_maker_progress_step13" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/clean_ice_maker_progress" android:layout_marginStart="@dimen/margin_normal" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_disinfection_and_drainage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/disinfection_and_drainage_in_progress" android:layout_marginStart="@dimen/margin_normal" />
+                </LinearLayout>
+                <Button android:id="@id/bt_clean_ice_maker_step13_next" android:layout_marginTop="@dimen/margin_normal" android:text="@string/next" style="@style/button_normal" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/rl_clean_ice_maker_step14" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ProgressBar android:id="@id/pb_step14" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_clean_ice_maker_progress_step14" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/clean_ice_maker_progress" android:layout_marginStart="@dimen/margin_normal" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_flushing_and_emptying_disinfectant" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/flushing_and_emptying_disinfectant" android:layout_marginStart="@dimen/margin_normal" />
+                </LinearLayout>
+                <Button android:id="@id/bt_clean_ice_maker_step14_next" android:layout_marginTop="@dimen/margin_normal" android:text="@string/next" style="@style/button_normal" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/rl_clean_ice_maker_step15" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_change_to_drinking_water" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/change_to_drinking_water" />
+                <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_step_15_click_confirm_hint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:text="@string/click_confirm_hint" />
+                <Button android:id="@id/bt_step_15_confirm" android:layout_marginTop="@dimen/margin_normal" android:text="@string/confirm" style="@style/button_normal" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/rl_clean_ice_maker_step16" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ProgressBar android:id="@id/pb_step16" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_clean_ice_maker_progress_step16" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/clean_ice_maker_progress" android:layout_marginStart="@dimen/margin_normal" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_making_ice_for_10_mins" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/making_ice_for_10_mins" android:layout_marginStart="@dimen/margin_normal" />
+                </LinearLayout>
+                <Button android:id="@id/bt_step_16_confirm" android:layout_marginTop="@dimen/margin_normal" android:text="@string/confirm" style="@style/button_normal" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/ll_clean_ice_maker_stop" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ProgressBar android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/clean_stop_cleaning" android:layout_marginStart="@dimen/margin_normal" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

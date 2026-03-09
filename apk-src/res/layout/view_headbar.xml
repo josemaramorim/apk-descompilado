@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/rl_headbar_root" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/tv_headbar_back" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_normal" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_normal" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/common_text_black" android:gravity="center" android:id="@id/tv_headbar_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" android:layout_toLeftOf="@id/tv_headbar_cancel" android:layout_toRightOf="@id/tv_headbar_back" android:layout_centerInParent="true" />
+    <ImageView android:id="@id/tv_headbar_cancel" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_normal" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_close2" android:layout_alignParentRight="true" />
+</RelativeLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/cardview_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" app:titleText="@string/card_settingtitle" />
+        <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_normal" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/card_sdk_version" android:layout_weight="1.0" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/black" android:id="@id/tv_card_version" android:background="@color/white" android:padding="@dimen/margin_small" android:paddingLeft="@dimen/margin_large" android:paddingRight="@dimen/margin_large" android:layout_width="0.0dip" android:layout_height="@dimen/text_height_normal" android:text="2021-09-09 09:09" android:layout_weight="3.0" />
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/bt_card_bind" android:text="@string/mdb_restartdevice" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/card_top_checkout_time" android:layout_weight="1.0" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/black" android:id="@id/tv_card_checkout_time" android:background="@color/white" android:padding="@dimen/margin_small" android:paddingLeft="@dimen/margin_large" android:paddingRight="@dimen/margin_large" android:layout_width="0.0dip" android:layout_height="@dimen/text_height_normal" android:text="2021-09-09 09:09" android:layout_weight="3.0" />
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/bt_card_checkout" android:text="@string/card_checkout" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/pay" android:layout_weight="1.0" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingRight="@dimen/margin_large" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="4.0">
+                        <EditText android:id="@id/et_card_payorder_amout" android:background="@drawable/rec_gray_white_1dp" android:paddingLeft="@dimen/margin_small" android:layout_width="@dimen/input_width_normal" android:layout_height="wrap_content" android:minHeight="@dimen/input_height_normal" android:hint="@string/mdb_payorder_hint" android:maxLength="4" android:inputType="number" android:imeOptions="actionDone" />
+                        <RadioGroup android:orientation="vertical" android:id="@id/rg_card_cardtype" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                            <RadioButton android:textColor="@color/white" android:id="@id/rb_card_card" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:checked="true" android:text="@string/card_card" />
+                            <RadioButton android:textColor="@color/white" android:id="@id/rb_card_elec" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:text="@string/menu_电子支付" />
+                            <RadioButton android:textColor="@color/white" android:id="@id/rb_card_mobile" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:text="@string/card_mobile" />
+                        </RadioGroup>
+                        <TextView android:id="@id/bt_card_payorder" android:layout_marginLeft="@dimen/margin_large" android:text="@string/mdb_payorder" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_normal" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_large2">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingRight="@dimen/margin_large" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="4.0">
+                        <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_large" android:text="@string/card_test_result" />
+                        <TextView android:textSize="@dimen/font_normal" android:textColor="@color/common_text_black" android:id="@id/tv_card_payorder_state" android:background="@color/white" android:padding="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_large" android:minHeight="@dimen/text_height_normal" android:text="@string/card_state_unstart" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

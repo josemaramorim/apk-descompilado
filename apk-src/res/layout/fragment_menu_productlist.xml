@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@id/cons_product_root" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/fl_productlist_group" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/menu300_arrowtop_height" app:layout_constraintBottom_toBottomOf="@id/ll_menu300_top" app:layout_constraintTop_toTopOf="@id/ll_menu300_top" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_menu300_top" android:layout_width="@dimen/menu300_arrowtop_height" android:layout_height="@dimen/menu300_arrowtop_height" app:layout_constraintLeft_toRightOf="parent" app:layout_constraintRight_toLeftOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <com.jetinno.core.menuedit.widget.MenuGifView android:id="@id/gif_menu300_top" android:layout_width="wrap_content" android:layout_height="@dimen/menu300_arrowtop_height2" app:defaultGif="@drawable/menugif_up" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_menu300_bottomvessel" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent">
+        <com.jetinno.menu300.ui.product.view.MenuBottomContainer android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_menu300_bottomcontainer" android:layout_width="fill_parent" android:layout_height="@dimen/menu300_bottomproduct_height" android:layout_marginTop="@dimen/menu300_margin_large2" android:layout_marginBottom="@dimen/menu300_bottomproduct_margin_bottom" />
+        <FrameLayout android:gravity="center_vertical" android:id="@id/fl_productlist_bottomaction" android:paddingLeft="@dimen/menu300_margin_large" android:paddingRight="@dimen/menu300_margin_large" android:layout_width="fill_parent" android:layout_height="@dimen/menu35_main_bottom_height" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_menu300_bottom" android:layout_width="wrap_content" android:layout_height="@dimen/menu300_arrowtop_height" app:layout_constraintBottom_toTopOf="@id/ll_menu300_bottomvessel" app:layout_constraintLeft_toRightOf="parent" app:layout_constraintRight_toLeftOf="parent">
+        <com.jetinno.core.menuedit.widget.MenuGifView android:id="@id/gif_menu300_bottom" android:layout_width="@dimen/menu300_arrowtop_height" android:layout_height="@dimen/menu300_arrowtop_height2" app:defaultGif="@drawable/menugif_down" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_menu300_productlist" android:layout_width="fill_parent" android:layout_height="0.0px" app:layout_constraintBottom_toTopOf="@id/ll_menu300_bottom" app:layout_constraintTop_toBottomOf="@id/ll_menu300_top">
+        <com.jetinno.menu300.ui.product.view.MenuRecyclerView android:layout_gravity="center_horizontal" android:id="@id/rv_menu300_productlist" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/menu300_margin_large2" android:layout_marginRight="@dimen/menu300_margin_large2" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/fl_shopping_ball" android:layout_width="1.0px" android:layout_height="1.0px" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <FrameLayout android:id="@id/fl_product_group" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

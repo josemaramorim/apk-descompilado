@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_normal" android:text="@string/分杯运杯" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_normal">
+        <TextView android:textColor="@color/white" android:gravity="center_vertical" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="@string/分杯测试" android:drawableRight="@drawable/shape_arrow_right" />
+        <TextView android:textColor="@color/white" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="@string/设置次数" />
+        <com.jetinno.ui.widget.ScopeEditText android:textColor="@color/black" android:gravity="center_vertical" android:id="@id/et_cup_split" android:background="@color/white" android:padding="@dimen/margin_small" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="1" />
+        <TextView android:id="@id/tv_cup_split" android:text="@string/开始" style="@style/button_normal" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_normal">
+        <TextView android:textColor="@color/white" android:gravity="center_vertical" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="@string/杯托移动" android:drawableRight="@drawable/shape_arrow_right" />
+        <TextView android:textColor="@color/white" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="@string/选择动作" />
+        <TextView android:textSize="@dimen/font_normal" android:textColor="@color/common_text_black" android:gravity="center_vertical" android:id="@id/sp_cup_move" android:background="@drawable/rec_black_white_1dp" android:padding="@dimen/margin_small" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="@string/bean" android:drawableRight="@drawable/ic_arrow_bottom" />
+        <TextView android:id="@id/tv_cup_move" android:text="@string/开始" style="@style/button_normal" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_normal">
+        <TextView android:textColor="@color/white" android:gravity="center_vertical" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="@string/分杯盖" android:drawableRight="@drawable/shape_arrow_right" />
+        <TextView android:textColor="@color/white" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="@string/设置次数" />
+        <com.jetinno.ui.widget.ScopeEditText android:textColor="@color/black" android:gravity="center_vertical" android:id="@id/et_cup_split_lid" android:background="@color/white" android:padding="@dimen/margin_small" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="1" />
+        <TextView android:id="@id/tv_cup_split_lid" android:text="@string/开始" style="@style/button_normal" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_normal">
+        <TextView android:textColor="@color/white" android:gravity="center_vertical" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="@string/压杯盖" android:drawableRight="@drawable/shape_arrow_right" />
+        <TextView android:textColor="@color/white" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="@string/选择动作" />
+        <TextView android:textSize="@dimen/font_normal" android:textColor="@color/common_text_black" android:gravity="center_vertical" android:id="@id/sp_cup_press_lid" android:background="@drawable/rec_black_white_1dp" android:padding="@dimen/margin_small" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="@string/bean" android:drawableRight="@drawable/ic_arrow_bottom" />
+        <TextView android:id="@id/tv_cup_press_lid" android:text="@string/开始" style="@style/button_normal" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_normal">
+        <TextView android:textColor="@color/white" android:gravity="center_vertical" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="@string/运杯系统测试" android:drawableRight="@drawable/shape_arrow_right" />
+        <TextView android:textColor="@color/white" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="@string/设置次数" />
+        <com.jetinno.ui.widget.ScopeEditText android:textColor="@color/black" android:gravity="center_vertical" android:id="@id/et_cup_move_test" android:background="@color/white" android:padding="@dimen/margin_small" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="1" />
+        <TextView android:id="@id/tv_cup_move_test" android:text="@string/开始" style="@style/button_normal" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_normal">
+        <TextView android:textColor="@color/white" android:gravity="center_vertical" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" />
+        <TextView android:textColor="@color/white" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="@string/仅转杯桶" />
+        <TextView android:textColor="@color/black" android:gravity="center_vertical" android:background="@color/white" android:padding="@dimen/margin_small" android:visibility="invisible" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="100" />
+        <TextView android:id="@id/tv_cup_onlyholder" android:text="@string/开始" style="@style/button_normal" />
+    </LinearLayout>
+</LinearLayout>

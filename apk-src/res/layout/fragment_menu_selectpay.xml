@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_menuselectpay_select" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_weight="1.0">
+            <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_large" android:textStyle="bold" android:textColor="@color/menu_white" android:id="@id/tv_menu300selectpay_title" android:background="@drawable/shape_menu_selectpay_bg" android:paddingLeft="@dimen/menu300_margin_large2" android:paddingTop="@dimen/menu300_margin_normal" android:paddingRight="@dimen/menu300_margin_large2" android:paddingBottom="@dimen/menu300_margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/menu300_selectpay_title_top" android:layout_marginBottom="@dimen/menu300_selectpay_title_top" android:text="@string/menu_请选择支付方式" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_menu300_selectpay" android:paddingLeft="@dimen/menu300_margin_large2" android:paddingRight="@dimen/menu300_margin_large2" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <com.jetinno.menu300.ui.buy.MenuBuyButtonsView android:id="@id/view_menubuttons" android:layout_width="fill_parent" android:layout_height="wrap_content" app:visibleBack="true" app:visibleCancel="true" app:visibleOk="false" app:visibleTime="true" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/fl_menuselectpay_other" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</FrameLayout>

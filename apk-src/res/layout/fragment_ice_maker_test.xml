@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="@color/app_black_dark2" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/ll_start_test" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginTop="@dimen/margin_large2" android:layout_weight="1.0">
+        <Button android:id="@id/bt_start_test" android:layout_marginTop="@dimen/margin_large2" android:text="@string/start_timer" style="@style/button_normal" />
+        <Button android:id="@id/bt_end_test" android:layout_marginTop="@dimen/margin_large2" android:text="@string/end_timer" style="@style/button_normal" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginTop="@dimen/margin_large2" android:layout_weight="1.0">
+        <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_last_record" android:layout_width="wrap_content" android:layout_height="@dimen/button_height_normal" android:layout_marginTop="@dimen/margin_large2" android:text="@string/full_ice_time" />
+        <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_ice_making_time" android:layout_width="wrap_content" android:layout_height="@dimen/button_height_normal" android:layout_marginTop="@dimen/margin_large2" android:text="@string/ice_making_time" />
+    </LinearLayout>
+</LinearLayout>

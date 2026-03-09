@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/app_black_dark2" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:background="@color/colorPrimary" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/button_width_large" android:text="@string/广告管理" android:layout_centerInParent="true" />
+        <ImageView android:id="@id/iv_advmanager_cancel" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_normal" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_close2" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <FrameLayout android:id="@id/fl_advmanager_container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</LinearLayout>

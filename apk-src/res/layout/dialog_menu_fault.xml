@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:background="@color/black" android:layout_width="fill_parent" android:layout_height="fill_parent" app:cardBackgroundColor="@color/black" app:cardCornerRadius="@dimen/menu300_margin_normal" app:cardElevation="0.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_normal" android:minHeight="@dimen/text_height_normal">
+            <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_fault_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/温馨提示" android:layout_centerInParent="true" />
+            <com.jetinno.core.menuedit.widget.MenuImageView android:id="@id/iv_fault_close" android:padding="@dimen/margin_small" android:layout_width="@dimen/menu300_bar_countdown_height" android:layout_height="@dimen/menu300_bar_countdown_height" android:layout_alignParentRight="true" app:defaultSrc="@drawable/menuic_close" />
+        </RelativeLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@color/bg_expandable_item_normal" android:padding="@dimen/margin_large2" android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_weight="1.0">
+            <com.jetinno.core.menuedit.widget.MenuGifView android:id="@id/iv_fault_gif" android:layout_width="@dimen/input_width_normal" android:layout_height="@dimen/input_width_normal" android:layout_marginRight="@dimen/margin_large2" android:scaleType="fitXY" app:defaultGif="@drawable/menugif_fault" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_fault" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

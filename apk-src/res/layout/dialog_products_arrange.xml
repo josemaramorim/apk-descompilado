@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/cardview_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" app:titleText="@string/custom_product_layout" />
+        <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/ll_align_ways" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_normal" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_large" android:layout_marginBottom="@dimen/margin_large" android:layout_below="@id/headbar" android:layout_centerHorizontal="true">
+            <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:gravity="left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/product_align_ways" />
+            <RadioGroup android:orientation="horizontal" android:id="@id/rg_products_align" android:background="@color/white" android:paddingRight="@dimen/margin_large" android:layout_width="0.0px" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_large" android:layout_weight="3.0">
+                <RadioButton android:textSize="@dimen/font_normal" android:textColor="@color/black" android:id="@id/rb_align_left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="@string/product_align_left" />
+                <RadioButton android:textSize="@dimen/font_normal" android:textColor="@color/black" android:id="@id/rb_align_center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/product_align_center" />
+                <RadioButton android:textSize="@dimen/font_normal" android:textColor="@color/black" android:id="@id/rb_align_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/product_align_right" />
+            </RadioGroup>
+        </LinearLayout>
+        <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_large" android:layout_marginBottom="@dimen/margin_large" android:layout_below="@id/ll_align_ways" android:layout_centerHorizontal="true">
+            <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:gravity="left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/product_arrange_ways" />
+            <TextView android:gravity="center" android:id="@id/tv_arrange_ways" android:layout_width="@dimen/button_width_normal" android:layout_height="wrap_content" android:text="2*5" android:drawableRight="@drawable/ic_arrow_bottom" style="@style/input_product_edit" />
+        </LinearLayout>
+        <TextView android:id="@id/tv_sure" android:layout_width="fill_parent" android:layout_marginLeft="@dimen/margin_large" android:layout_marginRight="@dimen/margin_large" android:layout_marginBottom="@dimen/margin_large" android:text="@string/sure" android:layout_alignParentBottom="true" style="@style/button_normal" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

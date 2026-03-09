@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/cardview_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" app:titleText="@string/余料扣减管理" />
+        <LinearLayout android:orientation="horizontal" android:background="@color/colorPrimary" android:paddingTop="@dimen/margin_normal" android:paddingBottom="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textStyle="bold" android:textColor="@color/app_white" android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/canister_name" android:layout_weight="@integer/canister_weight_name" style="@style/text_canister" />
+            <TextView android:textStyle="bold" android:textColor="@color/app_white" android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/余料扣减" android:layout_weight="@integer/canister_weight_name" style="@style/text_canister" />
+        </LinearLayout>
+        <View android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/line_height_normal" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_canisterminus" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginTop="@dimen/margin_large" android:layout_marginBottom="@dimen/margin_large" android:layout_weight="1.0" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_large">
+            <TextView android:id="@id/tv_canisterminus_checkall" android:layout_width="0.0dip" android:layout_marginLeft="@dimen/margin_large" android:layout_marginRight="@dimen/margin_large" android:text="@string/check_all" android:layout_weight="1.0" style="@style/button_normal" />
+            <TextView android:id="@id/tv_canisterminus_checkinvert" android:layout_width="0.0dip" android:layout_marginLeft="@dimen/margin_large" android:layout_marginRight="@dimen/margin_large" android:text="@string/uncheck_all" android:layout_weight="1.0" style="@style/button_normal" />
+            <TextView android:id="@id/tv_canisterminus_sure" android:layout_width="0.0dip" android:layout_marginLeft="@dimen/margin_large" android:layout_marginRight="@dimen/margin_large" android:text="@string/save" android:layout_weight="1.0" style="@style/button_normal" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

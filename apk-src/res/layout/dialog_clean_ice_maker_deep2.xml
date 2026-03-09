@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/cardview_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" app:titleText="@string/clean_all_deep" />
+        <View android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/line_height_normal" />
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_clean_ice_maker_root" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ProgressBar android:id="@id/pb_clean_ice_maker_cleanning" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" />
+                <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_clean_ice_maker_content1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:text="@string/clean_ice_maker_deep_step1" />
+                <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_clean_ice_maker_content2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:text="@string/click_descale_clean_hint" />
+                <Button android:id="@id/bt_clean_ice_maker_next" android:layout_marginTop="@dimen/margin_normal" android:text="@string/descale_clean" style="@style/button_normal" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/rec_white_black_1dp" android:padding="@dimen/dp_40" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_toast_content" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</LinearLayout>

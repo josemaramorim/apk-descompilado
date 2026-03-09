@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jetinno.core.menuedit.widget.MenuLinearLayout android:gravity="center" android:orientation="vertical" android:paddingBottom="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/dp_400" app:defaultIcon="@drawable/menuic_pickupcode_bg"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_pickupcode_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:text="@string/请选择要兑换的饮品" />
+    <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_pickupcode_countdown" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:text="0" />
+    <RelativeLayout android:id="@id/rl_pickupcode_close" android:paddingTop="@dimen/margin_normal" android:paddingBottom="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.jetinno.core.menuedit.widget.MenuImageView android:layout_width="@dimen/img_icon_height_normal" android:layout_height="@dimen/img_icon_height_normal" android:layout_centerInParent="true" app:defaultSrc="@drawable/menuic_pickupcode_close" />
+    </RelativeLayout>
+</com.jetinno.core.menuedit.widget.MenuLinearLayout>

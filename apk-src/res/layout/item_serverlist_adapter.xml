@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingTop="@dimen/margin_normal" android:paddingBottom="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textColor="@color/white" android:gravity="center" android:id="@id/tv_serverlist_ip" android:layout_width="0.0px" android:layout_height="fill_parent" android:layout_weight="3.0" style="@style/input_product_edit" />
+    <TextView android:textColor="@color/white" android:gravity="center" android:id="@id/tv_serverlist_port" android:layout_width="0.0px" android:layout_height="fill_parent" android:layout_weight="1.0" style="@style/input_product_edit" />
+    <Button android:id="@id/bt_serverlist_edit" android:layout_width="@dimen/button_width_small" android:layout_marginLeft="@dimen/margin_normal" android:text="@string/edit" style="@style/button_normal" />
+    <Button android:id="@id/bt_serverlist_delete" android:layout_width="@dimen/button_width_small" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" android:text="@string/delete" style="@style/button_normal" />
+    <Button android:id="@id/bt_serverlist_use" android:visibility="gone" android:layout_width="@dimen/button_width_small" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" android:text="@string/open_or_close" style="@style/button_normal" />
+</LinearLayout>

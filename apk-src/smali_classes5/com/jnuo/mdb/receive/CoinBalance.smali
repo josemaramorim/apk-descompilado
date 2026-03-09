@@ -1,0 +1,275 @@
+.class public final Lcom/jnuo/mdb/receive/CoinBalance;
+.super Ljava/lang/Object;
+.source "Receive_mdb_status_coin.kt"
+
+# interfaces
+.implements Ljava/io/Serializable;
+
+
+# annotations
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000,\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010\u000e\n\u0002\u0008\u0005\n\u0002\u0010\u0008\n\u0002\u0008\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0004\u0018\u00002\u00020\u0001B\u0005\u00a2\u0006\u0002\u0010\u0002J\u0006\u0010\u0015\u001a\u00020\u0004R\u001c\u0010\u0003\u001a\u0004\u0018\u00010\u0004X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\u0008\u0005\u0010\u0006\"\u0004\u0008\u0007\u0010\u0008R\u0014\u0010\t\u001a\u00020\nX\u0086D\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u000b\u0010\u000cR\u0014\u0010\r\u001a\u00020\nX\u0086D\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u000e\u0010\u000cR%\u0010\u000f\u001a\u0016\u0012\u0004\u0012\u00020\u0011\u0018\u00010\u0010j\n\u0012\u0004\u0012\u00020\u0011\u0018\u0001`\u0012\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u0013\u0010\u0014\u00a8\u0006\u0016"
+    }
+    d2 = {
+        "Lcom/jnuo/mdb/receive/CoinBalance;",
+        "Ljava/io/Serializable;",
+        "()V",
+        "amount",
+        "",
+        "getAmount",
+        "()Ljava/lang/String;",
+        "setAmount",
+        "(Ljava/lang/String;)V",
+        "low",
+        "",
+        "getLow",
+        "()I",
+        "low_amount",
+        "getLow_amount",
+        "z3z18TubeStatus",
+        "Ljava/util/ArrayList;",
+        "Lcom/jnuo/mdb/bean/MDBRejectAmount;",
+        "Lkotlin/collections/ArrayList;",
+        "getZ3z18TubeStatus",
+        "()Ljava/util/ArrayList;",
+        "getCoinLowInfosDesc",
+        "module_mdb_release"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x6,
+        0x0
+    }
+    xi = 0x30
+.end annotation
+
+
+# instance fields
+.field private amount:Ljava/lang/String;
+
+.field private final low:I
+
+.field private final low_amount:I
+
+.field private final z3z18TubeStatus:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList<",
+            "Lcom/jnuo/mdb/bean/MDBRejectAmount;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    .line 47
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const-string v0, ""
+
+    .line 51
+    iput-object v0, p0, Lcom/jnuo/mdb/receive/CoinBalance;->amount:Ljava/lang/String;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final getAmount()Ljava/lang/String;
+    .locals 1
+
+    .line 51
+    iget-object v0, p0, Lcom/jnuo/mdb/receive/CoinBalance;->amount:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final getCoinLowInfosDesc()Ljava/lang/String;
+    .locals 6
+
+    .line 54
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    check-cast v0, Ljava/util/List;
+
+    .line 55
+    iget-object v1, p0, Lcom/jnuo/mdb/receive/CoinBalance;->z3z18TubeStatus:Ljava/util/ArrayList;
+
+    if-eqz v1, :cond_0
+
+    .line 56
+    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/jnuo/mdb/bean/MDBRejectAmount;
+
+    .line 58
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, "("
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2}, Lcom/jnuo/mdb/bean/MDBRejectAmount;->getCredit()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 v4, 0x2f
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Lcom/jnuo/mdb/bean/MDBRejectAmount;->getNum()I
+
+    move-result v5
+
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Lcom/jnuo/mdb/bean/MDBRejectAmount;->getLow()I
+
+    move-result v5
+
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Lcom/jnuo/mdb/bean/MDBRejectAmount;->getLow_count()I
+
+    move-result v2
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const/16 v2, 0x29
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 59
+    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    .line 62
+    :cond_0
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "\u662f\u5426\u7ba1\u9053\u9884\u8b66:"
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget v2, p0, Lcom/jnuo/mdb/receive/CoinBalance;->low:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, ";\u662f\u5426\u91d1\u989d\u9884\u8b66:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v2, p0, Lcom/jnuo/mdb/receive/CoinBalance;->low_amount:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, ";\u786c\u5e01\u603b\u91d1\u989d:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lcom/jnuo/mdb/receive/CoinBalance;->amount:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, "; \u5404\u7ba1\u9053\u4f4e\u6c34\u4f4d(\u7ba1\u9053\u503c/\u7ba1\u9053\u6570\u91cf/\u7ba1\u9053\u662f\u5426\u4f4e\u6c34\u4f4d/\u4f4e\u6c34\u4f4d\u8981\u6c42\u6570\u91cf):"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, ";"
+
+    .line 64
+    check-cast v2, Ljava/lang/CharSequence;
+
+    .line 65
+    check-cast v0, Ljava/lang/Iterable;
+
+    .line 63
+    invoke-static {v2, v0}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 62
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final getLow()I
+    .locals 1
+
+    .line 49
+    iget v0, p0, Lcom/jnuo/mdb/receive/CoinBalance;->low:I
+
+    return v0
+.end method
+
+.method public final getLow_amount()I
+    .locals 1
+
+    .line 50
+    iget v0, p0, Lcom/jnuo/mdb/receive/CoinBalance;->low_amount:I
+
+    return v0
+.end method
+
+.method public final getZ3z18TubeStatus()Ljava/util/ArrayList;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/ArrayList<",
+            "Lcom/jnuo/mdb/bean/MDBRejectAmount;",
+            ">;"
+        }
+    .end annotation
+
+    .line 48
+    iget-object v0, p0, Lcom/jnuo/mdb/receive/CoinBalance;->z3z18TubeStatus:Ljava/util/ArrayList;
+
+    return-object v0
+.end method
+
+.method public final setAmount(Ljava/lang/String;)V
+    .locals 0
+
+    .line 51
+    iput-object p1, p0, Lcom/jnuo/mdb/receive/CoinBalance;->amount:Ljava/lang/String;
+
+    return-void
+.end method

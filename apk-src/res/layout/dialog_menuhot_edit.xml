@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:background="@color/black" android:layout_width="fill_parent" android:layout_height="wrap_content" app:cardBackgroundColor="@color/black" app:cardCornerRadius="@dimen/menu300_margin_normal" app:cardElevation="0.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/menu300_margin_large4">
+            <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_menuhot_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/个性化编辑" android:layout_centerInParent="true" />
+            <ImageView android:id="@id/iv_menuhot_close" android:padding="@dimen/margin_small" android:layout_width="@dimen/menu300_bar_countdown_height" android:layout_height="@dimen/menu300_bar_countdown_height" android:src="@drawable/menuic_close" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:background="@color/bg_expandable_item_normal" android:padding="@dimen/margin_large2" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <androidx.cardview.widget.CardView android:id="@id/cv_menuhot_root" android:layout_width="fill_parent" android:layout_height="@dimen/menu300_product_itemheight" app:cardBackgroundColor="@color/transparent" app:cardCornerRadius="@dimen/menu300_margin_normal" app:cardElevation="0.0px">
+                <ImageView android:id="@id/iv_menuhot_img" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+                <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <View android:orientation="horizontal" android:id="@id/view_menuhot_shadow" android:background="@color/menu_alpha_black" android:layout_width="fill_parent" android:layout_height="0.0px" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHeight_percent="0.25" />
+                    <com.jetinno.menu300.widget.HotImageView android:id="@id/iv_menuhot_hot" android:layout_width="@dimen/menu300_product_hotwidth" android:layout_height="@dimen/menu300_product_hotwidth" android:layout_marginLeft="@dimen/menu300_margin_normal" android:layout_marginTop="@dimen/menu300_margin_normal" android:src="@drawable/menuic_hot" app:defaultSrc="@drawable/menuic_hot" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_large">
+                <TextView android:textSize="@dimen/font_normal" android:textColor="@color/menu_black" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/edit_id" android:layout_weight="1.0" />
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" android:layout_weight="3.0">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/menu_black" android:id="@id/tv_menuhot_id" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_large">
+                <TextView android:textSize="@dimen/font_normal" android:textColor="@color/menu_black" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/大小" android:layout_weight="1.0" />
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" android:layout_weight="3.0">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/menu_black" android:id="@id/tv_menuhot_width" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_small" />
+                    <SeekBar android:id="@id/sb_menuhot_width" android:layout_width="0.0px" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/menu_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_small" android:text="(0px~200px)" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_large">
+                <TextView android:textSize="@dimen/font_normal" android:textColor="@color/menu_black" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/左间距" android:layout_weight="1.0" />
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" android:layout_weight="3.0">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/menu_black" android:id="@id/tv_menuhot_leftmargin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_small" />
+                    <SeekBar android:id="@id/sb_menuhot_leftmargin" android:layout_width="0.0px" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/menu_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_small" android:text="(0px~200px)" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_large">
+                <TextView android:textSize="@dimen/font_normal" android:textColor="@color/menu_black" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/上间距" android:layout_weight="1.0" />
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" android:layout_weight="3.0">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/menu_black" android:id="@id/tv_menuhot_topmargin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_small" />
+                    <SeekBar android:id="@id/sb_menuhot_topmargin" android:layout_width="0.0px" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/menu_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_small" android:text="(0px~200px)" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_menuhot_save" android:background="@drawable/sel_button" android:layout_width="@dimen/menu300_buy_buttons_width" android:layout_height="@dimen/menu300_buy_buttons_height" android:layout_marginTop="@dimen/margin_large2">
+                <TextView android:textSize="@dimen/menu300_font_large" android:textStyle="bold" android:textColor="@color/menu_black" android:id="@id/tv_menuhot_save" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/save" />
+            </LinearLayout>
+        </LinearLayout>
+        <TextView android:layout_width="fill_parent" android:layout_height="@dimen/menu300_margin_large4" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

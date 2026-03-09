@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="@dimen/main_bottom_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/view_main_divider" android:background="@color/white" android:layout_width="@dimen/line_height_normal" android:layout_height="fill_parent" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/sel_main_bottom_item_bg" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/iv_main_img" android:layout_width="wrap_content" android:layout_height="@dimen/img_icon_height_normal" android:src="@drawable/sel_main_state" />
+        <TextView android:textSize="@dimen/font_small" android:textColor="@drawable/sel_main_bottom_item_tx" android:gravity="center" android:id="@id/tv_main_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/main_tab_status" />
+    </LinearLayout>
+</LinearLayout>

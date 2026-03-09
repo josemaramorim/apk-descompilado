@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/cardview_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" app:titleText="xx" app:titleTextColor="@color/white" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/menu300_arrowleft_height" android:layout_marginBottom="@dimen/menu300_arrowleft_height">
+            <TextView android:gravity="center" android:id="@id/tv_group_name" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/type" android:layout_weight="1.0" style="@style/text_canister" />
+            <ImageView android:gravity="center" android:id="@id/iv_group_switch" android:clickable="true" android:layout_width="0.0dip" android:layout_height="wrap_content" android:src="@drawable/sel_switch" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_child_switch" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/button_height_normal">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:gravity="center" android:layout_width="0.0dip" android:layout_height="@dimen/text_height_normal" android:text="@string/type" android:layout_weight="1.0" style="@style/text_canister" />
+                <TextView android:gravity="center" android:layout_width="0.0dip" android:layout_height="@dimen/text_height_normal" android:text="@string/open_or_close" android:layout_weight="1.0" style="@style/text_canister" />
+            </LinearLayout>
+            <View android:background="@color/common_bg_gray2" android:layout_width="fill_parent" android:layout_height="@dimen/line_height_normal" android:layout_marginTop="@dimen/pb_height_clean" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_child_switch" android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_marginTop="@dimen/margin_large" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

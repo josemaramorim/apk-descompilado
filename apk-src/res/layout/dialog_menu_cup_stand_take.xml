@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:background="@color/menu_white" android:layout_width="fill_parent" android:layout_height="wrap_content" app:cardBackgroundColor="@color/menu_white" app:cardCornerRadius="@dimen/menu300_margin_normal" app:cardElevation="0.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:padding="@dimen/menu300_margin_large2" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_large" android:textStyle="bold" android:textColor="@color/menu_text_black" android:id="@id/tv_sensorcuptake_note" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/menu_请先取走产品" />
+        <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_normal" android:textStyle="bold" android:textColor="@color/menu_black" android:gravity="center" android:id="@id/tv_sensorcuptake_countdown" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:layout_marginBottom="@dimen/margin_large2" />
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.jetinno.core.menuedit.widget.MenuLinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_sensorcuptake_cancel" android:layout_width="@dimen/menu300_buy_buttons_width" android:layout_height="@dimen/menu300_buy_buttons_height" app:normalIcon="@drawable/menuic_cancel_normal" app:pressIcon="@drawable/menuic_cancel_press">
+                <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_large" android:textStyle="bold" android:textColor="@color/menu_text_black" android:id="@id/tv_sensorcuptake_back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/menu_取消" />
+            </com.jetinno.core.menuedit.widget.MenuLinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

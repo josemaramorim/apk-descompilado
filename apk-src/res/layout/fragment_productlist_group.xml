@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@id/cons_productlistgroup" android:layout_width="fill_parent" android:layout_height="@dimen/menu300_main_top_height"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.jetinno.core.menuedit.widget.MenuImageView android:id="@id/iv_productlistgroup_left" android:layout_width="@dimen/dp_50" android:layout_height="fill_parent" app:layout_constraintLeft_toLeftOf="parent" app:normalSrc="@drawable/menuic_headgroup_left_press" app:pressSrc="@drawable/menuic_headgroup_left_normal" />
+    <com.jetinno.core.menuedit.widget.MenuImageView android:id="@id/iv_productlistgroup_right" android:layout_width="@dimen/dp_50" android:layout_height="fill_parent" app:layout_constraintRight_toRightOf="parent" app:normalSrc="@drawable/menuic_headgroup_right_press" app:pressSrc="@drawable/menuic_headgroup_right_normal" />
+    <androidx.viewpager2.widget.ViewPager2 android:id="@id/vp_productlistgroup" android:layout_width="0.0px" android:layout_height="fill_parent" app:layout_constraintLeft_toRightOf="@id/iv_productlistgroup_left" app:layout_constraintRight_toLeftOf="@id/iv_productlistgroup_right" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="@dimen/button_height_normal" android:layout_marginTop="@dimen/line_height_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:gravity="center_vertical" android:id="@id/tv_machineitem_name" android:background="@drawable/sel_commonfun_bt_bg" android:paddingLeft="@dimen/margin_large" android:layout_width="0.0px" android:layout_height="fill_parent" android:text="@string/bean" android:layout_weight="1.0" />
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_machineitem_query" android:background="@drawable/rec_white_t_1dp" android:padding="@dimen/line_height_normal" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="@dimen/margin_small">
+        <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_machineitem_query" android:background="@drawable/sel_commonfun_bt_bg" android:layout_width="@dimen/button_width_normal" android:layout_height="fill_parent" android:text="@string/query" />
+    </LinearLayout>
+</LinearLayout>

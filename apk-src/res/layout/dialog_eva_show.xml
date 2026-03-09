@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/color_112433" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:background="@color/colorPrimary" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_eva_type" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/dex文档管理" android:layout_centerInParent="true" />
+        <ImageView android:id="@id/iv_eva_cancel" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_normal" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_close" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <LinearLayout android:gravity="center|right" android:orientation="horizontal" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="left" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/font_small" android:textColor="@color/white" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/last_operation_record" />
+            <TextView android:textSize="@dimen/font_small" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_eva_lasttime" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <View android:layout_width="0.0px" android:layout_height="1.0px" android:layout_weight="1.0" />
+        <TextView android:textSize="@dimen/font_small" android:layout_gravity="center|right" android:id="@id/tv_eva_sendtophone_dex" android:layout_marginLeft="@dimen/margin_large" android:maxWidth="@dimen/dp_200" android:text="@string/导出手机" android:maxLines="3" style="@style/button_normal_min150" />
+        <TextView android:textSize="@dimen/font_small" android:layout_gravity="center|right" android:id="@id/tv_eva_sendtophone_ddcmp" android:layout_marginLeft="@dimen/margin_large" android:maxWidth="@dimen/dp_200" android:text="@string/导出手机" android:maxLines="3" style="@style/button_normal_min150" />
+        <TextView android:textSize="@dimen/font_small" android:layout_gravity="center|right" android:id="@id/tv_eva_export" android:layout_marginLeft="@dimen/margin_large" android:maxWidth="@dimen/dp_200" android:text="@string/导出本地" android:maxLines="3" style="@style/button_normal_min150" />
+    </LinearLayout>
+    <View android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/line_height_normal" />
+    <ScrollView android:padding="15.0px" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_eva_content" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lineSpacingExtra="5.0dip" android:letterSpacing="0.1" />
+            <View android:layout_width="fill_parent" android:layout_height="360.0dip" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

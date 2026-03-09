@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/iv_menu300_bottom_left" android:paddingLeft="@dimen/menu300_margin_normal" android:paddingRight="@dimen/menu300_margin_normal" android:layout_width="0.0px" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <com.jetinno.core.menuedit.widget.MenuImageView android:id="@id/iv_menu300_bottom_leftimg" android:layout_width="fill_parent" android:layout_height="@dimen/menu300_arrowleft_height" app:defaultSrc="@drawable/menuic_bottom_left" />
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:clipChildren="false" android:layout_width="@dimen/menu300_bottomproduct_recyclerwidth" android:layout_height="fill_parent">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_menu300_bottom_product" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:layout_gravity="center|right" android:orientation="vertical" android:id="@id/iv_menu300_bottom_right" android:paddingLeft="@dimen/menu300_margin_normal" android:paddingRight="@dimen/menu300_margin_normal" android:layout_width="0.0px" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <com.jetinno.core.menuedit.widget.MenuImageView android:id="@id/iv_menu300_bottom_rightimg" android:layout_width="fill_parent" android:layout_height="@dimen/menu300_arrowleft_height" app:defaultSrc="@drawable/menuic_bottom_right" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="horizontal" android:id="@id/rl_head_title" android:background="@drawable/shopping_cart_shape_title_bg" android:paddingLeft="@dimen/shopping_cart_20_dp" android:paddingRight="@dimen/shopping_cart_20_dp" android:layout_width="wrap_content" android:layout_height="@dimen/shopping_cart_66_dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/btn_back" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/shopping_cart_ic_back_white" />
+    <TextView android:textSize="@dimen/shopping_cart_20_sp" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_title" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="" android:layout_centerHorizontal="true" />
+    <TextView android:textSize="@dimen/shopping_cart_16_sp" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_timer" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="" android:layout_marginEnd="@dimen/shopping_cart_10_dp" android:layout_toStartOf="@id/iv_delete" />
+    <ImageView android:id="@id/iv_delete" android:background="@mipmap/ic_shopping_cart_dialog_close" android:visibility="invisible" android:layout_width="@dimen/shopping_cart_34_dp" android:layout_height="@dimen/shopping_cart_34_dp" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+</RelativeLayout>

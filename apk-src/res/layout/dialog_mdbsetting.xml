@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/cardview_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" app:titleText="@string/mdb_manager" />
+        <View android:background="@color/common_line_gray" android:layout_width="fill_parent" android:layout_height="@dimen/line_height_normal" />
+        <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/mdb_sdk_version" android:layout_weight="1.0" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_mdb_version" android:padding="@dimen/margin_normal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="2021-09-09 09:09" android:layout_weight="3.0" />
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/bt_mdb_restartdevice" android:text="@string/mdb_restartdevice" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <View android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/line_height_normal" />
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/mdb_device_status" android:layout_weight="1.0" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_mdb_status" android:padding="@dimen/margin_normal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/dev_online" android:layout_weight="3.0" />
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/mdb_top_order_balance" android:layout_weight="1.0" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_mdb_toporderbalance" android:padding="@dimen/margin_normal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="0.0" android:layout_weight="3.0" />
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/bt_mdb_gettoporderbalance" android:text="@string/refresh" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/mdb_coin_balance" android:layout_weight="1.0" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_mdb_coinbalance" android:padding="@dimen/margin_normal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="0" android:layout_weight="3.0" />
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/bt_mdb_getcoindetail" android:text="@string/refresh" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/单次订单最大金额" android:layout_weight="1.0" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_mdb_maxamount" android:padding="@dimen/margin_normal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="1000.0" android:layout_weight="3.0" />
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/bt_mdb_maxamount_modify" android:text="@string/modify" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_mdb_changemaxamount" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/单次最大找零金额" android:layout_weight="1.0" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_mdb_changemaxamount" android:padding="@dimen/margin_normal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="1000.0" android:layout_weight="3.0" />
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/bt_mdb_changemaxamount_modify" android:text="@string/modify" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_mdb_record" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/断电余额恢复" android:layout_weight="1.0" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0px" android:layout_height="wrap_content" android:layout_weight="3.0">
+                        <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/cb_mdb_record" android:padding="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/tv_mdb_record_modify" android:layout_marginLeft="@dimen/margin_large" android:text="@string/modify" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_mdb_manualrefund" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/自动找零" android:layout_weight="1.0" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0px" android:layout_height="wrap_content" android:layout_weight="3.0">
+                        <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/cb_mdb_manualrefund" android:padding="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/tv_mdb_manualrefund_modify" android:layout_marginLeft="@dimen/margin_large" android:text="@string/modify" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_mdb_mustconsume" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/强制消费" android:layout_weight="1.0" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0px" android:layout_height="wrap_content" android:layout_weight="3.0">
+                        <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/cb_mdb_mustconsume" android:padding="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/tv_mdb_mustconsume_modify" android:layout_marginLeft="@dimen/margin_large" android:text="@string/modify" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_mdb_onlyonce" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/单次退币" android:layout_weight="1.0" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0px" android:layout_height="wrap_content" android:layout_weight="3.0">
+                        <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/cb_mdb_onlyonce" android:padding="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/tv_mdb_onlyonce_modify" android:layout_marginLeft="@dimen/margin_large" android:text="@string/modify" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_mdb_notenough_cancel" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/现金找零不足时取消订单" android:layout_weight="1.0" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0px" android:layout_height="wrap_content" android:layout_weight="3.0">
+                        <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/cb_mdb_notenough_cancel" android:padding="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/tv_mdb_notenough_cancel_modify" android:layout_marginLeft="@dimen/margin_large" android:text="@string/modify" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/超时清除现金余额" android:layout_weight="1.0" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_mdb_resetbalance" android:padding="@dimen/margin_normal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="1000" android:layout_weight="3.0" />
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/bt_mdb_resetbalance_modify" android:text="@string/modify" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_mdb_rechargemode" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/补币模式" android:layout_weight="1.0" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0px" android:layout_height="wrap_content" android:layout_weight="3.0" />
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/tv_mdb_rechargemode_modify" android:layout_marginLeft="@dimen/margin_large" android:text="@string/setting" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/mdb_refund2" android:layout_weight="1.0" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="4.0">
+                        <EditText android:textSize="@dimen/font_normal" android:gravity="center_vertical" android:id="@id/et_mdb_refund_amout" android:background="@drawable/rec_gray_white_1dp" android:paddingLeft="@dimen/margin_normal" android:paddingRight="@dimen/margin_normal" android:layout_width="0.0px" android:layout_height="wrap_content" android:minHeight="@dimen/button_height_large" android:hint="@string/mdb_refund_hint" android:maxLength="4" android:layout_weight="1.0" android:inputType="numberDecimal" android:imeOptions="actionDone" />
+                        <TextView android:id="@id/bt_mdb_refundamount" android:layout_height="@dimen/button_height_large" android:layout_marginLeft="@dimen/margin_large" android:text="@string/mdb_refund" android:singleLine="false" style="@style/button_normal" />
+                        <TextView android:id="@id/bt_mdb_stuckamount" android:layout_height="@dimen/button_height_large" android:layout_marginLeft="@dimen/margin_large" android:text="@string/mdb_stuckamount" android:singleLine="false" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/pay" android:layout_weight="1.0" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="4.0">
+                        <EditText android:textSize="@dimen/font_normal" android:id="@id/et_mdb_payorder_amout" android:background="@drawable/rec_gray_white_1dp" android:paddingLeft="@dimen/margin_normal" android:paddingRight="@dimen/margin_normal" android:layout_width="0.0px" android:layout_height="wrap_content" android:minHeight="@dimen/button_height_large" android:hint="@string/mdb_payorder_hint" android:maxLength="4" android:layout_weight="1.0" android:inputType="numberDecimal" android:imeOptions="actionDone" />
+                        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                                <TextView android:id="@id/bt_mdb_payorder" android:layout_height="@dimen/button_height_large" android:layout_marginLeft="@dimen/margin_large" android:text="@string/mdb_payorder" android:singleLine="false" style="@style/button_normal" />
+                                <TextView android:id="@id/bt_mdb_cancelorder" android:layout_height="@dimen/button_height_large" android:layout_marginLeft="@dimen/margin_large" android:text="@string/mdb_cancelorder" android:singleLine="false" style="@style/button_normal" />
+                            </LinearLayout>
+                            <LinearLayout android:orientation="horizontal" android:id="@id/ll_mdb_payorder_result" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal">
+                                <TextView android:id="@id/bt_mdb_finishorder_success" android:layout_height="@dimen/button_height_large" android:layout_marginLeft="@dimen/margin_large" android:text="@string/mdb_finishorder_success" android:singleLine="false" style="@style/button_normal" />
+                                <TextView android:id="@id/bt_mdb_finishorder_fail" android:layout_height="@dimen/button_height_large" android:layout_marginLeft="@dimen/margin_large" android:text="@string/mdb_finishorder_fail" android:singleLine="false" style="@style/button_normal" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_mdb_test" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_large2">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="@dimen/margin_large" android:paddingRight="@dimen/margin_large" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="4.0">
+                        <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_large" android:text="@string/card_test_result" />
+                        <TextView android:textSize="@dimen/font_normal" android:textColor="@color/common_text_black" android:id="@id/tv_mdb_coffee_making" android:background="@color/white" android:padding="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_large" android:text="@string/card_state_unstart" />
+                        <TextView android:textSize="@dimen/font_normal" android:textColor="@color/common_text_black" android:id="@id/tv_mdb_coffee_sumprice" android:background="@color/white" android:padding="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_large" />
+                        <TextView android:textSize="@dimen/font_normal" android:textColor="@color/common_text_black" android:id="@id/tv_mdb_coffee_paidprice" android:background="@color/white" android:padding="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_large" />
+                    </LinearLayout>
+                </LinearLayout>
+                <View android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/margin_normal" />
+                <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/app_white" android:padding="@dimen/margin_large" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mdb_coin" />
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/mdb_gethasemptycoinchannel" android:layout_weight="1.0" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_mdb_hasemptycoinchannel" android:padding="@dimen/margin_normal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/dev_yes" android:layout_weight="3.0" />
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/bt_mdb_gethasemptycoinchannel" android:text="@string/refresh" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/找零金额" android:layout_weight="1.0" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_mdb_totalamount" android:padding="@dimen/margin_normal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="0" android:layout_weight="3.0" />
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/bt_mdb_gettotalamount" android:text="@string/refresh" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_mdb_enablecoin" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/启用硬币器" android:layout_weight="1.0" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0px" android:layout_height="wrap_content" android:layout_weight="3.0">
+                        <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/cb_mdb_enablecoin" android:padding="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/tv_mdb_enablecoin_modify" android:layout_marginLeft="@dimen/margin_large" android:text="@string/modify" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_mdb_erroruirefund" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/故障手动退款" android:layout_weight="1.0" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0px" android:layout_height="wrap_content" android:layout_weight="3.0">
+                        <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/cb_mdb_erroruirefund" android:padding="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/tv_mdb_erroruirefund_modify" android:layout_marginLeft="@dimen/margin_large" android:text="@string/modify" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/硬币器允许接受的币值" android:layout_weight="1.0" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:paddingLeft="@dimen/margin_large" android:paddingRight="@dimen/margin_large" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="3.0">
+                        <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_mdb_coinenable" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/tv_mdb_coin_modify" android:layout_marginLeft="@dimen/margin_large" android:text="@string/modify" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <View android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/margin_normal" />
+                <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/app_white" android:padding="@dimen/margin_large" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mdb_bill" />
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_mdb_enablebill" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/启用纸币器" android:layout_weight="1.0" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0px" android:layout_height="wrap_content" android:layout_weight="3.0">
+                        <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/cb_mdb_enablebill" android:padding="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/tv_mdb_enablebill_modify" android:layout_marginLeft="@dimen/margin_large" android:text="@string/modify" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/纸币器允许接受的币值" android:layout_weight="1.0" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:paddingLeft="@dimen/margin_large" android:paddingRight="@dimen/margin_large" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="3.0">
+                        <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_mdb_billenable" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/tv_mdb_bill_modify" android:layout_marginLeft="@dimen/margin_large" android:text="@string/modify" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_mdb_escrow" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/mdb_escrow" android:layout_weight="1.0" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0px" android:layout_height="wrap_content" android:layout_weight="3.0">
+                        <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/cb_mdb_escrow" android:padding="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/tv_mdb_escrow_save" android:layout_marginLeft="@dimen/margin_large" android:text="@string/modify" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <View android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/margin_normal" />
+                <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/app_white" android:padding="@dimen/margin_large" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/找零预警" />
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/找零预警模式" android:layout_weight="1.0" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_changewarning_mode" android:padding="@dimen/margin_normal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/无预警" android:layout_weight="3.0" />
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/bt_changewarning_mode_modify" android:text="@string/modify" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_mdb_correct" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/找零预警状态" android:layout_weight="1.0" />
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_mdb_correct" android:padding="@dimen/margin_normal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/dev_yes" android:layout_weight="3.0" />
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/bt_mdb_correct" android:text="@string/refresh" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_mdb_notenough_rejectbill" android:background="@drawable/bottomline" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/app_white" android:gravity="left" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/现金找零不足时拒收纸币" android:layout_weight="1.0" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0px" android:layout_height="wrap_content" android:layout_weight="3.0">
+                        <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/cb_mdb_notenough_rejectbill" android:padding="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:id="@id/tv_mdb_notenough_rejectbill_modify" android:layout_marginLeft="@dimen/margin_large" android:text="@string/modify" style="@style/button_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/cardview_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" app:titleText="@string/setting" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/fl_canistername_container" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="@dimen/dp_500" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

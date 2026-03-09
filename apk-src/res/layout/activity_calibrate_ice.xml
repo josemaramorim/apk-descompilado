@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/cardview_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" app:titleText="@string/calibration" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/margin_large">
+            <View android:background="@color/title_text_ialog_ice_machine_clean" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="2.0px" />
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_ice_calibrate_opertion" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_large">
+                <TextView android:textColor="@color/white" android:gravity="center_horizontal" android:id="@id/tv_tip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/ice_weight_calibration_set_one" />
+                <TextView android:id="@id/tv_data_fact_weight_180" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" />
+                <TextView android:layout_gravity="center" android:id="@id/btn_operation_one_step" android:layout_width="@dimen/button_width_normal" android:layout_height="@dimen/button_height_normal" android:layout_marginTop="@dimen/margin_normal" android:text="@string/next" style="@style/button_normal" />
+                <TextView android:layout_gravity="center" android:id="@id/btn_operation_two_step" android:visibility="gone" android:layout_width="@dimen/button_width_normal" android:layout_height="@dimen/button_height_normal" android:layout_marginTop="@dimen/margin_normal" android:text="@string/next" style="@style/button_normal" />
+                <TextView android:layout_gravity="center" android:id="@id/btn_operation_three_step" android:visibility="gone" android:layout_width="@dimen/button_width_normal" android:layout_height="@dimen/button_height_normal" android:layout_marginTop="@dimen/margin_normal" android:text="@string/sure" style="@style/button_normal" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

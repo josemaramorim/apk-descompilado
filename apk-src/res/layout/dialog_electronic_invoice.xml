@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:background="@drawable/shape_bg_write_radius_12" android:layout_width="600.0dip" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/shape_bg_write_radius_half_blue" android:layout_width="fill_parent" android:layout_height="80.0dip">
+        <TextView android:textSize="26.0sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/electronic_invoice" />
+        <TextView android:textSize="12.0sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ELECTRONIC INVOICE" />
+    </LinearLayout>
+    <RelativeLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="40.0dip" android:paddingStart="60.0dip" android:paddingEnd="60.0dip">
+        <FrameLayout android:id="@id/fl_qr" android:background="@drawable/shape_picker_editbg" android:padding="4.0dip" android:visibility="visible" android:layout_width="200.0dip" android:layout_height="200.0dip">
+            <ImageView android:id="@id/img_qr" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+            <ProgressBar android:layout_gravity="center" android:id="@id/pb" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </FrameLayout>
+        <TextView android:textSize="22.0sp" android:textColor="@color/tw_green" android:id="@id/tv_tips" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:text="@string/electronic_invoice_tips" android:layout_marginStart="70.0dip" android:layout_toEndOf="@id/fl_qr" />
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/liner_cancel" android:background="@drawable/bg_com_back" android:layout_width="200.0dip" android:layout_height="90.0dip" android:layout_marginTop="20.0dip" android:layout_below="@id/tv_tips" android:layout_marginStart="60.0dip" android:layout_toEndOf="@id/fl_qr">
+            <TextView android:textSize="26.0sp" android:textStyle="bold" android:textColor="@color/tw_green" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/menu_返回" />
+            <TextView android:textSize="12.0sp" android:textColor="@color/tw_green" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BACK" />
+        </LinearLayout>
+        <TextView android:textSize="28.0sp" android:textColor="@color/red" android:id="@id/tv_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:layout_marginBottom="60.0dip" android:text="100s" android:layout_below="@id/fl_qr" android:layout_marginStart="70.0dip" />
+    </RelativeLayout>
+</LinearLayout>

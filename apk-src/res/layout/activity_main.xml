@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@color/app_black_dark2" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.jetinno.common.widget.MainHeadView android:id="@id/ll_top" android:background="@color/colorPrimary" android:layout_width="fill_parent" android:layout_height="@dimen/title_height" />
+    <com.jetinno.widget.NoScrollViewPager2 android:id="@id/vp_main" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/title_height" android:layout_marginBottom="@dimen/main_bottom_height" />
+    <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:id="@id/ll_main_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_main_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView android:layout_gravity="bottom|center|right" android:id="@id/tv_main_stop" android:background="@drawable/sel_start_making_bg" android:visibility="gone" android:layout_marginRight="@dimen/text_height_pass" android:layout_marginBottom="@dimen/text_height_pass" android:text="@string/common_grinder_stop" android:alpha="0.8" style="@style/button_normal" />
+    <TextView android:layout_gravity="bottom|center|right" android:id="@id/tv_app_download" android:background="@drawable/sel_start_making_bg" android:visibility="gone" android:layout_marginRight="@dimen/button_width_large" android:layout_marginBottom="@dimen/text_height_pass" android:text="@string/app_download" android:alpha="0.8" style="@style/button_normal" />
+</FrameLayout>

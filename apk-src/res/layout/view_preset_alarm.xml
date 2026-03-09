@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.recyclerview.widget.RecyclerView android:layout_gravity="center_horizontal" android:id="@id/rv_alarm_week" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_large2" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textColor="@color/common_text_gray" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/margin_large" android:text="@string/preset_price_start_moment" />
+        <TextView android:textColor="@color/white" android:id="@id/tv_start_moment" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/margin_large" android:text="5：30" android:paddingStart="@dimen/margin_large" android:paddingEnd="@dimen/margin_large" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textColor="@color/common_text_gray" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/margin_large" android:text="@string/preset_price_end_moment" />
+        <TextView android:textColor="@color/white" android:id="@id/tv_end_moment" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/margin_large" android:text="5：30" android:paddingStart="@dimen/margin_large" android:paddingEnd="@dimen/margin_large" />
+    </LinearLayout>
+</LinearLayout>

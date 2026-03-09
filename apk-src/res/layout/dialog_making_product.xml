@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/cardview_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" app:titleText="@string/recipe_title_making_product" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_makingTime" android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_weight="1.0" />
+            <TextView android:textSize="@dimen/margin_large2" android:textStyle="bold" android:textColor="@color/app_red_dark2" android:gravity="center" android:layout_gravity="center" android:id="@id/tv_making_cup" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_large" android:text="@string/请放置非透明杯" />
+            <TextView android:textSize="@dimen/font_large" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_machinestate" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

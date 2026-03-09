@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.contrarywind.view.WheelView android:id="@id/wh_hour" android:layout_width="0.0dip" android:layout_height="@dimen/button_width_receipe" android:layout_weight="1.0" />
+    <TextView android:textSize="@dimen/font_large" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_small" android:layout_marginRight="@dimen/margin_small" android:text="@string/hour" />
+    <com.contrarywind.view.WheelView android:id="@id/wh_min" android:layout_width="0.0dip" android:layout_height="@dimen/button_width_receipe" android:layout_weight="1.0" />
+    <TextView android:textSize="@dimen/font_large" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_small" android:layout_marginRight="@dimen/margin_small" android:text="@string/minuter" />
+</LinearLayout>

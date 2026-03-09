@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/cardview_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" app:titleText="@string/recipe_title_making_product" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_steps" android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_weight="1.0" />
+            <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_makingTime" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/margin_large" />
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="14.0dip" android:layout_marginStart="21.0dip" android:layout_marginEnd="21.0dip">
+                <com.jetinno.widget.MenuMakeProgressBar android:id="@id/pb_making" android:layout_width="fill_parent" android:layout_height="fill_parent" android:max="100" android:progress="0" android:indeterminateOnly="false" android:minHeight="60.0dip" style="@style/Widget.AppCompat.ProgressBar.Horizontal" />
+                <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/font_normal" android:textColor="@color/menu_white" android:id="@id/tv_progress" android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </FrameLayout>
+            <TextView android:layout_gravity="center_horizontal" android:id="@id/tv_stop" android:layout_marginTop="@dimen/margin_large" android:text="@string/stop" style="@style/button_normal" />
+            <TextView android:textSize="@dimen/margin_large2" android:textStyle="bold" android:textColor="@color/app_red_dark2" android:gravity="center" android:layout_gravity="center" android:id="@id/tv_making_cup" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_large" android:text="@string/请放置非透明杯" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

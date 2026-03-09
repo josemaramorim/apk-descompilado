@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/cardview_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" app:titleText="@string/recipe_select_list" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_simpleitem" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginTop="@dimen/margin_large" android:layout_marginBottom="@dimen/margin_large" android:layout_weight="1.0" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_large">
+            <TextView android:id="@id/tv_simpleitem_checkall" android:layout_width="0.0dip" android:layout_marginLeft="@dimen/margin_large" android:layout_marginRight="@dimen/margin_large" android:text="@string/check_all" android:layout_weight="1.0" style="@style/button_normal" />
+            <TextView android:id="@id/tv_simpleitem_checkinvert" android:layout_width="0.0dip" android:layout_marginLeft="@dimen/margin_large" android:layout_marginRight="@dimen/margin_large" android:text="@string/uncheck_all" android:layout_weight="1.0" style="@style/button_normal" />
+            <TextView android:id="@id/tv_simpleitem_sure" android:layout_width="0.0dip" android:layout_marginLeft="@dimen/margin_large" android:layout_marginRight="@dimen/margin_large" android:text="@string/sure" android:layout_weight="1.0" style="@style/button_normal" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

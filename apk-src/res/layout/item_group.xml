@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingTop="@dimen/margin_normal" android:paddingBottom="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="@integer/group_weight_1">
+        <TextView android:id="@id/tv_group_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="false" style="@style/text_product" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="@integer/group_weight_1">
+        <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_group_status" android:paddingLeft="@dimen/margin_large2" android:paddingTop="@dimen/margin_normal" android:paddingRight="@dimen/margin_large2" android:paddingBottom="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="@integer/group_weight_2">
+        <ImageView android:id="@id/iv_group_pic" android:layout_width="@dimen/list_group_width" android:layout_height="@dimen/list_group_height" android:src="@drawable/group_default" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="@integer/group_weight_2">
+        <TextView android:id="@id/tv_products" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="false" style="@style/text_product" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="@integer/group_weight_1">
+        <TextView android:id="@id/tv_ranking" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/text_product" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_group_action" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="@integer/group_weight_1">
+        <TextView android:id="@id/tv_group_edit" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/button_height_normal" android:text="@string/edit" style="@style/button_normal_min150" />
+        <TextView android:id="@id/tv_group_delete" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:minHeight="@dimen/button_height_normal" android:text="@string/delete" style="@style/button_normal_min150" />
+    </LinearLayout>
+</LinearLayout>

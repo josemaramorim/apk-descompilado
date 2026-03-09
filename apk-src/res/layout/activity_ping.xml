@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="fill_parent" app:cardBackgroundColor="@color/app_black_dark2" app:cardCornerRadius="@dimen/radius_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" app:titleText="@string/common_bt_net" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_weight="1.0">
+            <androidx.recyclerview.widget.RecyclerView android:orientation="vertical" android:id="@id/rv_ping_content" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/margin_large">
+            <TextView android:id="@id/tv_ping_retry" android:layout_width="fill_parent" android:text="@string/再试一次" style="@style/button_normal" />
+            <TextView android:id="@id/tv_ping_baidu" android:layout_width="fill_parent" android:layout_marginTop="@dimen/margin_large" android:text="https://www.baidu.com" style="@style/button_normal" />
+            <TextView android:id="@id/tv_ping_jetinno" android:layout_width="fill_parent" android:layout_marginTop="@dimen/margin_large" android:text="https://www.jetinno.com/" style="@style/button_normal" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

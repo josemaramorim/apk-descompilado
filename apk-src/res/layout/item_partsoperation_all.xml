@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_normal" android:text="@string/clean_machine_all" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_normal">
+        <TextView android:textColor="@color/white" android:gravity="center_vertical" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="@string/小门控制" android:drawableRight="@drawable/shape_arrow_right" />
+        <TextView android:textColor="@color/white" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="@string/动作时间_s" />
+        <com.jetinno.ui.widget.ScopeEditText android:textColor="@color/black" android:gravity="center_vertical" android:background="@color/white" android:padding="@dimen/margin_small" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="100" android:hint="@string/hint_scope_0_59" />
+        <TextView android:gravity="center" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:drawableLeft="@drawable/sel_switch" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_normal">
+        <TextView android:textColor="@color/white" android:gravity="center_vertical" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="@string/小门控制" android:drawableRight="@drawable/shape_arrow_right" />
+        <TextView android:gravity="center" android:id="@id/tv_all_smalldoor" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:drawableLeft="@drawable/sel_switch" />
+        <com.jetinno.ui.widget.ScopeEditText android:textColor="@color/black" android:gravity="center_vertical" android:background="@color/white" android:padding="@dimen/margin_small" android:visibility="invisible" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="100" android:hint="@string/hint_scope_0_59" />
+        <TextView android:gravity="center" android:visibility="invisible" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:drawableLeft="@drawable/sel_switch" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textColor="@color/white" android:gravity="center_vertical" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="@string/大门控制" android:drawableRight="@drawable/shape_arrow_right" />
+        <TextView android:id="@id/tv_all_bigdoor" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:drawableLeft="@drawable/sel_switch" />
+        <TextView android:textColor="@color/white" android:gravity="center_vertical" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="@string/指示灯控制" android:drawableRight="@drawable/shape_arrow_right" />
+        <TextView android:gravity="center" android:id="@id/tv_all_led" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:drawableLeft="@drawable/sel_switch" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingTop="@dimen/margin_normal" android:paddingBottom="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:padding="@dimen/margin_normal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="6.0">
+            <ImageView android:id="@id/tv_accessconfig_expand" android:layout_width="@dimen/font_biggest" android:layout_height="@dimen/font_biggest" android:src="@drawable/sel_access_expand" style="@style/text_canister" />
+            <TextView android:textSize="@dimen/font_large" android:textStyle="normal" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_accessconfig_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_40" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:paddingTop="@dimen/margin_small" android:paddingBottom="@dimen/margin_small" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:id="@id/tv_accessconfig_jnswitch" android:layout_width="wrap_content" android:layout_height="@dimen/font_biggest" android:src="@drawable/sel_access_switch" style="@style/text_canister" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:paddingTop="@dimen/margin_small" android:paddingBottom="@dimen/margin_small" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:id="@id/tv_accessconfig_normalswitch" android:layout_width="wrap_content" android:layout_height="@dimen/font_biggest" android:src="@drawable/sel_access_switch" style="@style/text_canister" />
+        </LinearLayout>
+    </LinearLayout>
+    <View android:id="@id/line_access" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/line_height_normal" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_accessconfig_child" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

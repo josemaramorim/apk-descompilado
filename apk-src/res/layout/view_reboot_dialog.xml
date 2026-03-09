@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/bg_reboot_dialog" android:padding="24.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textSize="24.0sp" android:textStyle="bold" android:textColor="@color/common_white" android:gravity="center" android:id="@id/tvTitle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/title_tip" />
+        <TextView android:textSize="20.0sp" android:textColor="@color/common_white" android:gravity="center" android:id="@id/tvMessage" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="40.0dip" android:text="@string/msg_system_reboot" />
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="40.0dip">
+            <Button android:textSize="20.0sp" android:textColor="@color/common_black" android:id="@id/btnCancel" android:background="@drawable/sel_cancel_bt_bg" android:paddingLeft="10.0dip" android:paddingTop="20.0dip" android:paddingRight="10.0dip" android:paddingBottom="20.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:text="@string/btn_next_reboot" android:layout_weight="1.0" />
+            <View android:layout_width="40.0dip" android:layout_height="0.0dip" />
+            <com.jetinno.common.feature.system.ui.widget.CountDownButton android:textSize="20.0sp" android:textColor="@color/common_black" android:id="@id/btnConfirm" android:paddingLeft="10.0dip" android:paddingTop="20.0dip" android:paddingRight="10.0dip" android:paddingBottom="20.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:text="@string/btn_now_reboot" android:layout_weight="1.0" style="@style/button_normal" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

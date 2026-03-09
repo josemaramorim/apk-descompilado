@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/cardview_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/liner_root_invoice" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" app:titleText="@string/printer_setting" />
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="70.0dip">
+            <TextView android:textSize="26.0sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/printer_setting" />
+            <TextView android:textSize="12.0sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="INVOICE SET" />
+        </LinearLayout>
+        <ScrollView android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip">
+                <LinearLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="80.0dip" android:paddingStart="20.0dip" android:paddingEnd="20.0dip">
+                    <TextView android:textSize="22.0sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/printer_enable" />
+                    <View android:layout_width="0.0dip" android:layout_height="1.0dip" android:layout_weight="1.0" />
+                    <com.suke.widget.SwitchButton android:id="@id/btn_invoice_machine_switch" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View android:background="#fff1f1f1" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginStart="16.0dip" android:layout_marginEnd="16.0dip" />
+                <LinearLayout android:gravity="center_vertical" android:id="@id/liner_brand_name" android:layout_width="fill_parent" android:layout_height="80.0dip" android:paddingStart="20.0dip" android:paddingEnd="20.0dip">
+                    <TextView android:textSize="22.0sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/brand_vendor_name" />
+                    <View android:layout_width="0.0dip" android:layout_height="1.0dip" android:layout_weight="1.0" />
+                    <TextView android:textSize="22.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_reset_brand_name" android:layout_width="120.0dip" android:layout_height="70.0dip" android:text="@string/reset" />
+                    <EditText android:textColorHint="@color/deep_gray" android:gravity="end|center" android:id="@id/et_brand_name" android:focusable="false" android:layout_width="160.0dip" android:layout_height="60.0dip" android:hint="請設置品牌名稱" android:inputType="text" />
+                </LinearLayout>
+                <View android:background="#fff1f1f1" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginStart="16.0dip" android:layout_marginEnd="16.0dip" />
+                <LinearLayout android:gravity="center_vertical" android:id="@id/liner_store_name" android:layout_width="fill_parent" android:layout_height="80.0dip" android:paddingStart="20.0dip" android:paddingEnd="20.0dip">
+                    <TextView android:textSize="22.0sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/plese_set_shop_name" />
+                    <View android:layout_width="0.0dip" android:layout_height="1.0dip" android:layout_weight="1.0" />
+                    <TextView android:textSize="22.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_reset_store_name" android:layout_width="120.0dip" android:layout_height="70.0dip" android:text="@string/reset" />
+                    <EditText android:textColorHint="@color/deep_gray" android:gravity="end|center" android:id="@id/et_store_name" android:focusable="false" android:layout_width="160.0dip" android:layout_height="60.0dip" android:hint="@string/plese_set_shop_name" android:inputType="text" />
+                </LinearLayout>
+                <View android:background="#fff1f1f1" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginStart="16.0dip" android:layout_marginEnd="16.0dip" />
+                <LinearLayout android:gravity="center_vertical" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="80.0dip" android:paddingStart="20.0dip" android:paddingEnd="20.0dip">
+                    <TextView android:textSize="22.0sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/pickCode_order_print_enable" />
+                    <View android:layout_width="0.0dip" android:layout_height="1.0dip" android:layout_weight="1.0" />
+                    <com.suke.widget.SwitchButton android:id="@id/btn_invoice_paper_switch" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View android:background="#fff1f1f1" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginStart="16.0dip" android:layout_marginEnd="16.0dip" />
+                <LinearLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="80.0dip" android:paddingStart="20.0dip" android:paddingEnd="20.0dip">
+                    <TextView android:textSize="22.0sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/moblie_show_enable" />
+                    <View android:layout_width="0.0dip" android:layout_height="1.0dip" android:layout_weight="1.0" />
+                    <com.suke.widget.SwitchButton android:id="@id/btn_invoice_mobile_switch" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View android:background="#fff1f1f1" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginStart="16.0dip" android:layout_marginEnd="16.0dip" />
+                <LinearLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="80.0dip" android:paddingStart="20.0dip" android:paddingEnd="20.0dip">
+                    <TextView android:textSize="22.0sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/print_invocie_enable" />
+                    <View android:layout_width="0.0dip" android:layout_height="1.0dip" android:layout_weight="1.0" />
+                    <com.suke.widget.SwitchButton android:id="@id/btn_invoice_com_switch" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View android:background="#fff1f1f1" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginStart="16.0dip" android:layout_marginEnd="16.0dip" />
+                <LinearLayout android:gravity="center_vertical" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="80.0dip" android:paddingStart="20.0dip" android:paddingEnd="20.0dip">
+                    <TextView android:textSize="22.0sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/e_invoice_enable" />
+                    <View android:layout_width="0.0dip" android:layout_height="1.0dip" android:layout_weight="1.0" />
+                    <com.suke.widget.SwitchButton android:id="@id/btn_invoice_electronic_switch" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View android:background="#fff1f1f1" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginStart="16.0dip" android:layout_marginEnd="16.0dip" />
+                <LinearLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="80.0dip" android:paddingStart="20.0dip" android:paddingEnd="20.0dip">
+                    <TextView android:textSize="22.0sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/donate_invoice_enable" />
+                    <View android:layout_width="0.0dip" android:layout_height="1.0dip" android:layout_weight="1.0" />
+                    <com.suke.widget.SwitchButton android:id="@id/btn_invoice_donate_switch" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View android:background="#fff1f1f1" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginStart="16.0dip" android:layout_marginEnd="16.0dip" />
+                <LinearLayout android:gravity="center_vertical" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="80.0dip" android:paddingStart="20.0dip" android:paddingEnd="20.0dip">
+                    <TextView android:textSize="22.0sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/error_page_number_enable" />
+                    <View android:layout_width="0.0dip" android:layout_height="1.0dip" android:layout_weight="1.0" />
+                    <com.suke.widget.SwitchButton android:id="@id/btn_machine_num_visible" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:id="@id/liner_host_name" android:layout_width="fill_parent" android:layout_height="80.0dip" android:paddingStart="20.0dip" android:paddingEnd="20.0dip">
+                    <TextView android:textSize="22.0sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/invoice_host_name" />
+                    <View android:layout_width="0.0dip" android:layout_height="1.0dip" android:layout_weight="1.0" />
+                    <TextView android:textSize="22.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_reset_host_name" android:layout_width="120.0dip" android:layout_height="70.0dip" android:text="@string/reset" />
+                    <EditText android:textColorHint="@color/deep_gray" android:gravity="end|center" android:id="@id/et_host_name" android:focusable="false" android:layout_width="260.0dip" android:layout_height="60.0dip" android:hint="@string/input_invoice_host_name" android:inputType="text" />
+                </LinearLayout>
+                <View android:background="#fff1f1f1" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginStart="16.0dip" android:layout_marginEnd="16.0dip" />
+            </LinearLayout>
+        </ScrollView>
+        <View android:background="#fff1f1f1" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginStart="16.0dip" android:layout_marginEnd="16.0dip" />
+        <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/liner_cancel" android:layout_width="200.0dip" android:layout_height="90.0dip" android:layout_marginTop="20.0dip">
+            <TextView android:textSize="26.0sp" android:textStyle="bold" android:textColor="@color/white" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/menu_返回" />
+            <TextView android:textSize="12.0sp" android:textColor="@color/white" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BACK" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

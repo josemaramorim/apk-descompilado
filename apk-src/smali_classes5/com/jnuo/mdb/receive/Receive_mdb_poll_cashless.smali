@@ -1,0 +1,296 @@
+.class public final Lcom/jnuo/mdb/receive/Receive_mdb_poll_cashless;
+.super Lcom/jnuo/mdb/receive/MdbReceive;
+.source "Receive_mdb_poll_cashless.kt"
+
+
+# annotations
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\"\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\u0008\u0005\n\u0002\u0010\u0002\n\u0002\u0008\u0003\u0008\u0000\u0018\u00002\u00020\u0001B\u0005\u00a2\u0006\u0002\u0010\u0002J\u0008\u0010\t\u001a\u00020\u0006H\u0016J\u0006\u0010\n\u001a\u00020\u0006J\u0018\u0010\u000b\u001a\u00020\u000c2\u0006\u0010\r\u001a\u00020\u00062\u0006\u0010\u000e\u001a\u00020\u0006H\u0016R\u0010\u0010\u0003\u001a\u0004\u0018\u00010\u0004X\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u0014\u0010\u0005\u001a\u00020\u00068VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\u0007\u0010\u0008\u00a8\u0006\u000f"
+    }
+    d2 = {
+        "Lcom/jnuo/mdb/receive/Receive_mdb_poll_cashless;",
+        "Lcom/jnuo/mdb/receive/MdbReceive;",
+        "()V",
+        "bean",
+        "Lcom/jnuo/mdb/receive/Bean_mdb_poll_cashless;",
+        "cmdDesc",
+        "",
+        "getCmdDesc",
+        "()Ljava/lang/String;",
+        "getDesc",
+        "pollCashlessDesc",
+        "setJson",
+        "",
+        "cmd",
+        "jsonStr",
+        "module_mdb_release"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x6,
+        0x0
+    }
+    xi = 0x30
+.end annotation
+
+
+# instance fields
+.field private bean:Lcom/jnuo/mdb/receive/Bean_mdb_poll_cashless;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .line 15
+    invoke-direct {p0}, Lcom/jnuo/mdb/receive/MdbReceive;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public getCmdDesc()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "mdb\u5237\u5361"
+
+    return-object v0
+.end method
+
+.method public getDesc()Ljava/lang/String;
+    .locals 2
+
+    .line 49
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p0}, Lcom/jnuo/mdb/receive/Receive_mdb_poll_cashless;->getCmd()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x3a
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Lcom/jnuo/mdb/receive/Receive_mdb_poll_cashless;->pollCashlessDesc()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final pollCashlessDesc()Ljava/lang/String;
+    .locals 1
+
+    .line 53
+    iget-object v0, p0, Lcom/jnuo/mdb/receive/Receive_mdb_poll_cashless;->bean:Lcom/jnuo/mdb/receive/Bean_mdb_poll_cashless;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Lcom/jnuo/mdb/receive/Bean_mdb_poll_cashless;->pollCashlessDesc()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    const-string v0, "NONE"
+
+    :cond_1
+    return-object v0
+.end method
+
+.method public setJson(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 4
+
+    const-string v0, "cmd"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "jsonStr"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 22
+    invoke-super {p0, p1, p2}, Lcom/jnuo/mdb/receive/MdbReceive;->setJson(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 23
+    const-class p1, Lcom/jnuo/mdb/receive/Bean_mdb_poll_cashless;
+
+    invoke-static {p2, p1}, Lcom/jnuo/mdb/util/MdbJsonTool;->jsonToAny(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/jnuo/mdb/receive/Bean_mdb_poll_cashless;
+
+    iput-object p1, p0, Lcom/jnuo/mdb/receive/Receive_mdb_poll_cashless;->bean:Lcom/jnuo/mdb/receive/Bean_mdb_poll_cashless;
+
+    .line 24
+    invoke-virtual {p0}, Lcom/jnuo/mdb/receive/Receive_mdb_poll_cashless;->addNote()V
+
+    .line 25
+    iget-object p1, p0, Lcom/jnuo/mdb/receive/Receive_mdb_poll_cashless;->bean:Lcom/jnuo/mdb/receive/Bean_mdb_poll_cashless;
+
+    if-eqz p1, :cond_4
+
+    .line 26
+    invoke-virtual {p1}, Lcom/jnuo/mdb/receive/Bean_mdb_poll_cashless;->isOk()Z
+
+    move-result p2
+
+    const/4 v0, 0x0
+
+    const-wide/high16 v1, -0x4010000000000000L    # -1.0
+
+    if-eqz p2, :cond_1
+
+    .line 27
+    invoke-virtual {p1}, Lcom/jnuo/mdb/receive/Bean_mdb_poll_cashless;->getDetail()Ljava/lang/String;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/lang/CharSequence;
+
+    const-string v3, "Begin Session"
+
+    check-cast v3, Ljava/lang/CharSequence;
+
+    invoke-static {p2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_0
+
+    .line 28
+    sget-object p1, Lcom/jnuo/mdb/MdbGlobal;->INSTANCE:Lcom/jnuo/mdb/MdbGlobal;
+
+    invoke-virtual {p1}, Lcom/jnuo/mdb/MdbGlobal;->getMdbBean()Lcom/jnuo/mdb/manager/MdbBean;
+
+    move-result-object p1
+
+    const/4 p2, 0x1
+
+    invoke-virtual {p1, p2}, Lcom/jnuo/mdb/manager/MdbBean;->setMdb_poll_cashless_begin(Z)V
+
+    goto :goto_0
+
+    .line 29
+    :cond_0
+    invoke-virtual {p1}, Lcom/jnuo/mdb/receive/Bean_mdb_poll_cashless;->getDetail()Ljava/lang/String;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/CharSequence;
+
+    const-string p2, "Session Cancel Request"
+
+    check-cast p2, Ljava/lang/CharSequence;
+
+    invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_4
+
+    .line 30
+    sget-object p1, Lcom/jnuo/mdb/MdbGlobal;->INSTANCE:Lcom/jnuo/mdb/MdbGlobal;
+
+    invoke-virtual {p1}, Lcom/jnuo/mdb/MdbGlobal;->getMdbBean()Lcom/jnuo/mdb/manager/MdbBean;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Lcom/jnuo/mdb/manager/MdbBean;->setMdb_poll_cashless_begin(Z)V
+
+    .line 31
+    sget-object p1, Lcom/jnuo/mdb/MdbGlobal;->INSTANCE:Lcom/jnuo/mdb/MdbGlobal;
+
+    invoke-virtual {p1}, Lcom/jnuo/mdb/MdbGlobal;->getMdbBean()Lcom/jnuo/mdb/manager/MdbBean;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v1, v2}, Lcom/jnuo/mdb/manager/MdbBean;->setCashlessSessBeginAmout(D)V
+
+    .line 32
+    sget-object p1, Lcom/jnuo/mdb/MdbGlobal;->INSTANCE:Lcom/jnuo/mdb/MdbGlobal;
+
+    invoke-virtual {p1}, Lcom/jnuo/mdb/MdbGlobal;->getMdbBean()Lcom/jnuo/mdb/manager/MdbBean;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v1, v2}, Lcom/jnuo/mdb/manager/MdbBean;->setCashless2SessBeginAmout(D)V
+
+    .line 33
+    invoke-virtual {p0}, Lcom/jnuo/mdb/receive/Receive_mdb_poll_cashless;->onCashlessBalnce()V
+
+    goto :goto_0
+
+    .line 36
+    :cond_1
+    invoke-static {}, Lcom/jnuo/mdb/MdbGlobal;->getPayMdbType()Lcom/jnuo/mdb/bean/MdbType;
+
+    move-result-object p2
+
+    .line 37
+    sget-object v3, Lcom/jnuo/mdb/bean/MdbType;->cashless:Lcom/jnuo/mdb/bean/MdbType;
+
+    if-eq p2, v3, :cond_2
+
+    sget-object v3, Lcom/jnuo/mdb/bean/MdbType;->cashless2:Lcom/jnuo/mdb/bean/MdbType;
+
+    if-ne p2, v3, :cond_3
+
+    .line 38
+    :cond_2
+    invoke-virtual {p1}, Lcom/jnuo/mdb/receive/Bean_mdb_poll_cashless;->getDetail()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p2, v0, p1}, Lcom/jnuo/mdb/receive/Receive_mdb_poll_cashless;->onCashless(Lcom/jnuo/mdb/bean/MdbType;ZLjava/lang/String;)V
+
+    .line 40
+    :cond_3
+    sget-object p1, Lcom/jnuo/mdb/MdbGlobal;->INSTANCE:Lcom/jnuo/mdb/MdbGlobal;
+
+    invoke-virtual {p1}, Lcom/jnuo/mdb/MdbGlobal;->getMdbBean()Lcom/jnuo/mdb/manager/MdbBean;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Lcom/jnuo/mdb/manager/MdbBean;->setMdb_poll_cashless_begin(Z)V
+
+    .line 41
+    sget-object p1, Lcom/jnuo/mdb/MdbGlobal;->INSTANCE:Lcom/jnuo/mdb/MdbGlobal;
+
+    invoke-virtual {p1}, Lcom/jnuo/mdb/MdbGlobal;->getMdbBean()Lcom/jnuo/mdb/manager/MdbBean;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v1, v2}, Lcom/jnuo/mdb/manager/MdbBean;->setCashlessSessBeginAmout(D)V
+
+    .line 42
+    sget-object p1, Lcom/jnuo/mdb/MdbGlobal;->INSTANCE:Lcom/jnuo/mdb/MdbGlobal;
+
+    invoke-virtual {p1}, Lcom/jnuo/mdb/MdbGlobal;->getMdbBean()Lcom/jnuo/mdb/manager/MdbBean;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v1, v2}, Lcom/jnuo/mdb/manager/MdbBean;->setCashless2SessBeginAmout(D)V
+
+    .line 43
+    invoke-virtual {p0}, Lcom/jnuo/mdb/receive/Receive_mdb_poll_cashless;->onCashlessBalnce()V
+
+    :cond_4
+    :goto_0
+    return-void
+.end method

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_machine2_buttons1" android:background="@color/app_black" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/margin_small" android:layout_marginRight="@dimen/margin_small" android:layout_weight="1.0" />
+    <View android:background="@color/white" android:layout_width="@dimen/line_height_normal" android:layout_height="fill_parent" />
+    <FrameLayout android:layout_width="0.0px" android:layout_height="fill_parent" android:layout_weight="4.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.jetinno.widget.NoScrollViewPager2 android:id="@id/vp_machine2" android:background="@color/app_black" android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_marginLeft="@dimen/margin_small" android:layout_marginRight="@dimen/margin_small" android:layout_weight="3.0" />
+            <View android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/line_height_normal" />
+            <FrameLayout android:id="@id/fl_machine2_respond" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+        </LinearLayout>
+    </FrameLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@color/app_black" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_weight="3.0">
+        <androidx.recyclerview.widget.RecyclerView android:background="@color/app_black" android:layout_width="0.0px" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/margin_small" android:layout_marginRight="@dimen/margin_small" android:layout_weight="3.0" />
+        <View android:background="@color/white" android:layout_width="@dimen/line_height_normal" android:layout_height="fill_parent" />
+        <com.jetinno.widget.NoScrollViewPager2 android:background="@color/app_black" android:layout_width="0.0px" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/margin_small" android:layout_marginRight="@dimen/margin_small" android:layout_weight="7.0" />
+    </LinearLayout>
+    <View android:background="@color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/line_height_normal" />
+    <FrameLayout android:visibility="gone" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+</LinearLayout>

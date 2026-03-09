@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="@color/app_black_dark2" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/fl_state_canister" android:layout_width="0.0px" android:layout_height="fill_parent" android:layout_weight="1.0" />
+    <View android:background="@color/white" android:layout_width="@dimen/line_height_normal" android:layout_height="fill_parent" />
+    <FrameLayout android:id="@id/fl_state_commonfun" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+    <View android:background="@color/white" android:layout_width="@dimen/line_height_normal" android:layout_height="fill_parent" />
+    <FrameLayout android:id="@id/fl_state_machinelog" android:layout_width="0.0px" android:layout_height="fill_parent" android:layout_weight="1.0" />
+</LinearLayout>

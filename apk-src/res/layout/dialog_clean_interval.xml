@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/cardview_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" app:titleText="@string/clean_interval_set" />
+        <View android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/line_height_normal" />
+        <com.jetinno.ui.widget.CleanTimeView android:layout_gravity="center_horizontal" android:id="@id/time_cleaninterval" android:layout_width="@dimen/viewgroup_width_clean" android:layout_height="wrap_content" android:layout_margin="@dimen/margin_large2" />
+        <FrameLayout android:layout_gravity="center" android:id="@id/cup_cleaninterval" android:layout_width="@dimen/viewgroup_width_clean" android:layout_height="wrap_content" android:layout_margin="@dimen/margin_large2">
+            <EditText android:textSize="@dimen/font_normal" android:textColor="@color/black" android:textColorHint="@color/common_text_gray" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/et_cup" android:background="@drawable/sel_white_gray_enable" android:paddingLeft="@dimen/margin_normal" android:paddingTop="@dimen/margin_normal" android:paddingRight="@dimen/margin_normal" android:paddingBottom="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:maxLength="10" android:inputType="number" android:imeOptions="actionDone" />
+            <TextView android:textColor="@color/common_text_gray" android:layout_gravity="center|right" android:id="@id/tv_cup_value_error" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" />
+        </FrameLayout>
+        <TextView android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/tv_cleaninterval_save" android:layout_marginBottom="@dimen/margin_large" android:text="@string/save" style="@style/button_normal" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

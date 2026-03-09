@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView android:id="@id/cv_menu300product_card" android:layout_width="fill_parent" android:layout_height="fill_parent" app:cardBackgroundColor="@color/transparent" app:cardCornerRadius="@dimen/menu300_margin_normal" app:cardElevation="0.0px">
+        <ImageView android:id="@id/iv_menu300product_img" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+        <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.jetinno.core.menuedit.widget.MenuLinearLayout android:orientation="horizontal" android:id="@id/view_menu300product_shadow" android:layout_width="fill_parent" android:layout_height="0.0px" app:defaultIcon="@drawable/menuic_shadow" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHeight_percent="0.25" />
+            <com.jetinno.menu300.widget.HotImageView android:id="@id/iv_menu300product_hot" android:layout_width="@dimen/menu300_product_hotwidth" android:layout_height="@dimen/menu300_product_hotwidth" android:layout_marginLeft="@dimen/menu300_margin_normal" android:layout_marginTop="@dimen/menu300_margin_normal" app:defaultSrc="@drawable/menuic_hot" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:paddingLeft="@dimen/menu300_margin_normal" android:paddingRight="@dimen/menu300_margin_normal" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toTopOf="@id/view_menu300product_shadow" app:layout_constraintTop_toBottomOf="@id/view_menu300product_shadow">
+                <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_normal" android:textColor="@color/menu_white" android:gravity="center" android:id="@id/tv_menu300product_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="3" />
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/ll_menu300product_prices" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_normal" android:textColor="@color/menu_white" android:id="@id/tv_menu300product_saleprice" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_small" android:textColor="@color/menu_gray" android:id="@id/tv_menu300product_oriprice" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_large" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.jetinno.core.menuedit.widget.MenuLinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/iv_menu300product_stockout" android:layout_width="fill_parent" android:layout_height="fill_parent" app:defaultIcon="@drawable/menuic_lack_bg" />
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/shape_recipe_canister_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_small" android:layout_marginTop="@dimen/margin_small" android:layout_marginRight="@dimen/margin_small"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/margin_small">
+        <TextView android:textSize="@dimen/font_normal" android:textColor="@color/common_text_black" android:ellipsize="middle" android:gravity="center_vertical" android:id="@id/tv_recipeedit_canistername" android:background="@drawable/rec_black_white_1dp" android:paddingLeft="@dimen/margin_large" android:paddingTop="@dimen/margin_normal" android:paddingRight="@dimen/margin_large" android:paddingBottom="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/button_width_receipe" android:text="@string/bean" android:singleLine="true" android:drawableRight="@drawable/ic_arrow_bottom" />
+        <TextView android:id="@id/tv_recipeedit_showmoreattr" android:layout_marginLeft="@dimen/margin_large" android:text="@string/recipe_more_attr" style="@style/button_normal" />
+        <View android:layout_width="0.0px" android:layout_height="@dimen/line_height_normal" android:layout_weight="1.0" />
+        <ImageView android:id="@id/tv_recipeedit_canister_add" android:paddingLeft="@dimen/margin_normal" android:paddingRight="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_add" />
+        <ImageView android:id="@id/tv_recipeedit_canister_delete" android:paddingLeft="@dimen/margin_normal" android:paddingRight="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_sub" />
+    </LinearLayout>
+    <TextView android:id="@id/tv_recipeedit_showmoreattr_hori" android:visibility="gone" android:layout_margin="@dimen/margin_normal" android:text="@string/recipe_more_attr" style="@style/button_normal_min150" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_recipeedit_attr" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_small" android:layout_marginTop="@dimen/margin_small" android:layout_marginRight="@dimen/margin_small" android:layout_marginBottom="@dimen/margin_normal" />
+</LinearLayout>

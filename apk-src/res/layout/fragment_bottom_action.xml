@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="@dimen/menu35_main_bottom_height"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.recyclerview.widget.RecyclerView android:layout_gravity="center_vertical" android:id="@id/rv_menu300_lang_icons" android:layout_width="wrap_content" android:layout_height="@dimen/menu300_product_iconheight" app:layout_constraintBottom_toTopOf="parent" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintTop_toBottomOf="parent" />
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:id="@id/ll_pickcode_vessel" android:layout_width="wrap_content" android:layout_height="@dimen/menu300_product_iconheight" app:layout_constraintBottom_toTopOf="parent" app:layout_constraintLeft_toRightOf="parent" app:layout_constraintRight_toLeftOf="parent" app:layout_constraintTop_toBottomOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/cons_pickcode" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="@dimen/menu300_product_iconheight">
+            <com.jetinno.core.menuedit.widget.MenuImageView android:id="@id/iv_pickcode" android:layout_width="0.0px" android:layout_height="fill_parent" app:defaultSrc="@drawable/menuic_fastcode" app:layout_constraintDimensionRatio="w,364:186" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <View android:id="@id/view_divider" android:visibility="gone" android:layout_width="@dimen/margin_normal" android:layout_height="@dimen/margin_normal" />
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/cons_cash" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="@dimen/menu300_product_iconheight">
+            <com.jetinno.core.menuedit.widget.MenuImageView android:id="@id/iv_cash" android:layout_width="0.0px" android:layout_height="fill_parent" app:defaultSrc="@drawable/menuic_cash" app:layout_constraintDimensionRatio="w,364:186" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent" />
+            <com.jetinno.core.menuedit.widget.MenuImageView android:id="@id/tv_cash_enable" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="0.0dip" app:defaultSrc="@drawable/menuic_cash_disable" app:layout_constraintBottom_toBottomOf="@id/iv_cash" app:layout_constraintLeft_toLeftOf="@id/iv_cash" app:layout_constraintRight_toRightOf="@id/iv_cash" app:layout_constraintTop_toTopOf="@id/iv_cash" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center|right" android:layout_gravity="center|right" android:id="@id/ll_rightbottom_vessel" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toTopOf="parent" app:layout_constraintRight_toRightOf="parent" app:layout_constraintTop_toBottomOf="parent">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_menu300_bottomwechat_icons" android:layout_width="wrap_content" android:layout_height="@dimen/menu300_product_iconheight" />
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_large" android:textColor="@color/menu_white" android:id="@id/tv_menu300_wxpub" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="@dimen/viewgroup_width_clean" android:text="@string/menu_关注公众号" />
+            <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_large" android:textColor="@color/menu_white" android:id="@id/tv_menu300_phone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/menu_服务热线" />
+            <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_large" android:textColor="@color/menu_white" android:id="@id/tv_menu300_machinenum" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/menu_设备编号" />
+            <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_large" android:textColor="@color/menu_white" android:id="@id/tv_menu300_temp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/common_bolier_temp" />
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_menu300_bottomhotwater_icons" android:layout_width="wrap_content" android:layout_height="@dimen/menu300_product_iconheight" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

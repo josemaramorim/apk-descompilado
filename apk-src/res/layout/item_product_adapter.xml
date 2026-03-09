@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingTop="@dimen/margin_normal" android:paddingBottom="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_product_id" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="@integer/product_weight_id">
+        <TextView android:id="@id/tv_product_id" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/text_product" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_product_name" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="@integer/product_weight_name">
+        <TextView android:gravity="center" android:id="@id/tv_product_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="false" style="@style/text_product" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_product_price" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="@integer/product_weight_price">
+        <TextView android:id="@id/tv_product_oriprice" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/text_product" />
+        <TextView android:id="@id/tv_product_discount" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/text_product" />
+        <TextView android:id="@id/tv_product_disprice" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/text_product" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_product_image" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="@integer/product_weight_image">
+        <ImageView android:id="@id/iv_product_image" android:layout_width="fill_parent" android:layout_height="@dimen/text_width_normal" android:src="@drawable/ic_loadimg_error" android:scaleType="fitCenter" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_product_state" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="@integer/product_weight_state">
+        <TextView android:id="@id/tv_product_state" android:layout_height="wrap_content" android:minHeight="@dimen/button_height_normal" style="@style/button_normal_min150" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_product_order" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="@integer/product_weight_order">
+        <TextView android:gravity="center" android:id="@id/tv_product_order" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="false" style="@style/text_product" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_product_date" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="@integer/product_weight_date">
+        <TextView android:gravity="center" android:id="@id/tv_product_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="false" style="@style/text_product" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_product_action" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="@integer/product_weight_action">
+        <TextView android:id="@id/tv_product_edit" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/button_height_normal" android:text="@string/edit" style="@style/button_normal_min150" />
+        <TextView android:id="@id/tv_product_delete" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:minHeight="@dimen/button_height_normal" android:text="@string/delete" style="@style/button_normal_min150" />
+        <TextView android:id="@id/tv_product_modifyprice" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:minHeight="@dimen/button_height_normal" android:text="@string/product_modify_price" style="@style/button_normal_min150" />
+    </LinearLayout>
+</LinearLayout>

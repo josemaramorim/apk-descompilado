@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/cardview_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" />
+        <View android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/line_height_normal" />
+        <RadioGroup android:gravity="center" android:orientation="horizontal" android:id="@id/rg_preset_price_mode" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:layout_marginBottom="@dimen/margin_normal">
+            <RadioButton android:textSize="@dimen/font_normal" android:textColor="@color/white" android:gravity="center_vertical" android:id="@id/tv_preset_price_alarm_mode" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large2" android:paddingBottom="@dimen/margin_small" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/sel_check_white" android:text="@string/preset_price_alarm_mode" android:drawablePadding="@dimen/margin_normal" />
+            <RadioButton android:textSize="@dimen/font_normal" android:textColor="@color/white" android:gravity="center_vertical" android:id="@id/tv_preset_price_interval_mode" android:paddingTop="@dimen/margin_small" android:paddingRight="@dimen/margin_large2" android:paddingBottom="@dimen/margin_small" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/sel_check_white" android:text="@string/preset_price_interval_mode" android:drawablePadding="@dimen/margin_normal" />
+        </RadioGroup>
+        <com.jetinno.ui.widget.PresetAlarmView android:gravity="center" android:layout_gravity="center" android:id="@id/ll_preset_alarm" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="@dimen/viewgroup_width_receipe" />
+        <com.jetinno.ui.widget.PresetIntervalView android:gravity="center" android:layout_gravity="center" android:id="@id/ll_preset_interval" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="@dimen/viewgroup_width_receipe" />
+        <View android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/line_height_normal" />
+        <TextView android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/tv_time_save" android:layout_marginTop="@dimen/margin_large" android:layout_marginBottom="@dimen/margin_large" android:text="@string/save" style="@style/button_normal" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:layout_gravity="center" android:orientation="horizontal" android:paddingTop="@dimen/menu300_margin_large" android:paddingBottom="@dimen/menu300_margin_large" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_large" android:textColor="@color/menu_white" android:id="@id/tv_syrup_typename" android:layout_width="@dimen/menu300_cash_icon_width" android:layout_height="wrap_content" android:layout_marginRight="@dimen/menu300_margin_normal" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_syrup_child" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</LinearLayout>

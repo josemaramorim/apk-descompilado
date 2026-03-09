@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_large" android:textStyle="bold" android:textColor="@color/menu_black" android:id="@id/tv_menu300bar_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_large" android:text="@string/menu_请将二维码对准扫码处" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+        <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_large" android:textStyle="bold" android:textColor="@color/menu_white" android:gravity="center" android:id="@id/tv_menu300bar_countdown" android:background="@drawable/shape_menu_selectpay_bg" android:layout_width="@dimen/menu300_bar_countdown_width" android:layout_height="@dimen/menu300_bar_countdown_height" android:layout_marginTop="@dimen/margin_large" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/tv_menu300bar_title" />
+        <com.jetinno.core.menuedit.widget.MenuImageView android:id="@id/iv_menu300bar_icon" android:layout_width="wrap_content" android:layout_height="@dimen/menu300_bar_image_height" android:layout_marginTop="@dimen/margin_normal" app:defaultSrc="@drawable/menuic_pay_bar_on" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/tv_menu300bar_countdown" />
+        <com.jetinno.menu300.ui.buy.MenuBuyButtonsView android:id="@id/view_menubuttons" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:visibleBack="true" app:visibleCancel="false" app:visibleOk="false" app:visibleTime="false" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <include layout="@layout/view_menu_buynote" />
+</FrameLayout>

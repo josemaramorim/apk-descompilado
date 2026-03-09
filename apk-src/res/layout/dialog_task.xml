@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/app_black_dark2" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" app:titleText="@string/任务管理" />
+    <View android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/line_height_normal" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@color/colorPrimary" android:paddingTop="@dimen/margin_normal" android:paddingBottom="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textStyle="bold" android:textColor="@color/app_white" android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/序号" android:layout_weight="1.0" style="@style/text_canister" />
+        <TextView android:textStyle="bold" android:textColor="@color/app_white" android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/任务类型" android:layout_weight="1.0" style="@style/text_canister" />
+        <TextView android:textStyle="bold" android:textColor="@color/app_white" android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/product_operation" android:layout_weight="1.0" style="@style/text_canister" />
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_task" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</LinearLayout>

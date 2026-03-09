@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/cardview_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" app:titleText="@string/recipe_more_attr" />
+        <View android:background="@color/common_bg_gray" android:layout_width="fill_parent" android:layout_height="@dimen/line_height_normal" />
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:paddingLeft="@dimen/margin_large2" android:paddingTop="@dimen/margin_large2" android:paddingRight="@dimen/margin_large2" android:paddingBottom="@dimen/margin_large2" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_recipe_moreattr" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

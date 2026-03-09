@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_weight="1.0">
+            <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_large" android:textStyle="bold" android:textColor="@color/menu_black" android:id="@id/tv_menu300vx820_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/menu300_bar_title_top" android:text="@string/menu_请将信用卡靠近刷卡机" />
+            <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_large" android:textStyle="bold" android:textColor="@color/menu_white" android:gravity="center" android:id="@id/tv_menu300vx820_countdown" android:background="@drawable/shape_menu_selectpay_bg" android:layout_width="@dimen/menu300_bar_countdown_width" android:layout_height="@dimen/menu300_bar_countdown_height" android:layout_marginTop="@dimen/menu300_bar_countdown_top" />
+            <com.jetinno.core.menuedit.widget.MenuImageView android:id="@id/iv_menu300vx820_icon" android:layout_width="wrap_content" android:layout_height="@dimen/menu300_bar_image_height" android:layout_marginTop="@dimen/menu300_bar_image_top" app:defaultSrc="@drawable/menuic_pay_vx820_on" />
+        </LinearLayout>
+        <com.jetinno.menu300.ui.buy.MenuBuyButtonsView android:id="@id/view_menubuttons" android:layout_width="fill_parent" android:layout_height="wrap_content" app:visibleBack="false" app:visibleCancel="false" app:visibleOk="false" app:visibleTime="false" />
+    </LinearLayout>
+    <include layout="@layout/view_menu_buynote" />
+</FrameLayout>

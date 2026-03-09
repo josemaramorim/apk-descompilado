@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/menu300_margin_small" android:layout_marginEnd="@dimen/menu300_margin_normal">
+        <com.jetinno.core.menuedit.widget.MenuLinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="@dimen/dp_150" android:layout_height="@dimen/dp_60" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintTop_toTopOf="parent" app:normalIcon="@drawable/menuic_syrup_bg_normal" app:pressIcon="@drawable/menuic_syrup_bg_press">
+            <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_large" android:textColor="@color/menu_white" android:gravity="center" android:id="@id/tv_syrupchild_name" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </com.jetinno.core.menuedit.widget.MenuLinearLayout>
+        <ImageView android:id="@id/iv_syrupchild_lack" android:paddingTop="@dimen/margin_normal" android:paddingBottom="@dimen/margin_normal" android:visibility="gone" android:layout_width="@dimen/menu300_product_hotwidth" android:layout_height="@dimen/menu300_product_hotwidth" android:src="@drawable/menuic_syrup_lack" app:layout_constraintBottom_toTopOf="parent" app:layout_constraintLeft_toRightOf="parent" app:layout_constraintRight_toLeftOf="parent" app:layout_constraintTop_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_normal" android:textColor="@color/menu_white" android:layout_gravity="end" android:id="@id/tv_syrupchild_price" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="@dimen/menu300_margin_large" />
+</LinearLayout>

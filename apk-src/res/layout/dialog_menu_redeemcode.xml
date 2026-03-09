@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="@color/menu_alpha_black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.jetinno.core.menuedit.widget.MenuLinearLayout android:orientation="vertical" android:id="@id/ll_menu300fast_vessel" android:layout_width="fill_parent" android:layout_height="fill_parent" app:defaultIcon="@drawable/menuic_fastcode_bg">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/menu300_fast_titleheight">
+            <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_biggest" android:textStyle="bold" android:textColor="@color/menu_white" android:id="@id/tv_menu300fast_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/menu_兑换码" android:layout_centerInParent="true" />
+            <com.jetinno.core.menuedit.widget.MenuImageView android:id="@id/iv_menu300fast_close" android:padding="@dimen/menu300_margin_normal" android:layout_width="@dimen/menu300_fast_closeheight" android:layout_height="@dimen/menu300_fast_closeheight" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:defaultSrc="@drawable/menuic_close" />
+        </RelativeLayout>
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <EditText android:textSize="@dimen/menu300_font_biggest" android:textStyle="bold" android:textColor="@color/menu_black" android:textColorHint="@color/menu_gray" android:gravity="center_vertical" android:id="@id/et_menu300fast_input" android:background="@color/transparent" android:paddingLeft="@dimen/menu300_margin_large2" android:paddingRight="@dimen/menu300_margin_large2" android:focusable="false" android:focusableInTouchMode="false" android:layout_width="fill_parent" android:layout_height="@dimen/menu300_fast_inputheight" android:hint="@string/menu_请输入兑换码取饮品" />
+                <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_menu300fast_key" android:paddingLeft="@dimen/menu300_margin_large" android:paddingRight="@dimen/menu300_margin_large" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_large" android:textStyle="bold" android:textColor="@color/menu_gray" android:gravity="center" android:id="@id/tv_menu300fast_countdown" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </LinearLayout>
+            <ProgressBar android:layout_gravity="center" android:id="@id/pb_menu300fast" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </FrameLayout>
+    </com.jetinno.core.menuedit.widget.MenuLinearLayout>
+</LinearLayout>

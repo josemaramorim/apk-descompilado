@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/root" android:layout_width="600.0dip" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="80.0dip">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/liner_com_num" android:background="@drawable/shape_bg_radius_half_yellow" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <TextView android:textSize="26.0sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/com_num" android:fontFamily="@font/adobefanheitistdbold" />
+            <TextView android:textSize="12.0sp" android:textColor="@color/white" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="UNIFORM INVOICE" android:fontFamily="@font/adobefanheitistdbold" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/liner_com_print" android:background="@drawable/shape_bg_write_radius_half_grey" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="10.0dip" android:layout_weight="1.0" android:layout_marginStart="10.0dip">
+            <TextView android:textSize="26.0sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/com_print_ticket" android:fontFamily="@font/adobefanheitistdbold" />
+            <TextView android:textSize="12.0sp" android:textColor="@color/white" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ELECTRONIC INVOICE" android:fontFamily="@font/adobefanheitistdbold" />
+        </LinearLayout>
+    </LinearLayout>
+    <View android:id="@id/view_line" android:background="@color/color_F0B032" android:layout_width="fill_parent" android:layout_height="8.0dip" />
+    <LinearLayout android:orientation="vertical" android:id="@id/liner_content" android:background="@drawable/shape_bg_radius_half_wirte" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="360.0dip">
+        <TextView android:textSize="14.0sp" android:textColor="@color/tw_red" android:layout_gravity="center" android:id="@id/tv_tips" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="40.0dip" android:text="@string/input_type_error" android:fontFamily="@font/adobefanheitistdbold" />
+        <EditText android:textSize="18.0sp" android:gravity="center" android:layout_gravity="center" android:id="@id/et" android:background="@drawable/sel_et_invoice_bg" android:layout_width="400.0dip" android:layout_height="50.0dip" android:layout_marginTop="14.0dip" android:hint="@string/please_input_mobile_scan" android:inputType="textPassword" android:fontFamily="@font/adobefanheitistdbold" />
+        <TextView android:textSize="28.0sp" android:textColor="@color/tw_red_2" android:layout_gravity="center" android:id="@id/tv_times" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="40s" android:fontFamily="@font/adobefanheitistdbold" />
+        <LinearLayout android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip">
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/liner_cancel" android:background="@drawable/sel_button" android:layout_width="200.0dip" android:layout_height="90.0dip" android:layout_marginTop="20.0dip">
+                <TextView android:textSize="26.0sp" android:textStyle="bold" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/menu_返回" android:fontFamily="@font/adobefanheitistdbold" />
+                <TextView android:textSize="12.0sp" android:textColor="@color/tw_green" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BACK" android:fontFamily="@font/adobefanheitistdbold" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/liner_sure" android:background="@drawable/sel_button" android:layout_width="200.0dip" android:layout_height="90.0dip" android:layout_marginTop="20.0dip" android:layout_marginStart="60.0dip">
+                <TextView android:textSize="26.0sp" android:textStyle="bold" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sure" android:fontFamily="@font/adobefanheitistdbold" />
+                <TextView android:textSize="12.0sp" android:textColor="@color/tw_green" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SURE" android:fontFamily="@font/adobefanheitistdbold" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/liner_uploading" android:background="@drawable/shape_bg_radius_half_wirte" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="360.0dip">
+        <TextView android:textSize="26.0sp" android:textColor="@color/tw_green" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/printing" android:fontFamily="@font/adobefanheitistdbold" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/liner_success" android:background="@drawable/shape_bg_radius_half_wirte" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="360.0dip">
+        <TextView android:textSize="30.0sp" android:textColor="@color/tw_green" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="60.0dip" android:text="@string/print_success" android:fontFamily="@font/adobefanheitistdbold" />
+        <ImageView android:layout_width="160.0dip" android:layout_height="160.0dip" android:layout_marginTop="30.0dip" android:src="@drawable/print_success_invoice" />
+    </LinearLayout>
+</LinearLayout>

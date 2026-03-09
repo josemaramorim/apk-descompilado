@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_weight="1.0">
+            <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/root_card" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_large" android:textStyle="bold" android:textColor="@color/menu_black" android:id="@id/tv_menu300_tian_long_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/menu300_bar_title_top" android:text="@string/menu_请将信用卡靠近刷卡机" />
+                <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_large" android:textStyle="bold" android:textColor="@color/menu_white" android:gravity="center" android:id="@id/tv_menu300_tian_long_countdown" android:background="@drawable/shape_menu_selectpay_bg" android:layout_width="@dimen/menu300_bar_countdown_width" android:layout_height="@dimen/menu300_bar_countdown_height" android:layout_marginTop="@dimen/menu300_bar_countdown_top" />
+                <FrameLayout android:id="@id/fl_qr" android:background="@drawable/shape_menu_qr_bg" android:padding="@dimen/menu300_margin_normal" android:visibility="gone" android:layout_width="@dimen/menu300_qr_load_width" android:layout_height="@dimen/menu300_qr_load_width" android:layout_marginTop="@dimen/menu300_qr_load_top">
+                    <ImageView android:id="@id/iv_menu300qr_result" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+                    <ProgressBar android:layout_gravity="center" android:id="@id/pb" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </FrameLayout>
+                <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_menu300qr_pay_list" android:paddingLeft="@dimen/menu300_margin_large2" android:paddingRight="@dimen/menu300_margin_large2" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/menu300_qr_icons_top" />
+                <com.jetinno.core.menuedit.widget.MenuImageView android:id="@id/iv_menu300_tian_long_icon" android:layout_width="wrap_content" android:layout_height="@dimen/menu300_bar_image_height" android:layout_marginTop="@dimen/margin_normal" />
+            </LinearLayout>
+        </LinearLayout>
+        <com.jetinno.menu300.ui.buy.MenuBuyButtonsView android:id="@id/view_menubuttons" android:layout_width="fill_parent" android:layout_height="wrap_content" app:visibleBack="true" app:visibleCancel="false" app:visibleOk="false" app:visibleTime="false" />
+    </LinearLayout>
+    <include layout="@layout/view_menu_buynote" />
+</FrameLayout>

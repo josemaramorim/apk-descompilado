@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_normal" android:text="@string/水路" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_normal">
+        <TextView android:id="@id/tv_water_cleanboiler" android:text="@string/清空锅炉" style="@style/button_normal" />
+        <View android:layout_width="0.0px" android:layout_height="1.0px" android:layout_weight="1.0" />
+        <TextView android:id="@id/tv_water_fillboiler" android:text="@string/填充锅炉" style="@style/button_normal" />
+        <View android:layout_width="0.0px" android:layout_height="1.0px" android:layout_weight="1.0" />
+        <TextView android:id="@id/tv_water_cleanwater" android:text="@string/清空水箱" style="@style/button_normal" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textColor="@color/white" android:gravity="center_vertical" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="@string/设置水量ml" android:drawableRight="@drawable/shape_arrow_right" />
+        <com.jetinno.ui.widget.ScopeEditText android:textColor="@color/black" android:gravity="center_vertical" android:id="@id/et_water_ml" android:background="@color/white" android:padding="@dimen/margin_small" android:layout_width="@dimen/text_width_normal" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="100" />
+        <TextView android:id="@id/tv_water_outhot" android:layout_marginRight="@dimen/margin_normal" android:text="@string/出热水" style="@style/button_normal" />
+        <TextView android:id="@id/tv_water_outcold" android:text="@string/出冷水" style="@style/button_normal" />
+    </LinearLayout>
+</LinearLayout>

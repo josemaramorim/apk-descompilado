@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="bottom|center|left" android:orientation="vertical" android:id="@id/ll_menubuy_note" android:paddingLeft="@dimen/margin_normal" android:paddingRight="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_small" android:textColor="@color/menu_black" android:id="@id/tv_menu300buy_note1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/menu_提示1" />
+    <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_small" android:textColor="@color/menu_black" android:id="@id/tv_menu300buy_note2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/menu_提示2" />
+    <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_small" android:textColor="@color/menu_black" android:id="@id/tv_menu300buy_note3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/menu_提示3" />
+</LinearLayout>

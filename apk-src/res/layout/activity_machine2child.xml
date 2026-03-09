@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/app_black_dark2" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@color/colorPrimary" android:layout_width="fill_parent" android:layout_height="@dimen/title_height">
+        <ImageView android:id="@id/bt_machine2child_back" android:paddingLeft="@dimen/margin_normal" android:paddingRight="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/sel_main_back" />
+        <TextView android:textSize="@dimen/font_biggest" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_machine2child_title" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/machine_normal_standby" android:layout_centerInParent="true" />
+        <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_machine2child_stop" android:padding="@dimen/margin_normal" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/common_grinder_stop" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <FrameLayout android:id="@id/fl_machine2child_container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</LinearLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/cardview_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" app:titleText="@string/canister_add" />
+        <View android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/line_height_normal" />
+        <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/margin_large2" android:paddingRight="@dimen/margin_large2" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_canisteradd_currentcanister" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_large2">
+                <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:gravity="right" android:paddingRight="@dimen/margin_large" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/canister_canister_name" android:layout_weight="1.0" />
+                <TextView android:textSize="@dimen/font_normal" android:textColor="@color/common_text_black" android:gravity="center_vertical" android:id="@id/tv_canisteradd_currentcanister" android:background="@drawable/rec_black_white_1dp" android:paddingLeft="@dimen/margin_large" android:paddingRight="@dimen/margin_large" android:layout_width="0.0dip" android:layout_height="@dimen/text_height_normal" android:text="@string/bean" android:drawableRight="@drawable/ic_arrow_bottom" android:layout_weight="2.0" />
+                <TextView android:textSize="@dimen/font_normal" android:gravity="center" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_canister_clear" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_large">
+                <com.jetinno.canister.widget.MatchResTextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:gravity="right" android:id="@id/label_remain" android:paddingRight="@dimen/margin_large" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" app:tag="canisterRemainDialog_labelRemain" />
+                <TextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:gravity="center_vertical" android:id="@id/tv_canisteradd_currentremain" android:paddingLeft="@dimen/margin_large" android:paddingRight="@dimen/margin_large" android:layout_width="0.0dip" android:layout_height="@dimen/text_height_normal" android:text="1000" android:layout_weight="2.0" />
+                <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/margin_large" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <TextView android:id="@id/tv_canister_clear" android:text="@string/empty" style="@style/button_normal" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_large" android:layout_marginBottom="@dimen/margin_large2">
+                <com.jetinno.canister.widget.MatchResTextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:gravity="right" android:id="@id/label_padding" android:paddingRight="@dimen/margin_large" android:layout_width="0.0px" android:layout_height="wrap_content" android:layout_weight="1.0" app:tag="canisterRemainDialog_labelPadding" />
+                <FrameLayout android:background="@color/white" android:layout_width="0.0dip" android:layout_height="@dimen/text_height_normal" android:layout_weight="2.0">
+                    <TextView android:textSize="@dimen/font_small" android:textColor="@color/common_text_gray" android:layout_gravity="center|right" android:id="@id/tv_canisteradd_allremain" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" />
+                    <EditText android:textSize="@dimen/font_normal" android:textColor="@color/common_text_black" android:textColorHint="@color/common_text_gray" android:gravity="center_vertical" android:id="@id/et_canisteradd_allremain" android:background="@color/transparent" android:paddingLeft="@dimen/margin_large" android:paddingRight="@dimen/margin_large" android:layout_width="fill_parent" android:layout_height="fill_parent" android:hint="@string/canister_hint_canister_add" />
+                </FrameLayout>
+                <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/margin_large" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <TextView android:enabled="false" android:id="@id/tv_canister_sure" android:text="@string/save" style="@style/button_normal" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

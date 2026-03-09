@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:background="@drawable/sel_language_bg" android:padding="@dimen/margin_large" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/margin_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.jetinno.core.menuedit.widget.MenuImageView android:id="@id/iv_language_img" android:layout_width="@dimen/menu300_product_iconwidth" android:layout_height="@dimen/menu300_product_iconwidth" />
+    <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/font_normal" android:textColor="@color/white" android:id="@id/tv_language_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+    <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/font_small" android:textColor="@color/white" android:id="@id/tv_language_name2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+</LinearLayout>

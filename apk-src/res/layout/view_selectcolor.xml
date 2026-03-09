@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/font_normal" android:textColor="@color/menu_black" android:gravity="left" android:id="@id/tv_menuedit_name" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/颜色" android:layout_weight="1.0" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" android:layout_weight="3.0">
+        <LinearLayout android:orientation="vertical" android:background="@drawable/rec_black_t_1dp" android:padding="@dimen/margin_small" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:id="@id/tv_menuedit_colorkey" android:layout_width="@dimen/font_large" android:layout_height="@dimen/font_large" />
+        </LinearLayout>
+        <TextView android:textSize="@dimen/font_normal" android:textColor="@color/menu_black" android:id="@id/tv_menuedit_colorvalue" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_menuedit_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_large" />
+    </LinearLayout>
+</LinearLayout>

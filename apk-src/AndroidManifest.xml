@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="31" android:compileSdkVersionCodename="12" package="com.jinuo.mhwang.jetinnocoffe" platformBuildVersionCode="31" platformBuildVersionName="12">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.REORDER_TASKS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="com.jinuo.mhwang.jetinnocoffe.log"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.USB_PERMISSION"/>
+    <uses-feature android:name="android.hardware.usb.host"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <application android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:name="com.jinuo.mhwang.MyApplication" android:networkSecurityConfig="@xml/network_security_config" android:persistent="true" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="false" android:theme="@style/JetinnoAppTheme" android:usesCleartextTraffic="true">
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize|touchscreen" android:launchMode="singleTask" android:name="com.jinuo.mhwang.app_ui.menu.activity.ProductGridActivity" android:screenOrientation="unspecified" android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.HOME"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTop" android:name="com.jetinno.menuedit.MenuEditActivity"/>
+        <activity android:launchMode="singleTop" android:name="com.jetinno.menu300.ui.make.MenuMakingActivity"/>
+        <activity android:launchMode="singleTop" android:name="com.jetinno.groupmanager.activity.GroupManagerActivity"/>
+        <activity android:launchMode="singleTop" android:name="com.jetinno.adv.activity.AdvManagementActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize|touchscreen" android:launchMode="singleTask" android:name="com.jetinno.adv.activity.ScreenProtectActivity"/>
+        <activity android:launchMode="singleTop" android:name="com.jetinno.pricemanager.activity.PriceManagementActivity"/>
+        <activity android:name="com.jetinno.canister.test.activity.CalibrateIceActivity" android:screenOrientation="unspecified" android:theme="@style/JetinnoAppTheme"/>
+        <activity android:launchMode="singleTop" android:name="com.jetinno.clean.activity.TaskCleanDA" android:screenOrientation="unspecified" android:theme="@style/JetinnoAppTheme"/>
+        <provider android:authorities="com.jinuo.mhwang.jetinnocoffe.fileProvider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
+        </provider>
+        <receiver android:name="com.jetinno.common.receiver.NetWorkChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jetinno.common.receiver.BootFinishReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.ACTION_BOOT_IPO"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize|touchscreen" android:icon="@mipmap/ic_launcher_log" android:label="@string/jetinnolog_name" android:launchMode="singleInstance" android:name="com.jetinno.common.activity.LogActionActivity" android:screenOrientation="unspecified">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize|touchscreen" android:name="com.jetinno.common.activity.MainActivity" android:screenOrientation="unspecified" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:launchMode="singleTop" android:name="com.jetinno.common.dialog.TaskRemoteDA" android:screenOrientation="unspecified" android:theme="@style/JetinnoAppDialogActivity"/>
+        <activity android:launchMode="singleTop" android:name="com.jetinno.common.dialog.TaskUpdateAppDA" android:screenOrientation="unspecified" android:theme="@style/JetinnoAppDialogActivity"/>
+        <activity android:launchMode="singleTop" android:name="com.jetinno.common.dialog.TaskUpdateAdvDA" android:screenOrientation="unspecified" android:theme="@style/JetinnoAppDialogActivity"/>
+        <activity android:launchMode="singleTop" android:name="com.jetinno.common.dialog.TaskUpdateIoDA" android:screenOrientation="unspecified" android:theme="@style/JetinnoAppDialogActivity"/>
+        <activity android:launchMode="singleTop" android:name="com.jetinno.common.activity.PasswordDA" android:screenOrientation="unspecified" android:theme="@style/JetinnoAppDialogActivity" android:windowSoftInputMode="stateAlwaysVisible"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize|touchscreen" android:name="com.jetinno.machine.activity.Machine2ChildActivity" android:screenOrientation="unspecified" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:launchMode="singleTop" android:name="com.jetinno.machineold.activity.OldMachineActivity" android:screenOrientation="unspecified"/>
+        <service android:name="com.jetinno.machine.floating.FloatingStatusService"/>
+        <activity android:launchMode="singleTop" android:name="com.jetinno.order.activity.OrderActivity"/>
+        <activity android:launchMode="singleTop" android:name="com.jetinno.power.activity.PresetPowerActivity"/>
+        <activity android:launchMode="singleTop" android:name="com.jetinno.power.activity.PowerActivity" android:screenOrientation="unspecified" android:theme="@style/JetinnoAppTheme"/>
+        <activity android:name="com.jetinno.file.TextActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="file"/>
+                <data android:scheme="content"/>
+                <data android:mimeType="*/*"/>
+                <data android:host="*"/>
+                <data android:pathPattern=".*.txt"/>
+                <data android:pathPattern=".*.json"/>
+                <data android:pathPattern=".*.product"/>
+                <data android:pathPattern=".*.productclass"/>
+                <data android:pathPattern=".*.recipe"/>
+                <data android:pathPattern=".*.ini"/>
+                <data android:pathPattern=".*.ioprogram"/>
+            </intent-filter>
+        </activity>
+        <provider android:authorities="com.jinuo.mhwang.jetinnocoffe.contextprovider" android:exported="false" android:name="com.jetinno.bugly.BuglyProvider"/>
+        <receiver android:name="com.jetinno.ecrofverifone.CardCheckoutCast"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.uuzuche.lib_zxing.activity.CaptureActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.NoActionBar" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.blankj.utilcode.util.UtilsTransActivity4MainProcess" android:theme="@style/ActivityTranslucent" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:multiprocess="true" android:name="com.blankj.utilcode.util.UtilsTransActivity" android:theme="@style/ActivityTranslucent" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <provider android:authorities="com.jinuo.mhwang.jetinnocoffe.utilcode.provider" android:exported="false" android:grantUriPermissions="true" android:name="com.blankj.utilcode.util.UtilsFileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/util_code_provider_paths"/>
+        </provider>
+        <service android:exported="false" android:name="com.blankj.utilcode.util.MessengerUtils$ServerService">
+            <intent-filter>
+                <action android:name="com.jinuo.mhwang.jetinnocoffe.messenger"/>
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

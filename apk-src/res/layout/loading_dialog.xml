@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/cardview_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_loading_root" android:padding="@dimen/margin_large2" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageView android:id="@id/tv_loading_close" android:layout_width="@dimen/img_icon_height_normal" android:layout_height="@dimen/img_icon_height_normal" android:src="@drawable/ic_close2" />
+        <ProgressBar android:gravity="center" android:visibility="visible" android:layout_width="@dimen/text_height_normal" android:layout_height="@dimen/text_height_normal" android:layout_marginTop="@dimen/margin_large" style="@android:style/Widget.Holo.Light.ProgressBar.Small.Inverse" />
+        <TextView android:textSize="@dimen/font_large" android:textColor="#ffffffff" android:gravity="center_horizontal" android:id="@id/tv_loading_msg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_large" android:text="@string/app_loading" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

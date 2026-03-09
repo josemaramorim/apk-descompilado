@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/cardview_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" app:titleText="@string/common_bt_serverlist" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingTop="@dimen/margin_normal" android:paddingBottom="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_large2">
+            <TextView android:textColor="@color/white" android:gravity="center" android:layout_width="0.0px" android:layout_height="wrap_content" android:text="@string/common_hint_input_address" android:layout_weight="3.0" />
+            <TextView android:textColor="@color/white" android:gravity="center" android:layout_width="0.0px" android:layout_height="wrap_content" android:text="@string/common_hint_input_port" android:layout_weight="1.0" />
+        </LinearLayout>
+        <View android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/line_height_normal" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingTop="@dimen/margin_small" android:paddingBottom="@dimen/margin_small" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center_vertical" android:layout_width="0.0px" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_large2" android:layout_marginRight="@dimen/margin_large2" android:layout_weight="3.0">
+                <EditText android:gravity="center" android:id="@id/et_editip_ip1" android:background="@color/white" android:layout_width="0.0px" android:layout_height="@dimen/input_height_normal" android:maxLength="3" android:layout_weight="1.0" android:inputType="number" android:imeOptions="actionNext" />
+                <EditText android:gravity="center" android:id="@id/et_editip_ip2" android:background="@color/white" android:layout_width="0.0px" android:layout_height="@dimen/input_height_normal" android:layout_marginLeft="@dimen/margin_small" android:layout_marginRight="@dimen/margin_small" android:maxLength="3" android:layout_weight="1.0" android:inputType="number" android:imeOptions="actionNext" />
+                <EditText android:gravity="center" android:id="@id/et_editip_ip3" android:background="@color/white" android:layout_width="0.0px" android:layout_height="@dimen/input_height_normal" android:layout_marginLeft="@dimen/margin_small" android:layout_marginRight="@dimen/margin_small" android:maxLength="3" android:layout_weight="1.0" android:inputType="number" android:imeOptions="actionNext" />
+                <EditText android:gravity="center" android:id="@id/et_editip_ip4" android:background="@color/white" android:layout_width="0.0px" android:layout_height="@dimen/input_height_normal" android:layout_marginLeft="@dimen/margin_small" android:layout_marginRight="@dimen/margin_small" android:maxLength="3" android:layout_weight="1.0" android:inputType="number" android:imeOptions="actionNext" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:layout_width="0.0px" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_large2" android:layout_marginRight="@dimen/margin_large2" android:layout_weight="1.0">
+                <EditText android:gravity="center" android:id="@id/et_editip_port" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/input_height_normal" android:maxLength="5" android:inputType="number" android:imeOptions="actionDone" />
+            </LinearLayout>
+        </LinearLayout>
+        <Button android:layout_gravity="center_horizontal" android:id="@id/bt_editip_sure" android:layout_marginTop="@dimen/margin_large2" android:layout_marginBottom="@dimen/margin_large2" android:text="@string/sure" style="@style/button_normal" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

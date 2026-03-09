@@ -1,0 +1,26 @@
+{
+    "data": [
+        {
+            "id": 10000,
+            "name": "料盒",
+            "isChecked": true,
+            "isManagerChecked": true,
+            "list": [
+                {
+                    "id": 10100,
+                    "name": "校准",
+                    "isChecked": true,
+                    "isManagerChecked": true,
+                    "list": null
+                },
+                {
+                    "id": 10200,
+                    "name": "设置",
+                    "isChecked": true,
+                    "isManagerChecked": true,
+                    "list": null
+                }
+            ]
+        }
+    ]
+}

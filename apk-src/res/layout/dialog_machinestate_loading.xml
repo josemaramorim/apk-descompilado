@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/cardview_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" app:titleText="" />
+        <View android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/line_height_normal" />
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:padding="@dimen/margin_large2" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ProgressBar android:gravity="center" android:visibility="visible" android:layout_width="@dimen/text_height_large" android:layout_height="@dimen/text_height_large" style="@android:style/Widget.Holo.Light.ProgressBar.Large.Inverse" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_weight="1.0">
+            <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_large" android:textStyle="bold" android:textColor="@color/menu_black" android:id="@id/tv_menu300qr_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/menu300_bar_title_top" android:text="@string/menu_请扫描QRCODE付款" />
+            <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_large" android:textStyle="bold" android:textColor="@color/menu_white" android:gravity="center" android:id="@id/tv_menuqr_countdown" android:background="@drawable/shape_menu_selectpay_bg" android:layout_width="@dimen/menu300_bar_countdown_width" android:layout_height="@dimen/menu300_bar_countdown_height" android:layout_marginTop="@dimen/menu300_bar_countdown_top" />
+            <FrameLayout android:background="@drawable/shape_menu_qr_bg" android:padding="@dimen/menu300_margin_normal" android:layout_width="@dimen/menu300_qr_load_width" android:layout_height="@dimen/menu300_qr_load_width" android:layout_marginTop="@dimen/menu300_qr_load_top">
+                <ProgressBar android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <ImageView android:id="@id/iv_menu300qr_result" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+            </FrameLayout>
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_menu300qr_icons" android:paddingLeft="@dimen/menu300_margin_large2" android:paddingRight="@dimen/menu300_margin_large2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/menu300_qr_icons_top" />
+        </LinearLayout>
+        <com.jetinno.menu300.ui.buy.MenuBuyButtonsView android:id="@id/view_menubuttons" android:layout_width="fill_parent" android:layout_height="wrap_content" app:visibleBack="true" app:visibleCancel="false" app:visibleOk="false" app:visibleTime="false" />
+    </LinearLayout>
+    <include layout="@layout/view_menu_buynote" />
+</FrameLayout>

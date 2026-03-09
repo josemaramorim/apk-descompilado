@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/cardview_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.jetinno.widget.HeadBar android:id="@id/headbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:backgroundColor="@color/colorPrimary" app:titleText="@string/氛围灯" />
+        <View android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/line_height_normal" />
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/button_width_normal" android:text="状态编号" />
+                        <RadioGroup android:gravity="center_vertical" android:orientation="vertical" android:id="@id/rg_light_stateno" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_large2">
+                            <RadioButton android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/black" android:id="@id/rb_light_stateno1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="机器正常待机，有触屏操作时" />
+                            <RadioButton android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/black" android:id="@id/rb_light_stateno2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="机器正常待机，30s内无触屏操作时" />
+                            <RadioButton android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/black" android:id="@id/rb_light_stateno3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="开机自检中、饮品制作中、清洗中、机器动作中、加热中" />
+                            <RadioButton android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/black" android:id="@id/rb_light_stateno4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="饮品制作完成后8秒内，等待取杯中" />
+                            <RadioButton android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/black" android:id="@id/rb_light_stateno5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="机器发生警告时" />
+                            <RadioButton android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/black" android:id="@id/rb_light_stateno6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="机器锁屏" />
+                            <RadioButton android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/black" android:id="@id/rb_light_stateno7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="机器故障" />
+                            <RadioButton android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/black" android:id="@id/rb_light_stateno9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="退出App" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/button_width_normal" android:text="灯控编号" />
+                        <RadioGroup android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/rg_light_no" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_large2">
+                            <RadioButton android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/black" android:id="@id/rb_light_no1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="常关" />
+                            <RadioButton android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/black" android:id="@id/rb_light_no2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="常亮" />
+                            <RadioButton android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/black" android:id="@id/rb_light_no3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="闪亮" />
+                            <RadioButton android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/black" android:id="@id/rb_light_no4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="单色呼吸" />
+                            <RadioButton android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/black" android:id="@id/rb_light_no5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="多色循环呼吸" />
+                            <RadioButton android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/black" android:id="@id/rb_light_no6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="多色循环" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/button_width_normal" android:text="灯带类型" />
+                        <RadioGroup android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/rg_light_type" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_large2">
+                            <RadioButton android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/black" android:id="@id/rb_light_type0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="RGB灯带" />
+                            <RadioButton android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/black" android:id="@id/rb_light_type1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="单色灯管" />
+                        </RadioGroup>
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_light_red" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/button_width_normal" android:text="红" />
+                        <SeekBar android:id="@id/seek_light_red" android:background="@color/white" android:paddingRight="@dimen/margin_large2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_large2" android:max="100" android:progress="0" android:min="0" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_light_green" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/button_width_normal" android:text="绿" />
+                        <SeekBar android:id="@id/seek_light_green" android:background="@color/white" android:paddingRight="@dimen/margin_large2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_large2" android:max="100" android:progress="0" android:min="0" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_light_blue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/button_width_normal" android:text="蓝" />
+                        <SeekBar android:id="@id/seek_light_blue" android:background="@color/white" android:paddingRight="@dimen/margin_large2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_large2" android:max="100" android:progress="0" android:min="0" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_light_lum" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/button_width_normal" android:text="单色亮度" />
+                        <SeekBar android:id="@id/seek_light_lum" android:background="@color/white" android:paddingRight="@dimen/margin_large2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_large2" android:max="100" android:progress="0" android:min="0" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_light_opentime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/button_width_normal" android:text="亮灯时间" />
+                        <SeekBar android:id="@id/seek_light_opentime" android:background="@color/white" android:paddingRight="@dimen/margin_large2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_large2" android:max="50" android:progress="0" android:min="0" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:textSize="@dimen/font_normal" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_light_closetime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/button_width_normal" android:text="灭灯时间" />
+                        <SeekBar android:id="@id/seek_light_closetime" android:background="@color/white" android:paddingRight="@dimen/margin_large2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_large2" android:max="50" android:progress="0" android:min="0" />
+                    </LinearLayout>
+                    <TextView android:textSize="@dimen/font_large" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_light_cmd" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_large" android:layout_marginBottom="@dimen/margin_large" android:text="" />
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_large2" android:layout_marginRight="@dimen/margin_large2">
+                        <Button android:id="@id/bt_light_sure" android:layout_width="0.0px" android:layout_height="@dimen/button_height_normal" android:layout_marginRight="@dimen/margin_normal" android:text="@string/sure" android:layout_weight="1.0" style="@style/button_normal_min150" />
+                        <Button android:id="@id/bt_light_save" android:layout_width="0.0px" android:layout_height="@dimen/button_height_normal" android:layout_marginLeft="@dimen/margin_normal" android:text="保存当前状态编号至文件" android:layout_weight="1.0" style="@style/button_normal_min150" />
+                    </LinearLayout>
+                    <View android:layout_width="fill_parent" android:layout_height="400.0px" />
+                </LinearLayout>
+            </ScrollView>
+        </FrameLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

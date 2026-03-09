@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="bottom" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_small">
+        <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/font_biggest" android:textColor="@color/menu_white" android:id="@id/tv_time_hour" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_time_am" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_normal">
+            <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/font_small" android:textStyle="bold" android:textColor="@color/menu_white" android:id="@id/tv_time_am" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_normal" android:textColor="@color/menu_white" android:id="@id/tv_time_date" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <com.jetinno.core.menuedit.widget.MenuTextView android:textSize="@dimen/menu300_font_normal" android:textColor="@color/menu_white" android:id="@id/tv_time_week" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingTop="@dimen/margin_normal" android:paddingBottom="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textStyle="bold" android:textColor="@color/app_white" android:gravity="center" android:id="@id/tv_task_no" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/序号" android:layout_weight="1.0" style="@style/text_canister" />
+    <TextView android:textStyle="bold" android:textColor="@color/app_white" android:gravity="center" android:id="@id/tv_task_name" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/任务类型" android:layout_weight="1.0" style="@style/text_canister" />
+    <TextView android:id="@id/tv_task_delete" android:layout_width="0.0dip" android:layout_marginLeft="@dimen/margin_large" android:text="@string/delete" android:layout_weight="1.0" style="@style/button_normal" />
+</LinearLayout>
