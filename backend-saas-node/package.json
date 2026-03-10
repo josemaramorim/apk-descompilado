@@ -1,0 +1,22 @@
+{
+  "name": "coffeepix-backend-saas",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Backend SaaS base for CoffeePix machine payments",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node src/server.js",
+    "start": "node src/server.js",
+    "lint": "node -e \"console.log('lint: pending setup')\"",
+    "test": "node -e \"console.log('test: pending setup')\""
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "fastify": "^4.29.0",
+    "fastify-plugin": "^5.0.1"
+  }
+}

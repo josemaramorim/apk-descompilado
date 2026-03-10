@@ -1,6 +1,6 @@
 # Plano de Trabalho — Integração APK + Backend (JL22)
 
-Status atual: em execução
+Status atual: etapa 2 em execução
 
 ## Objetivo
 
@@ -11,6 +11,7 @@ Validar primeiro a aceitação técnica da máquina JL22 para fluxo de pagamento
 - Cada etapa só avança quando os critérios de conclusão forem atendidos.
 - Em cada etapa concluída, atualizar este arquivo e o checklist abaixo.
 - Sempre manter caminho de rollback (APK anterior assinado e testado).
+- Nao misturar trilhas: APK Lab e Backend SaaS devem ficar em pastas separadas.
 
 ## Checklist de etapas
 
@@ -134,6 +135,9 @@ Validar primeiro a aceitação técnica da máquina JL22 para fluxo de pagamento
 - Validacao em campo concluida com `CoffeePix22.apk` (resultado geral: OK).
 - Observacao operacional: fluxo funcionou em modo livre.
 - Proxima etapa ativa: 2) Provar exibicao QR remoto.
+- Mapeamento tecnico da etapa 2 concluido (fluxo de `requestQRcode` e evento `qrcode_r`).
+- Execucao local sem JL22 conectada: validacoes de API seguem em ambiente de laboratorio.
+- Estrutura separada aplicada: `apk-lab/` (cliente) e `backend-saas-node/` (servidor).
 
 ## Execucao da etapa 1 (baseline)
 
@@ -170,3 +174,41 @@ Validar primeiro a aceitação técnica da máquina JL22 para fluxo de pagamento
 Marcar etapa 1 como concluida somente quando os 5 itens de validacao em campo estiverem completos.
 
 Status: etapa 1 concluida.
+
+## Execucao da etapa 2 (prova de QR remoto)
+
+### Pontos tecnicos mapeados no APK
+
+- `apk-src/smali_classes4/com/jetinno/socket/SocketIml.smali`
+	Metodo `requestQRcode(...)` inicia fluxo de solicitacao do QR.
+- `apk-src/smali_classes4/com/jetinno/socket/core/ServerSocketManager.smali`
+	Metodo `requestQRcode(...)` delega para criacao de mensagem.
+- `apk-src/smali_classes4/com/jetinno/socket/helper/ServerMsgCreator.smali`
+	Metodo `createQRcode(...)` monta payload de QR e order.
+- `apk-src/smali_classes4/com/jetinno/socket/helper/SocketReceiveManager.smali`
+	Trata comando `qrcode_r` e dispara `PayQrimageEvent`.
+- `apk-src/smali_classes2/com/jetinno/core/socket/bean/ReceivedMsgBean.smali`
+	Campos de retorno, incluindo `qrcode`.
+
+### Infra minima definida
+
+- Backend Node estruturado adicionado: `backend-saas-node/`.
+- Objetivo do MVP: retornar `qr_text` remoto para validar renderizacao na JL22.
+
+### Checklist de validacao da etapa 2
+
+- [x] Subir backend local (`cd backend-saas-node && npm run dev`).
+- [x] Confirmar `GET /health` com `ok=true`.
+- [ ] Ajustar APK para consumir `POST /v1/orders` e obter `qr_text`.
+- [ ] Validar que QR remoto aparece na tela da JL22.
+- [ ] Registrar evidencia (log HTTP + foto/video curto).
+
+### Criterio de conclusao da etapa 2
+
+Etapa 2 conclui quando o QR retornado remotamente aparecer na tela da JL22 de forma repetivel.
+
+### Progresso tecnico da etapa 2
+
+- `GET /health` validado com sucesso: `{ "ok": true, "mode": "mock-qr" }`.
+- `POST /v1/orders` validado com sucesso e retorno de `qr_text` confirmado.
+- Limpeza concluida: trilha Python removida para manter stack unica em Node.
