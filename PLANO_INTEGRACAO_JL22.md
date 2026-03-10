@@ -212,3 +212,14 @@ Etapa 2 conclui quando o QR retornado remotamente aparecer na tela da JL22 de fo
 - `GET /health` validado com sucesso: `{ "ok": true, "mode": "mock-qr" }`.
 - `POST /v1/orders` validado com sucesso e retorno de `qr_text` confirmado.
 - Limpeza concluida: trilha Python removida para manter stack unica em Node.
+- Fluxo local completo validado via script em `backend-saas-node/examples/jl22-local-flow.ps1` com resultado `should_release=true`.
+
+### Proximo passo operacional
+
+- Aplicar patch no fluxo de QR do APK para consumir `POST /v1/orders` do backend Node e exibir QR remoto no cliente.
+
+### Atualizacao de implementacao (2026-03-10)
+
+- Patch inicial aplicado em `apk-src/smali_classes3/com/jetinno/menu300/ui/pay/MenuQrFragment.smali`.
+- Fluxo novo: tenta `POST /v1/orders`, faz parse de `qr_text` e renderiza QR na UI.
+- Fallback mantido: em erro/excecao, volta para `SocketCoreHolder.requestQRcode(...)`.

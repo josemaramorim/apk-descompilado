@@ -35,3 +35,17 @@ npm run dev
 ## Observacao
 
 Este backend e a trilha de APK sao projetos separados no mesmo repositorio.
+
+## Exemplo de conexao SaaS com JL22 em laboratorio
+
+- Guia: `docs/JL22_SAAS_EXEMPLO_LOCAL.md`
+- Deploy no Render: `docs/DEPLOY_RENDER_PASSO_A_PASSO.md`
+- Script de fluxo completo: `examples/jl22-local-flow.ps1`
+
+Execucao sugerida:
+
+1. `cd backend-saas-node`
+2. `npm install`
+3. `Copy-Item .env.example .env`
+4. `npm run dev`
+5. Em outro terminal: `./examples/jl22-local-flow.ps1`

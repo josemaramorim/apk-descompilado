@@ -1212,37 +1212,11 @@
 .end method
 
 .method public static final getAppLangType()Lcom/jetinno/utils/LangType;
-    .locals 2
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
-    .line 33
-    sget-object v0, Lcom/jetinno/utils/LocalManageUtil;->INSTANCE:Lcom/jetinno/utils/LocalManageUtil;
-
-    invoke-virtual {v0}, Lcom/jetinno/utils/LocalManageUtil;->isInnerSales()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 34
     sget-object v0, Lcom/jetinno/utils/LangType;->portuguese:Lcom/jetinno/utils/LangType;
-
-    return-object v0
-
-    .line 36
-    :cond_0
-    invoke-direct {v0}, Lcom/jetinno/utils/LocalManageUtil;->getAppLanguage()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/jetinno/utils/LangType;->findTypeByCode(Ljava/lang/String;)Lcom/jetinno/utils/LangType;
-
-    move-result-object v0
-
-    const-string v1, "findTypeByCode(appLanguage)"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object v0
 .end method
@@ -1269,37 +1243,11 @@
 .end method
 
 .method public static final getFrontLangType()Lcom/jetinno/utils/LangType;
-    .locals 2
+    .locals 1
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
-    .line 66
-    sget-object v0, Lcom/jetinno/utils/LocalManageUtil;->INSTANCE:Lcom/jetinno/utils/LocalManageUtil;
-
-    invoke-virtual {v0}, Lcom/jetinno/utils/LocalManageUtil;->isInnerSales()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 67
     sget-object v0, Lcom/jetinno/utils/LangType;->portuguese:Lcom/jetinno/utils/LangType;
-
-    return-object v0
-
-    .line 69
-    :cond_0
-    invoke-direct {v0}, Lcom/jetinno/utils/LocalManageUtil;->getFrontLanguage()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/jetinno/utils/LangType;->findTypeByCode(Ljava/lang/String;)Lcom/jetinno/utils/LangType;
-
-    move-result-object v0
-
-    const-string v1, "findTypeByCode(frontLanguage)"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object v0
 .end method

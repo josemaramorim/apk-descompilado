@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: coffeepix-backend
+    runtime: node
+    plan: free
+    rootDir: backend-saas-node
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: API_TOKEN
+        sync: false
+      - key: QR_TEXT
+        sync: false

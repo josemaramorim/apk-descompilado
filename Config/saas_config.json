@@ -1,0 +1,8 @@
+{
+  "base_url": "http://SEU_IP_BACKEND:8080",
+  "orders_endpoint": "/v1/orders",
+  "status_endpoint_template": "/v1/orders/{order_id}/status?machine_id={machine_id}",
+  "confirm_endpoint": "/v1/payments/confirm",
+  "api_key": "1475F22EF5ECE7BA19AF85273763F9C6",
+  "notes": "Troque SEU_IP_BACKEND pelo IP/host acessivel pela JL22."
+}

@@ -82,6 +82,12 @@ Estratégia de patch:
 3. No loop de espera, consultar `GET /v1/orders/{id}/status`.
 4. Só liberar produto se `should_release=true`.
 
+Configuração de SaaS (laboratório/produção):
+
+- Arquivo: `Config/saas_config.json`
+- Defina `base_url` com IP/host acessível pela JL22 (não use `127.0.0.1`).
+- Exemplo: `http://192.168.0.50:8080`
+
 ## Fase 4 — Build do APK patchado
 
 ```powershell
