@@ -1,0 +1,27 @@
+# Local Python environment
+.venv/
+**/.venv/
+__pycache__/
+*.pyc
+
+# Local environment files
+.env
+*.env
+!.env.example
+
+# Build and signing artifacts
+*.apk
+*.apks
+*.idsig
+*.keystore
+*.jks
+*.p12
+
+# Tool/build folders
+build/
+dist/
+out/
+
+# OS/editor
+.DS_Store
+Thumbs.db
