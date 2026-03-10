@@ -117,6 +117,15 @@
     return-void
 .end method
 
+.method public static final synthetic access$setQrImage(Lcom/jetinno/menu300/ui/pay/MenuQrFragment;Ljava/lang/String;)V
+    .locals 0
+
+    .line 33
+    invoke-direct {p0, p1}, Lcom/jetinno/menu300/ui/pay/MenuQrFragment;->setQrImage(Ljava/lang/String;)V
+
+    return-void
+.end method
+
 .method public constructor <init>()V
     .locals 5
 
@@ -732,7 +741,7 @@
 .end method
 
 .method private final startPay()V
-    .locals 7
+    .locals 13
 
     .line 112
     invoke-virtual {p0}, Lcom/jetinno/menu300/ui/pay/MenuQrFragment;->isMenuEdit()Z
@@ -798,6 +807,98 @@
 
     .line 120
     :cond_1
+    :try_start_0
+    new-instance v1, Lorg/json/JSONObject;
+
+    invoke-direct {v1}, Lorg/json/JSONObject;-><init>()V
+
+    const-string v2, "machine_id"
+
+    sget-object v3, Lcom/jetinno/confing/StatusGlobalX;->INSTANCE:Lcom/jetinno/confing/StatusGlobalX;
+
+    invoke-virtual {v3}, Lcom/jetinno/confing/StatusGlobalX;->getMachineNumL()J
+
+    move-result-wide v3
+
+    invoke-static {v3, v4}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    const-string v2, "product_id"
+
+    invoke-virtual {p0}, Lcom/jetinno/menu300/ui/pay/MenuQrFragment;->getPayingNode()Lcom/jetinno/core/menu/bean/PayingNode;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/jetinno/core/menu/bean/PayingNode;->getProductBean()Lcom/jetinno/core/product/IProductBean;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Lcom/jetinno/core/product/IProductBean;->getProductId()I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    const-string v2, "product_name"
+
+    const-string v3, "Coffee"
+
+    invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    const-string v2, "amount_cents"
+
+    invoke-virtual {p0}, Lcom/jetinno/menu300/ui/pay/MenuQrFragment;->getPrice()D
+
+    move-result-wide v3
+
+    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v3
+
+    const/16 v4, 0x64
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Lcom/jetinno/utils/NumberUtil;->multiply(Ljava/lang/Object;Ljava/lang/Object;)D
+
+    move-result-wide v3
+
+    double-to-int v3, v3
+
+    invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
+
+    sget-object v2, Lcom/jetinno/socket/helper/OkHttpUtil;->JSON:Lokhttp3/MediaType;
+
+    invoke-virtual {v1}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v2, v1}, Lokhttp3/RequestBody;->create(Lokhttp3/MediaType;Ljava/lang/String;)Lokhttp3/RequestBody;
+
+    move-result-object v1
+
+    const-string v2, "http://127.0.0.1:8080/v1/orders"
+
+    new-instance v3, Lcom/jetinno/menu300/ui/pay/MenuQrFragment$$ExternalSyntheticLambda1;
+
+    invoke-direct {v3, p0}, Lcom/jetinno/menu300/ui/pay/MenuQrFragment$$ExternalSyntheticLambda1;-><init>(Lcom/jetinno/menu300/ui/pay/MenuQrFragment;)V
+
+    invoke-static {v2, v1, v3}, Lcom/jetinno/socket/helper/OkHttpUtil;->post(Ljava/lang/String;Lokhttp3/RequestBody;Lcom/jetinno/socket/helper/OkHttpUtil$HttpCallBack;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
     sget-object v1, Lcom/jetinno/core/socket/SocketCoreHolder;->INSTANCE:Lcom/jetinno/core/socket/SocketCoreHolder;
 
     invoke-virtual {p0}, Lcom/jetinno/menu300/ui/pay/MenuQrFragment;->getPayingNode()Lcom/jetinno/core/menu/bean/PayingNode;
@@ -808,7 +909,6 @@
 
     move-result-object v2
 
-    .line 121
     invoke-virtual {p0}, Lcom/jetinno/menu300/ui/pay/MenuQrFragment;->getPayingNode()Lcom/jetinno/core/menu/bean/PayingNode;
 
     move-result-object v0
@@ -817,7 +917,6 @@
 
     move-result-object v3
 
-    .line 122
     invoke-virtual {p0}, Lcom/jetinno/menu300/ui/pay/MenuQrFragment;->getPayingNode()Lcom/jetinno/core/menu/bean/PayingNode;
 
     move-result-object v0
@@ -826,15 +925,54 @@
 
     move-result-object v4
 
-    .line 123
     invoke-virtual {p0}, Lcom/jetinno/menu300/ui/pay/MenuQrFragment;->getPrice()D
 
     move-result-wide v5
 
-    .line 120
     invoke-virtual/range {v1 .. v6}, Lcom/jetinno/core/socket/SocketCoreHolder;->requestQRcode(Ljava/lang/String;Lcom/jetinno/core/product/IProductBean;Ljava/lang/String;D)V
 
     :goto_0
+    return-void
+.end method
+
+.method public final lambda$startPaySaas$1(Ljava/lang/String;)V
+    .locals 4
+
+    :try_start_0
+    new-instance v0, Lorg/json/JSONObject;
+
+    invoke-direct {v0, p1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+
+    const-string v1, "qr_text"
+
+    const-string v2, ""
+
+    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    invoke-virtual {p0}, Lcom/jetinno/menu300/ui/pay/MenuQrFragment;->getMainHandler()Landroid/os/Handler;
+
+    move-result-object v1
+
+    new-instance v2, Lcom/jetinno/menu300/ui/pay/MenuQrFragment$$ExternalSyntheticLambda2;
+
+    invoke-direct {v2, p0, v0}, Lcom/jetinno/menu300/ui/pay/MenuQrFragment$$ExternalSyntheticLambda2;-><init>(Lcom/jetinno/menu300/ui/pay/MenuQrFragment;Ljava/lang/String;)V
+
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_0
+    return-void
+
+    :catch_0
     return-void
 .end method
 

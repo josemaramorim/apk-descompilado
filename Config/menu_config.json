@@ -1,0 +1,715 @@
+{
+    "data": {
+        "string_xml": {},
+        "tv_cancel_making": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_clear": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 16,
+            "text_wide": 1
+        },
+        "tv_content": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 16,
+            "text_wide": 1
+        },
+        "tv_fault_desc": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 12,
+            "text_wide": 0
+        },
+        "tv_fault_title": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 16,
+            "text_wide": 1
+        },
+        "tv_group2_name": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 27,
+            "text_wide": 1
+        },
+        "tv_group_name": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 27,
+            "text_wide": 1
+        },
+        "tv_head_cashlessamount": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 0
+        },
+        "tv_head_cashlessamount_text": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 0
+        },
+        "tv_headgroup_groupname": {
+            "text_color": "#FF9D9D9D",
+            "text_maxLines": 0,
+            "text_selected_color": "#FF734418",
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_language_name": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 12,
+            "text_wide": 0
+        },
+        "tv_language_name2": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 10,
+            "text_wide": 0
+        },
+        "tv_menu300_cashcorrect": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 0
+        },
+        "tv_menu300_cashpaid": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 0
+        },
+        "tv_menu300_cate_name": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 1
+        },
+        "tv_menu300_countdown": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 1
+        },
+        "tv_menu300_machinenum": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 0
+        },
+        "tv_menu300_phone": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 0
+        },
+        "tv_menu300_progress": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 10,
+            "text_wide": 0
+        },
+        "tv_menu300_task": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 16,
+            "text_wide": 1
+        },
+        "tv_menu300_temp": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 0
+        },
+        "tv_menu300_wxpub": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 0
+        },
+        "tv_menu300bar_countdown": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300bar_title": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300bottom_name": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 12,
+            "text_wide": 0
+        },
+        "tv_menu300bottom_oriprice": {
+            "text_color": "#FF999999",
+            "text_maxLines": 0,
+            "text_size": 12,
+            "text_wide": 0
+        },
+        "tv_menu300bottom_saleprice": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 14,
+            "text_wide": 0
+        },
+        "tv_menu300bottom_stockout": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 12,
+            "text_wide": 1
+        },
+        "tv_menu300buy_back": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300buy_cancel": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300buy_name": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300buy_note1": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 14,
+            "text_wide": 0
+        },
+        "tv_menu300buy_note2": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 14,
+            "text_wide": 0
+        },
+        "tv_menu300buy_note3": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 14,
+            "text_wide": 0
+        },
+        "tv_menu300buy_ok": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300buy_oriprice": {
+            "text_color": "#FF999999",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 0
+        },
+        "tv_menu300buy_otherinfo": {
+            "text_color": "#FFFF6F24",
+            "text_maxLines": 0,
+            "text_size": 14,
+            "text_wide": 0
+        },
+        "tv_menu300buy_saleprice": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 0
+        },
+        "tv_menu300buy_usercup": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300cash_countdown": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300cash_dian1": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 1
+        },
+        "tv_menu300cash_dian2": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 1
+        },
+        "tv_menu300cash_paid": {
+            "text_color": "#FFFF0000",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 1
+        },
+        "tv_menu300cash_paid_text": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 1
+        },
+        "tv_menu300cash_price": {
+            "text_color": "#FFFF0000",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 1
+        },
+        "tv_menu300cash_price_text": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 1
+        },
+        "tv_menu300cash_symbol": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 1
+        },
+        "tv_menu300cash_symbol2": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 1
+        },
+        "tv_menu300cash_title": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300cashless_countdown": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300cashless_title": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300concen_name": {
+            "text_color": "#FF000000",
+            "text_maxLines": 1,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300error_comming": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 27,
+            "text_wide": 1
+        },
+        "tv_menu300error_contact": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 27,
+            "text_wide": 1
+        },
+        "tv_menu300error_machinenum": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 0
+        },
+        "tv_menu300error_reason": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 27,
+            "text_wide": 1
+        },
+        "tv_menu300face_countdown": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300face_title": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300fast_countdown": {
+            "text_color": "#FF999999",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300fast_key": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300fast_title": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 27,
+            "text_wide": 1
+        },
+        "tv_menu300glassquery_back": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300glassquery_countdown": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 1
+        },
+        "tv_menu300glassquery_note": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300glassquery_ok": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300make_makefinish": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 27,
+            "text_wide": 1
+        },
+        "tv_menu300make_makefinish_countdown": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 27,
+            "text_wide": 1
+        },
+        "tv_menu300make_making": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 27,
+            "text_wide": 1
+        },
+        "tv_menu300make_progress": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 0
+        },
+        "tv_menu300make_progress_edit": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 12,
+            "text_wide": 0
+        },
+        "tv_menu300make_takedcup": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300product_name": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 3,
+            "text_size": 18,
+            "text_wide": 0
+        },
+        "tv_menu300product_oriprice": {
+            "text_color": "#FF999999",
+            "text_maxLines": 0,
+            "text_size": 14,
+            "text_wide": 0
+        },
+        "tv_menu300product_saleprice": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 0
+        },
+        "tv_menu300qr_back": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300qr_countdown": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 1
+        },
+        "tv_menu300qr_note": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300qr_ok": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300qr_title": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300refund_countdown": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 1
+        },
+        "tv_menu300refund_note": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300refund_ok": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300rfid_countdown": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300rfid_note": {
+            "text_color": "#FFFF0000",
+            "text_maxLines": 0,
+            "text_size": 12,
+            "text_wide": 0
+        },
+        "tv_menu300rfid_title": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300selectpay_title": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300water_stop": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_menu300water_title": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 27,
+            "text_wide": 1
+        },
+        "tv_menuhead_rfid_amount": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 0
+        },
+        "tv_menuhead_rfid_title": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 0
+        },
+        "tv_menuqr_countdown": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_productlistgroup_groupname": {
+            "text_color": "#FF9D9D9D",
+            "text_maxLines": 0,
+            "text_selected_color": "#FF734418",
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_sensorcup_back": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_sensorcup_change": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 1
+        },
+        "tv_sensorcup_countdown": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 1
+        },
+        "tv_sensorcup_note": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_sensorcup_note2": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 1
+        },
+        "tv_sensorcup_ok": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 1
+        },
+        "tv_sensorcupnote_back": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_sensorcupnote_countdown": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 1
+        },
+        "tv_sensorcupnote_note": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_sensorcupnote_note2": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 1
+        },
+        "tv_sensorcupnoteold_back": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_sensorcupnoteold_countdown": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 1
+        },
+        "tv_sensorcupnoteold_note": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_sensorcupnoteold_note2": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 1
+        },
+        "tv_sensorcuptake_back": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_sensorcuptake_countdown": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 1
+        },
+        "tv_sensorcuptake_note": {
+            "text_color": "#FF333333",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 1
+        },
+        "tv_syrup_flavour": {
+            "text_color": "#FF000000",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 0
+        },
+        "tv_syrup_typename": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 0
+        },
+        "tv_syrupchild_name": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 20,
+            "text_wide": 0
+        },
+        "tv_syrupchild_price": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 0
+        },
+        "tv_time_am": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 10,
+            "text_wide": 1
+        },
+        "tv_time_date": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 0
+        },
+        "tv_time_hour": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 27,
+            "text_wide": 0
+        },
+        "tv_time_week": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 18,
+            "text_wide": 0
+        },
+        "tv_wastewarning_title": {
+            "text_color": "#FFFFFFFF",
+            "text_maxLines": 0,
+            "text_size": 16,
+            "text_wide": 1
+        }
+    }
+}
